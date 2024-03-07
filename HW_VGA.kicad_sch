@@ -320,6 +320,10 @@
       (effects (font (size 1.27 1.27)) (justify right))
       (uuid 07bf9be4-752a-4014-8d63-76e2c89b4303)
     )
+    (pin "-FRAME_END" input (at 73.66 50.8 180)
+      (effects (font (size 1.27 1.27)) (justify left))
+      (uuid 1ecc9e4b-c950-4a87-84bf-96bfe80d3691)
+    )
     (instances
       (project "HW_VGA"
         (path "/c4bd4b39-993a-4195-805f-b4de6fa4aea5" (page "2"))
