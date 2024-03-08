@@ -4,8 +4,20 @@
 
   <lib desc="#Wiring" name="0">
     <tool name="Splitter">
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
+      <a name="bit1" val="0"/>
+      <a name="bit10" val="2"/>
+      <a name="bit11" val="2"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="1"/>
+      <a name="bit5" val="1"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
+      <a name="bit8" val="2"/>
+      <a name="bit9" val="2"/>
+      <a name="facing" val="west"/>
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="12"/>
     </tool>
     <tool name="Pin">
       <a name="appearance" val="classic"/>
@@ -386,10 +398,8 @@
     <wire from="(630,630)" to="(720,630)"/>
     <wire from="(630,840)" to="(630,850)"/>
     <wire from="(630,850)" to="(790,850)"/>
-    <wire from="(630,880)" to="(630,890)"/>
+    <wire from="(630,880)" to="(630,920)"/>
     <wire from="(630,880)" to="(670,880)"/>
-    <wire from="(630,890)" to="(630,920)"/>
-    <wire from="(630,890)" to="(950,890)"/>
     <wire from="(640,100)" to="(800,100)"/>
     <wire from="(640,70)" to="(640,100)"/>
     <wire from="(650,1000)" to="(650,1030)"/>
@@ -413,6 +423,8 @@
     <wire from="(670,540)" to="(670,580)"/>
     <wire from="(670,540)" to="(990,540)"/>
     <wire from="(670,840)" to="(670,880)"/>
+    <wire from="(670,880)" to="(670,890)"/>
+    <wire from="(670,890)" to="(950,890)"/>
     <wire from="(670,990)" to="(670,1030)"/>
     <wire from="(670,990)" to="(710,990)"/>
     <wire from="(680,120)" to="(740,120)"/>
@@ -434,8 +446,9 @@
     <wire from="(710,1290)" to="(770,1290)"/>
     <wire from="(710,580)" to="(710,620)"/>
     <wire from="(710,580)" to="(990,580)"/>
-    <wire from="(710,840)" to="(710,900)"/>
-    <wire from="(710,900)" to="(950,900)"/>
+    <wire from="(710,840)" to="(710,880)"/>
+    <wire from="(710,880)" to="(710,900)"/>
+    <wire from="(710,880)" to="(950,880)"/>
     <wire from="(710,990)" to="(710,1110)"/>
     <wire from="(720,140)" to="(990,140)"/>
     <wire from="(720,590)" to="(720,630)"/>
@@ -475,9 +488,9 @@
     <wire from="(780,220)" to="(870,220)"/>
     <wire from="(790,1340)" to="(790,1360)"/>
     <wire from="(790,350)" to="(790,380)"/>
-    <wire from="(790,850)" to="(790,880)"/>
-    <wire from="(790,880)" to="(790,920)"/>
-    <wire from="(790,880)" to="(950,880)"/>
+    <wire from="(790,850)" to="(790,900)"/>
+    <wire from="(790,900)" to="(790,920)"/>
+    <wire from="(790,900)" to="(950,900)"/>
     <wire from="(800,100)" to="(800,160)"/>
     <wire from="(800,1090)" to="(800,1120)"/>
     <wire from="(800,1240)" to="(800,1370)"/>
