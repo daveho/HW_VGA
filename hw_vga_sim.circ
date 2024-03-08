@@ -67,7 +67,9 @@
       <a name="output" val="true"/>
     </tool>
     <sep/>
-    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="NOT Gate">
+      <a name="facing" val="west"/>
+    </tool>
     <tool lib="1" name="AND Gate"/>
     <tool lib="1" name="OR Gate"/>
     <tool lib="1" name="XOR Gate"/>
@@ -121,6 +123,7 @@
     </comp>
     <comp lib="5" loc="(570,80)" name="Hex Digit Display"/>
     <comp lib="5" loc="(580,280)" name="Hex Digit Display"/>
+    <comp lib="5" loc="(580,380)" name="LED"/>
     <comp lib="5" loc="(610,80)" name="Hex Digit Display"/>
     <comp lib="5" loc="(620,280)" name="Hex Digit Display"/>
     <comp lib="5" loc="(650,80)" name="Hex Digit Display"/>
@@ -140,6 +143,7 @@
     <wire from="(470,130)" to="(520,130)"/>
     <wire from="(470,170)" to="(490,170)"/>
     <wire from="(470,340)" to="(530,340)"/>
+    <wire from="(470,380)" to="(580,380)"/>
     <wire from="(490,170)" to="(490,310)"/>
     <wire from="(540,100)" to="(650,100)"/>
     <wire from="(540,110)" to="(610,110)"/>
@@ -256,6 +260,12 @@
     </comp>
     <comp lib="6" loc="(680,320)" name="74163">
       <a name="ShowInternalStructure" val="true"/>
+    </comp>
+    <comp lib="8" loc="(468,462)" name="Text">
+      <a name="text" val="Counters reset when nRST or nHCOUNT_END asserted"/>
+    </comp>
+    <comp lib="8" loc="(842,637)" name="Text">
+      <a name="text" val="HCOUNT_END when HCOUNT is 799"/>
     </comp>
     <wire from="(150,300)" to="(150,380)"/>
     <wire from="(150,380)" to="(240,380)"/>
@@ -519,6 +529,9 @@
       <a name="output" val="true"/>
       <a name="width" val="12"/>
     </comp>
+    <comp lib="1" loc="(620,730)" name="NOT Gate">
+      <a name="facing" val="west"/>
+    </comp>
     <comp lib="1" loc="(860,630)" name="NOT Gate"/>
     <comp lib="3" loc="(810,630)" name="Comparator">
       <a name="mode" val="unsigned"/>
@@ -535,9 +548,18 @@
     <comp lib="6" loc="(750,240)" name="74163">
       <a name="ShowInternalStructure" val="true"/>
     </comp>
+    <comp lib="8" loc="(1003,530)" name="Text">
+      <a name="text" val="VCOUNT_END when count is 524"/>
+    </comp>
+    <comp lib="8" loc="(571,361)" name="Text">
+      <a name="text" val="Counters reset if nRST asserted or both VCOUNT_END and HCOUNT_END asserted"/>
+    </comp>
     <wire from="(150,130)" to="(190,130)"/>
-    <wire from="(150,170)" to="(410,170)"/>
+    <wire from="(150,170)" to="(170,170)"/>
     <wire from="(150,90)" to="(230,90)"/>
+    <wire from="(170,170)" to="(170,580)"/>
+    <wire from="(170,170)" to="(410,170)"/>
+    <wire from="(170,580)" to="(630,580)"/>
     <wire from="(190,130)" to="(190,410)"/>
     <wire from="(190,410)" to="(590,410)"/>
     <wire from="(200,280)" to="(200,380)"/>
@@ -588,6 +610,7 @@
     <wire from="(570,270)" to="(570,340)"/>
     <wire from="(570,340)" to="(590,340)"/>
     <wire from="(570,520)" to="(570,550)"/>
+    <wire from="(570,550)" to="(650,550)"/>
     <wire from="(570,90)" to="(570,210)"/>
     <wire from="(580,200)" to="(590,200)"/>
     <wire from="(580,90)" to="(580,200)"/>
@@ -596,8 +619,8 @@
     <wire from="(590,270)" to="(590,340)"/>
     <wire from="(590,340)" to="(610,340)"/>
     <wire from="(590,410)" to="(590,460)"/>
-    <wire from="(590,520)" to="(590,690)"/>
-    <wire from="(590,690)" to="(890,690)"/>
+    <wire from="(590,520)" to="(590,730)"/>
+    <wire from="(590,730)" to="(620,730)"/>
     <wire from="(590,90)" to="(590,190)"/>
     <wire from="(600,150)" to="(630,150)"/>
     <wire from="(600,90)" to="(600,150)"/>
@@ -607,21 +630,27 @@
     <wire from="(610,380)" to="(610,460)"/>
     <wire from="(610,40)" to="(610,70)"/>
     <wire from="(610,40)" to="(930,40)"/>
+    <wire from="(610,520)" to="(610,670)"/>
+    <wire from="(610,670)" to="(820,670)"/>
     <wire from="(630,150)" to="(630,210)"/>
     <wire from="(630,270)" to="(630,340)"/>
     <wire from="(630,340)" to="(800,340)"/>
     <wire from="(630,410)" to="(630,460)"/>
     <wire from="(630,410)" to="(930,410)"/>
+    <wire from="(630,520)" to="(630,580)"/>
     <wire from="(650,140)" to="(650,210)"/>
     <wire from="(650,140)" to="(690,140)"/>
     <wire from="(650,270)" to="(650,290)"/>
     <wire from="(650,290)" to="(690,290)"/>
     <wire from="(650,420)" to="(650,460)"/>
     <wire from="(650,420)" to="(930,420)"/>
+    <wire from="(650,520)" to="(650,550)"/>
+    <wire from="(650,730)" to="(670,730)"/>
     <wire from="(670,110)" to="(670,210)"/>
     <wire from="(670,110)" to="(900,110)"/>
     <wire from="(670,430)" to="(670,460)"/>
     <wire from="(670,430)" to="(760,430)"/>
+    <wire from="(670,520)" to="(670,730)"/>
     <wire from="(690,140)" to="(690,290)"/>
     <wire from="(690,440)" to="(690,460)"/>
     <wire from="(690,440)" to="(750,440)"/>
@@ -680,13 +709,11 @@
     <wire from="(840,470)" to="(930,470)"/>
     <wire from="(860,140)" to="(860,210)"/>
     <wire from="(860,270)" to="(860,340)"/>
-    <wire from="(860,630)" to="(890,630)"/>
+    <wire from="(860,630)" to="(950,630)"/>
     <wire from="(880,130)" to="(880,210)"/>
     <wire from="(880,130)" to="(920,130)"/>
     <wire from="(880,270)" to="(880,290)"/>
     <wire from="(880,290)" to="(920,290)"/>
-    <wire from="(890,630)" to="(890,690)"/>
-    <wire from="(890,630)" to="(950,630)"/>
     <wire from="(900,110)" to="(900,210)"/>
     <wire from="(920,130)" to="(920,290)"/>
     <wire from="(950,210)" to="(950,380)"/>
