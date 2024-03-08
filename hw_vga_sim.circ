@@ -20,13 +20,8 @@
     </tool>
     <tool name="Pin">
       <a name="appearance" val="classic"/>
-      <a name="facing" val="west"/>
-      <a name="label" val="HCOUNT"/>
-      <a name="output" val="true"/>
+      <a name="label" val="CLK"/>
       <a name="width" val="12"/>
-    </tool>
-    <tool name="Constant">
-      <a name="width" val="8"/>
     </tool>
   </lib>
   <lib desc="#Gates" name="1"/>
@@ -719,5 +714,41 @@
     <wire from="(950,210)" to="(950,380)"/>
     <wire from="(950,210)" to="(990,210)"/>
     <wire from="(950,60)" to="(950,210)"/>
+  </circuit>
+  <circuit name="Sync">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="Sync"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(200,140)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(200,190)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="nRST"/>
+    </comp>
+    <comp lib="0" loc="(200,250)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="HCOUNT"/>
+      <a name="width" val="12"/>
+    </comp>
+    <comp lib="0" loc="(440,320)" name="Constant"/>
+    <comp lib="6" loc="(470,530)" name="74157">
+      <a name="ShowInternalStructure" val="true"/>
+    </comp>
+    <comp lib="6" loc="(480,270)" name="7474">
+      <a name="ShowInternalStructure" val="true"/>
+    </comp>
+    <wire from="(200,140)" to="(300,140)"/>
+    <wire from="(200,190)" to="(280,190)"/>
+    <wire from="(280,190)" to="(280,400)"/>
+    <wire from="(280,400)" to="(550,400)"/>
+    <wire from="(300,140)" to="(300,380)"/>
+    <wire from="(300,380)" to="(530,380)"/>
+    <wire from="(440,320)" to="(490,320)"/>
+    <wire from="(490,300)" to="(490,320)"/>
+    <wire from="(530,300)" to="(530,380)"/>
+    <wire from="(550,300)" to="(550,400)"/>
   </circuit>
 </project>
