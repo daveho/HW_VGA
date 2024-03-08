@@ -2,7 +2,7 @@ GAL16V8
 HSync
 
 Clock NRST  HC0   HC1   HC2   HC3   HC4   HC5   HC6   GND
-NOE   HC7   HC8   HC9   BEGIN END   HSYNC NC    NC    VCC
+NOE   HC7   HC8   HC9   BEGIN END   NC    NC    HSYNC VCC
 
 ; Sync pulse generation should begin at count 655
 ; (655 in base 2 is 1010001111)
