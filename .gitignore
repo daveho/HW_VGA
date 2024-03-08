@@ -1,3 +1,8 @@
 /#*
 /HW_VGA-backups
 /~*
+*.swp
+/*.chp
+/*.fus
+/*.jed
+/*.pin
