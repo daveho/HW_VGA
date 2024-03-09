@@ -1,25 +1,25 @@
 GAL16V8
 HCntCtrl
 
-NRST  HC0   HC1   HC2   HC3   HC4   HC5   HC6   HC7   GND
-HC8   HC9   HCEND NHCEND NHCCLR PulseBeg  PulseEnd    NC    NC    VCC
+NRST  HC0   HC1   HC2    HC3      HC4      HC5     HC6   HC7   GND
+HC8   HC9   HCEND NHCCLR PulseBeg PulseEnd HVisEnd NC     NC    VCC
 
 ; HCOUNT_END is when HCOUNT=799 (1100011111 binary)
 HCEND   = HC9 * HC8 * /HC7 * /HC6 * /HC5 * HC4 * HC3 * HC2 * HC1 * HC0
-
-; Active-low output for HCOUNT_END
-/NHCEND = HC9 * HC8 * /HC7 * /HC6 * /HC5 * HC4 * HC3 * HC2 * HC1 * HC0
-
-; Sync pulse initiated when HCOUNT=655
-PulseBeg = HC9 * /HC8 * HC7 * /HC6 * /HC5 * /HC4 * HC3 * HC2 * HC1 * HC0
-
-; Sync pulse terminated when HCOUNT=751
-PulseEnd = HC9 * /HC8 * HC7 * HC6 * HC5 * /HC4 * HC3 * HC2 * HC1 * HC0
 
 ; Counters should be cleared (reset to 0) if either NRST is asserted
 ; or HCOUNT_END is asserted
 /NHCCLR =   /NRST
           + HCEND
+
+; Sync pulse initiated when HCOUNT=655 (binary 1010001111)
+PulseBeg = HC9 * /HC8 * HC7 * /HC6 * /HC5 * /HC4 * HC3 * HC2 * HC1 * HC0
+
+; Sync pulse terminated when HCOUNT=751 (binary 1011101111)
+PulseEnd = HC9 * /HC8 * HC7 * HC6 * HC5 * /HC4 * HC3 * HC2 * HC1 * HC0
+
+; Visible line ends at HCOUNT=639 (binary 1001111111)
+HVisEnd = HC9 * /HC8 * /HC7 * HC6 * HC5 * HC4 * HC3 * HC2 * HC1 * HC0
 
 DESCRIPTION
 
@@ -30,12 +30,13 @@ Pin functions:
 
 HC0..HC9  current HCOUNT
 HCEND     generated active-high HCOUNT_END signal (when HCOUNT=799)
-NHCEND    generated active-low HCOUNT_END signal (when HCOUNT=799)
 NHCCLR    generated active-low clear signal to counters
             (on reset or HCOUNT_END)
 PulseBeg  generated active-high signal telling HSync module
             to begin the HSync pulse
 PulseEnd  generated active-high signal telling HSync module
             to end the HSync pulse
+HVisEnd   generated active-high signal indicating when the end of
+            horizontal visible region is reached (HCOUNT=639)
 
 ; vim:ft=text:
