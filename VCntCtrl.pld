@@ -15,6 +15,12 @@ VCEND    = VC9 * /VC8 * /VC7 * /VC6 * /VC5 * /VC4 * VC3 * VC2 * /VC1 * /VC0
 /NVCCLR  =   /NRST
            + HCEND * VCEND
 
+; VSync pulse begins when HCEND asserted and VCOUNT=489
+PulseBeg = HCEND * VC8 * VC7 * VC6 * VC5 * /VC4 * VC3 * /VC2 * /VC1 * VC0
+
+; VSync pulse ends when HCEND asserted and VCOUNT=491
+PulseEnd = HCEND * VC8 * VC7 * VC6 * VC5 * /VC4 * VC3 * /VC2 * VC1 * VC0
+
 DESCRIPTION
 
 Control logic for VCount module. Note that this is entirely
