@@ -694,201 +694,6 @@
     <wire from="(850,130)" to="(850,290)"/>
     <wire from="(880,60)" to="(880,420)"/>
   </circuit>
-  <circuit name="HSync">
-    <a name="appearance" val="logisim_evolution"/>
-    <a name="circuit" val="HSync"/>
-    <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(150,280)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="label" val="BeginPulse"/>
-    </comp>
-    <comp lib="0" loc="(150,310)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="label" val="EndPulse"/>
-    </comp>
-    <comp lib="0" loc="(170,110)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="label" val="nRST"/>
-    </comp>
-    <comp lib="0" loc="(170,60)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="label" val="CLK"/>
-    </comp>
-    <comp lib="0" loc="(280,60)" name="Tunnel">
-      <a name="label" val="CLK"/>
-    </comp>
-    <comp lib="0" loc="(460,330)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="CLK"/>
-    </comp>
-    <comp lib="0" loc="(510,320)" name="Constant">
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(700,240)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="facing" val="west"/>
-      <a name="label" val="HSYNC_OUT"/>
-      <a name="output" val="true"/>
-    </comp>
-    <comp lib="1" loc="(210,280)" name="NOT Gate"/>
-    <comp lib="1" loc="(210,310)" name="NOT Gate"/>
-    <comp lib="1" loc="(310,300)" name="AND Gate">
-      <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="1" loc="(470,240)" name="OR Gate">
-      <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="1" loc="(520,170)" name="NOT Gate">
-      <a name="facing" val="south"/>
-    </comp>
-    <comp lib="4" loc="(500,230)" name="D Flip-Flop">
-      <a name="appearance" val="logisim_evolution"/>
-    </comp>
-    <comp lib="8" loc="(360,25)" name="Text">
-      <a name="text" val="This circuit is intended to replicate the logic in HSync.pld"/>
-    </comp>
-    <wire from="(150,280)" to="(180,280)"/>
-    <wire from="(150,310)" to="(170,310)"/>
-    <wire from="(170,110)" to="(520,110)"/>
-    <wire from="(170,240)" to="(170,310)"/>
-    <wire from="(170,240)" to="(420,240)"/>
-    <wire from="(170,310)" to="(180,310)"/>
-    <wire from="(170,60)" to="(280,60)"/>
-    <wire from="(210,280)" to="(260,280)"/>
-    <wire from="(210,310)" to="(230,310)"/>
-    <wire from="(230,300)" to="(230,310)"/>
-    <wire from="(230,300)" to="(260,300)"/>
-    <wire from="(240,320)" to="(240,370)"/>
-    <wire from="(240,320)" to="(260,320)"/>
-    <wire from="(240,370)" to="(600,370)"/>
-    <wire from="(310,300)" to="(370,300)"/>
-    <wire from="(370,190)" to="(370,220)"/>
-    <wire from="(370,190)" to="(520,190)"/>
-    <wire from="(370,220)" to="(420,220)"/>
-    <wire from="(370,260)" to="(370,300)"/>
-    <wire from="(370,260)" to="(420,260)"/>
-    <wire from="(460,330)" to="(480,330)"/>
-    <wire from="(470,240)" to="(490,240)"/>
-    <wire from="(480,280)" to="(480,330)"/>
-    <wire from="(480,280)" to="(490,280)"/>
-    <wire from="(510,320)" to="(520,320)"/>
-    <wire from="(520,110)" to="(520,140)"/>
-    <wire from="(520,170)" to="(520,190)"/>
-    <wire from="(520,190)" to="(520,230)"/>
-    <wire from="(520,290)" to="(520,320)"/>
-    <wire from="(550,240)" to="(600,240)"/>
-    <wire from="(600,240)" to="(600,370)"/>
-    <wire from="(600,240)" to="(700,240)"/>
-  </circuit>
-  <circuit name="VSync">
-    <a name="appearance" val="logisim_evolution"/>
-    <a name="circuit" val="VSync"/>
-    <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="128.0"/>
-    <comp lib="0" loc="(130,350)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="BeginPulse"/>
-    </comp>
-    <comp lib="0" loc="(130,380)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="EndPulse"/>
-    </comp>
-    <comp lib="0" loc="(150,100)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="label" val="BeginPulse"/>
-      <a name="radix" val="16"/>
-    </comp>
-    <comp lib="0" loc="(150,130)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="label" val="EndPulse"/>
-      <a name="radix" val="16"/>
-    </comp>
-    <comp lib="0" loc="(150,160)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="label" val="nRST"/>
-    </comp>
-    <comp lib="0" loc="(150,70)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="label" val="CLK"/>
-    </comp>
-    <comp lib="0" loc="(190,100)" name="Tunnel">
-      <a name="label" val="BeginPulse"/>
-    </comp>
-    <comp lib="0" loc="(190,130)" name="Tunnel">
-      <a name="label" val="EndPulse"/>
-    </comp>
-    <comp lib="0" loc="(200,70)" name="Tunnel">
-      <a name="label" val="CLK"/>
-    </comp>
-    <comp lib="0" loc="(210,250)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="EndPulse"/>
-    </comp>
-    <comp lib="0" loc="(360,290)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="CLK"/>
-    </comp>
-    <comp lib="0" loc="(390,330)" name="Constant">
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(650,250)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="facing" val="west"/>
-      <a name="label" val="VSYNC_OUT"/>
-      <a name="output" val="true"/>
-    </comp>
-    <comp lib="1" loc="(170,350)" name="NOT Gate"/>
-    <comp lib="1" loc="(170,380)" name="NOT Gate"/>
-    <comp lib="1" loc="(270,370)" name="AND Gate">
-      <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="1" loc="(290,250)" name="OR Gate">
-      <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="1" loc="(410,200)" name="NOT Gate">
-      <a name="facing" val="south"/>
-    </comp>
-    <comp lib="4" loc="(390,240)" name="D Flip-Flop">
-      <a name="appearance" val="logisim_evolution"/>
-    </comp>
-    <comp lib="8" loc="(180,30)" name="Text">
-      <a name="halign" val="left"/>
-      <a name="text" val="This circuit is intended to replicate the logic in VSync.pld"/>
-    </comp>
-    <wire from="(130,350)" to="(140,350)"/>
-    <wire from="(130,380)" to="(140,380)"/>
-    <wire from="(150,100)" to="(190,100)"/>
-    <wire from="(150,130)" to="(190,130)"/>
-    <wire from="(150,160)" to="(410,160)"/>
-    <wire from="(150,70)" to="(200,70)"/>
-    <wire from="(170,350)" to="(220,350)"/>
-    <wire from="(170,380)" to="(180,380)"/>
-    <wire from="(180,370)" to="(180,380)"/>
-    <wire from="(180,370)" to="(220,370)"/>
-    <wire from="(190,390)" to="(190,430)"/>
-    <wire from="(190,390)" to="(220,390)"/>
-    <wire from="(190,430)" to="(470,430)"/>
-    <wire from="(210,250)" to="(240,250)"/>
-    <wire from="(220,210)" to="(220,230)"/>
-    <wire from="(220,210)" to="(410,210)"/>
-    <wire from="(220,230)" to="(240,230)"/>
-    <wire from="(220,270)" to="(220,320)"/>
-    <wire from="(220,270)" to="(240,270)"/>
-    <wire from="(220,320)" to="(290,320)"/>
-    <wire from="(270,370)" to="(290,370)"/>
-    <wire from="(290,250)" to="(380,250)"/>
-    <wire from="(290,320)" to="(290,370)"/>
-    <wire from="(360,290)" to="(380,290)"/>
-    <wire from="(390,330)" to="(410,330)"/>
-    <wire from="(410,160)" to="(410,170)"/>
-    <wire from="(410,200)" to="(410,210)"/>
-    <wire from="(410,210)" to="(410,240)"/>
-    <wire from="(410,300)" to="(410,330)"/>
-    <wire from="(440,250)" to="(470,250)"/>
-    <wire from="(470,250)" to="(470,430)"/>
-    <wire from="(470,250)" to="(650,250)"/>
-  </circuit>
   <circuit name="HCntCtrl">
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="HCntCtrl"/>
@@ -1291,8 +1096,8 @@
     <wire from="(580,500)" to="(690,500)"/>
     <wire from="(590,1010)" to="(610,1010)"/>
     <wire from="(590,1030)" to="(610,1030)"/>
-    <wire from="(590,740)" to="(610,740)"/>
-    <wire from="(590,910)" to="(610,910)"/>
+    <wire from="(590,740)" to="(710,740)"/>
+    <wire from="(590,910)" to="(930,910)"/>
     <wire from="(590,980)" to="(590,1010)"/>
     <wire from="(590,980)" to="(830,980)"/>
     <wire from="(610,270)" to="(610,380)"/>
@@ -1305,9 +1110,9 @@
     <wire from="(640,1090)" to="(870,1090)"/>
     <wire from="(650,1020)" to="(670,1020)"/>
     <wire from="(670,310)" to="(680,310)"/>
+    <wire from="(710,740)" to="(710,760)"/>
+    <wire from="(710,760)" to="(920,760)"/>
     <wire from="(720,1040)" to="(760,1040)"/>
-    <wire from="(760,760)" to="(760,1040)"/>
-    <wire from="(760,760)" to="(920,760)"/>
     <wire from="(800,1030)" to="(850,1030)"/>
     <wire from="(830,1010)" to="(850,1010)"/>
     <wire from="(830,980)" to="(830,1010)"/>
@@ -1317,8 +1122,6 @@
     <wire from="(90,1060)" to="(640,1060)"/>
     <wire from="(90,620)" to="(210,620)"/>
     <wire from="(90,620)" to="(90,1060)"/>
-    <wire from="(900,910)" to="(900,980)"/>
-    <wire from="(900,910)" to="(930,910)"/>
     <wire from="(900,980)" to="(1000,980)"/>
     <wire from="(970,1040)" to="(1000,1040)"/>
   </circuit>
