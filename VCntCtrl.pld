@@ -1,0 +1,38 @@
+GAL16V8
+VCntCtrl
+
+NRST  VC0   VC1   VC2   VC3    VC4    VC5       VC6       VC7   GND
+VC8   VC9   HCEND VCEND NVCEND NVCCLR PulseBeg  PulseEnd  NC    VCC
+
+
+; VCCOUNT_END asserted when VCOUNT=524
+VCEND    = VC9 * /VC8 * /VC7 * /VC6 * /VC5 * /VC4 * VC3 * VC2 * /VC1 * /VC0
+
+; Active-low version of VCOUNT_END
+/NVCEND  = VC9 * /VC8 * /VC7 * /VC6 * /VC5 * /VC4 * VC3 * VC2 * /VC1 * /VC0 
+
+; Clear counters when nRST or (HCOUNT_END & VCOUNT_END)
+/NVCCLR  =   /NRST
+           + HCEND * VCEND
+
+DESCRIPTION
+
+Control logic for VCount module. Note that this is entirely
+combinational logic.
+
+Pin functions:
+
+VC0..VC9  current VCOUNT
+HCEND     input HCOUNT_END signal, from HCount module
+VCEND     generated active-high VCOUNT_END signal
+            (when HCOUNT_END & VCOUNT=799)
+NVCEND    generated active-low VCOUNT_END signal
+            (when HCOUNT_END & VCOUNT=799)
+NVCCLR    generated active-low clear signal to counters
+            (on reset or HCOUNT_END & VCOUNT_END)
+PulseBeg  generated active-high signal telling VSync module
+            to begin the VSync pulse
+PulseEnd  generated active-high signal telling VSync module
+            to end the VSync pulse
+
+; vim:ft=text:
