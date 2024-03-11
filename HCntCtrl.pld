@@ -1,8 +1,8 @@
-GAL16V8
+GAL22V10
 HCntCtrl
 
-NRST  HC0   HC1   HC2    HC3      HC4      HC5     HC6   HC7   GND
-HC8   HC9   HCEND NHCCLR PulseBeg PulseEnd HVisEnd NC     NC    VCC
+NRST  HC0    HC1   HC2      HC3      HC4     HC5   HC6   HC7   HC8   HC9   GND
+NC    HCEND NHCCLR PulseBeg PulseEnd HVisEnd NC    NC    NC    NC    NC    VCC
 
 ; HCOUNT_END is when HCOUNT=799 (1100011111 binary)
 HCEND   = HC9 * HC8 * /HC7 * /HC6 * /HC5 * HC4 * HC3 * HC2 * HC1 * HC0
