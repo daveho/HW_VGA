@@ -4662,7 +4662,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4f7a3ac9-cb8c-4ea3-b951-90433c1237fb")
-		(property "Reference" "U3"
+		(property "Reference" "U103"
 			(at 52.9941 88.9 0)
 			(effects
 				(font
@@ -4758,7 +4758,7 @@
 		(instances
 			(project "HW_VGA"
 				(path "/c4bd4b39-993a-4195-805f-b4de6fa4aea5/0f1cb3c4-c993-4160-bf3e-944843924f41"
-					(reference "U3")
+					(reference "U103")
 					(unit 1)
 				)
 			)
@@ -4839,7 +4839,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "530a5058-8c2e-41d5-862e-89789cbcdc77")
-		(property "Reference" "U2"
+		(property "Reference" "U102"
 			(at 217.17 87.63 0)
 			(effects
 				(font
@@ -4955,7 +4955,7 @@
 		(instances
 			(project "HW_VGA"
 				(path "/c4bd4b39-993a-4195-805f-b4de6fa4aea5/0f1cb3c4-c993-4160-bf3e-944843924f41"
-					(reference "U2")
+					(reference "U102")
 					(unit 1)
 				)
 			)
@@ -5038,7 +5038,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "711c3465-f6e7-437d-9ed5-d676fd181dc1")
-		(property "Reference" "U5"
+		(property "Reference" "U105"
 			(at 153.3241 88.9 0)
 			(effects
 				(font
@@ -5134,7 +5134,7 @@
 		(instances
 			(project "HW_VGA"
 				(path "/c4bd4b39-993a-4195-805f-b4de6fa4aea5/0f1cb3c4-c993-4160-bf3e-944843924f41"
-					(reference "U5")
+					(reference "U105")
 					(unit 1)
 				)
 			)
@@ -5418,7 +5418,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8596619b-252e-4b78-909a-82632cb237dd")
-		(property "Reference" "U4"
+		(property "Reference" "U104"
 			(at 102.5241 88.9 0)
 			(effects
 				(font
@@ -5514,7 +5514,7 @@
 		(instances
 			(project "HW_VGA"
 				(path "/c4bd4b39-993a-4195-805f-b4de6fa4aea5/0f1cb3c4-c993-4160-bf3e-944843924f41"
-					(reference "U4")
+					(reference "U104")
 					(unit 1)
 				)
 			)
