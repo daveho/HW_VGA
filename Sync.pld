@@ -34,16 +34,17 @@ HVis.R  =   /NRST
           + /HVisEnd * HVis
 
 ; Vertical visibility:
-;   - next VVis true on reset
-;   - next VVis true if HCOUNT_END & VCOUNT_END (end of frame)
-;   - if VVisEnd is not asserted, next VVis value should be
-;     the same as the current one
-;   - if VVisEnd is asserted and HCOUNT_END is not asserted,
-;     next VVis value should be the same as the current one
-VVis.R  =   /NRST
-          + HCEND * VCEND
-          + /VVisEnd * VVis
-          + VVisEnd * /HCEND * VVis
+;   - next VVis **false** on reset (we assume that the initial VCOUNT
+;     is in the back porch, which is not visisble)
+;   - if -RST is NOT asserted, then
+;     * next VVis true if HCOUNT_END & VCOUNT_END (end of frame)
+;     * if VVisEnd is not asserted, next VVis value should be
+;       the same as the current one
+;     * if VVisEnd is asserted and HCOUNT_END is not asserted,
+;       next VVis value should be the same as the current one
+VVis.R  =   NRST * HCEND * VCEND
+          + NRST * /VVisEnd * VVis
+          + NRST * VVisEnd * /HCEND * VVis
 
 ; Current pixel visibility
 Vis     = HVis * VVis

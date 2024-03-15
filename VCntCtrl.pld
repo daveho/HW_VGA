@@ -1,15 +1,21 @@
 GAL22V10
 VCntCtrl
 
-NRST  VC0   VC1    VC2      VC3      VC4     VC5   VC6   VC7   VC8   VC9   GND
-HCEND VCEND NVCCLR PulseBeg PulseEnd VVisEnd NC    NC    NC    NC    NC    VCC
+VC0   VC1    VC2      VC3      VC4     VC5   VC6   VC7   VC8   VC9   HCEND GND
+NC    VCEND NVCCLR PulseBeg PulseEnd VVisEnd NC    NC    NC    NC    NC    VCC
 
 ; VCCOUNT_END asserted when VCOUNT=524 (binary 1000001100)
 VCEND    = VC9 * /VC8 * /VC7 * /VC6 * /VC5 * /VC4 * VC3 * VC2 * /VC1 * /VC0
 
-; Clear counters when nRST or (HCOUNT_END & VCOUNT_END)
-/NVCCLR  =   /NRST
-           + HCEND * VCEND
+; Clear counters when (HCOUNT_END & VCOUNT_END)
+;
+; Note that on reset, counters are parallel-loaded with the
+; initial VCOUNT (which will be in the back porch
+; part of the frame, to allow for the rasterization
+; hardware to get read for the first line of pixels in the
+; initial frame.) The counters only need to be *cleared*
+; at the end of a frame.
+/NVCCLR  = HCEND * VCEND
 
 ; VSync pulse begins when HCEND asserted and VCOUNT=489 (binary 111101001)
 PulseBeg = HCEND * VC8 * VC7 * VC6 * VC5 * /VC4 * VC3 * /VC2 * /VC1 * VC0
