@@ -55,6 +55,7 @@ HSync, VSync, and pixel visibility signal generation.
 
 Inputs (active-high unless otherwise noted):
 
+  Clock    25.175 MHz pixel clock
   NRST     active-low reset signal
   HBPulse  a HSync pulse should start
   HEPulse  the HSync pulse should end
