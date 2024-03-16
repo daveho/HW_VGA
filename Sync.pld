@@ -2,7 +2,7 @@ GAL22V10
 Sync
 
 Clock   NRST   HBPulse  HEPulse VBPulse VEPulse HCEND  VCEND  HVisEnd VVisEnd NC  GND
-NOE     HSync  VSync    HVis    VVis    Vis     NC     NC     NC      NC      NC  VCC
+NOE     HSync  VSync    HVis    VVis    NVis    NC     NC     NC      NC      NC  VCC
 
 ; Sync pulses are negative
 ; (which means that in reset we definitely want a high output)
@@ -47,7 +47,14 @@ VVis.R  =   NRST * HCEND * VCEND
           + NRST * VVisEnd * /HCEND * VVis
 
 ; Current pixel visibility
-Vis     = HVis * VVis
+; Note that this output is active-low, because it controls the
+; enable input of the 75HC157 multiplexor that selects the foreground
+; or background color value. By de-asserting the mux's enable inut,
+; it outputs a low on all outputs, corresponding to black (0V).
+; It's important that we don't output colors during the non-visible
+; parts of the frame.
+Vis     =   /HVis
+          + /VVis
 
 DESCRIPTION
 
@@ -71,8 +78,8 @@ Outputs:
 
   HSync    horizontal sync
   VSync    vertical sync
-  HVis     current pixel is in the visible horizontal region
-  VVis     current pixel is in the visible vertical region
-  Vis      current pixel is visible (HVis & VVis)
+  HVis     active-high: current pixel is in the visible horizontal region
+  VVis     active-high: current pixel is in the visible vertical region
+  NVis     active-low: current pixel is visible (HVis & VVis)
 
 ; vim:ft=text:
