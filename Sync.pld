@@ -1,8 +1,8 @@
-GAL16V8
+GAL22V10
 Sync
 
-Clock   NRST   HBPulse  HEPulse VBPulse VEPulse HCEND  VCEND  HVisEnd GND
-NOE     VVisEnd  HSync  VSync   HVis    VVis    Vis    NC     NC      VCC
+Clock   NRST   HBPulse  HEPulse VBPulse VEPulse HCEND  VCEND  HVisEnd VVisEnd NC  GND
+NOE     HSync  VSync    HVis    VVis    Vis     NC     NC     NC      NC      NC  VCC
 
 ; Sync pulses are negative
 ; (which means that in reset we definitely want a high output)

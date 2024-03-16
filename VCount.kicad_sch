@@ -6370,6 +6370,16 @@
 		)
 		(uuid "10496cc7-ce55-4041-8e30-08bf39088b81")
 	)
+	(text "Vertical count control GAL:\nlogic is in HCntCtrl.pld"
+		(exclude_from_sim no)
+		(at 220.98 68.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8c90d987-af0e-4732-b022-ef393c51057e")
+	)
 	(label "InitVC4"
 		(at 41.91 172.72 0)
 		(fields_autoplaced yes)
