@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "8.0")
 	(uuid "c4bd4b39-993a-4195-805f-b4de6fa4aea5")
-	(paper "User" 419.1 323.85)
+	(paper "User" 335.28 259.08)
 	(title_block
 		(title "Hardware VGA")
 		(company "daveho hacks")
