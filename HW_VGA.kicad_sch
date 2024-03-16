@@ -1610,7 +1610,7 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 205.74) (xy 46.99 205.74)
+			(xy 80.01 205.74) (xy 92.71 205.74)
 		)
 		(stroke
 			(width 0)
@@ -2362,7 +2362,7 @@
 		(uuid "20787af6-025d-4985-81eb-f7570e3fef57")
 	)
 	(label "-VIS"
-		(at 36.83 205.74 0)
+		(at 82.55 205.74 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3444,7 +3444,7 @@
 		)
 	)
 	(sheet
-		(at 46.99 172.72)
+		(at 92.71 172.72)
 		(size 21.59 38.1)
 		(fields_autoplaced yes)
 		(stroke
@@ -3456,7 +3456,7 @@
 		)
 		(uuid "6938dbb6-3e46-4ac6-b400-805c357c7abb")
 		(property "Sheetname" "Output"
-			(at 46.99 172.0084 0)
+			(at 92.71 172.0084 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3465,7 +3465,7 @@
 			)
 		)
 		(property "Sheetfile" "Output.kicad_sch"
-			(at 46.99 211.4046 0)
+			(at 92.71 211.4046 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3474,7 +3474,7 @@
 			)
 		)
 		(pin "FGGreen" input
-			(at 46.99 180.34 180)
+			(at 92.71 180.34 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3484,7 +3484,7 @@
 			(uuid "821c5898-54fd-4a23-87eb-f6e0985fe988")
 		)
 		(pin "FGIntens" input
-			(at 46.99 185.42 180)
+			(at 92.71 185.42 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3494,7 +3494,7 @@
 			(uuid "c607bcfd-1b9d-4ec3-940d-9ae0a7ed3610")
 		)
 		(pin "FGBlue" input
-			(at 46.99 177.8 180)
+			(at 92.71 177.8 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3504,7 +3504,7 @@
 			(uuid "ab98204f-9c78-4647-b7af-c3a5aa3d200b")
 		)
 		(pin "FGRed" input
-			(at 46.99 182.88 180)
+			(at 92.71 182.88 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3514,7 +3514,7 @@
 			(uuid "a2be3c4f-ca3b-412b-ac9d-f0c842258bdd")
 		)
 		(pin "PixIn" input
-			(at 46.99 203.2 180)
+			(at 92.71 203.2 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3524,7 +3524,7 @@
 			(uuid "bc64e468-0f66-4a1d-949f-1aa0fc306bf7")
 		)
 		(pin "-VIS" input
-			(at 46.99 205.74 180)
+			(at 92.71 205.74 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3534,7 +3534,7 @@
 			(uuid "0e2c4c86-0409-4321-9d18-12697f3312b2")
 		)
 		(pin "BGRed" input
-			(at 46.99 195.58 180)
+			(at 92.71 195.58 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3544,7 +3544,7 @@
 			(uuid "76445f08-ccba-49e3-b619-c3fdc15a63e7")
 		)
 		(pin "BGBlue" input
-			(at 46.99 190.5 180)
+			(at 92.71 190.5 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3554,7 +3554,7 @@
 			(uuid "b697dd57-cb7c-4d26-a3c8-562320ecab0e")
 		)
 		(pin "BGIntens" input
-			(at 46.99 198.12 180)
+			(at 92.71 198.12 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3564,7 +3564,7 @@
 			(uuid "ebd6baed-18af-48dd-8b9f-7d5d108a718c")
 		)
 		(pin "BGGreen" input
-			(at 46.99 193.04 180)
+			(at 92.71 193.04 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3574,7 +3574,7 @@
 			(uuid "29e30d93-77c9-44ea-8f73-576304667299")
 		)
 		(pin "Bout" output
-			(at 68.58 177.8 0)
+			(at 114.3 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3584,7 +3584,7 @@
 			(uuid "9e103bfb-9e65-45de-b517-5ef1ad13ec68")
 		)
 		(pin "Gout" output
-			(at 68.58 180.34 0)
+			(at 114.3 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3594,7 +3594,7 @@
 			(uuid "58b312c8-eb3c-447c-9bff-3d3083bde8fb")
 		)
 		(pin "Rout" output
-			(at 68.58 182.88 0)
+			(at 114.3 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3612,8 +3612,8 @@
 		)
 	)
 	(sheet
-		(at 46.99 118.11)
-		(size 22.86 34.29)
+		(at 46.99 113.03)
+		(size 26.67 39.37)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -3624,7 +3624,7 @@
 		)
 		(uuid "9d0a08ae-034d-4ad8-acf1-7aa7822f05f4")
 		(property "Sheetname" "ReadAddr"
-			(at 46.99 117.3984 0)
+			(at 46.99 112.3184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3641,10 +3641,208 @@
 				(justify left top)
 			)
 		)
+		(pin "CLK" input
+			(at 46.99 116.84 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "882c402f-d8e0-4dff-bdc3-3be0ee1a020f")
+		)
+		(pin "-CLR" input
+			(at 46.99 119.38 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "2e720c3b-ad9d-4f16-aa2d-9b783a34d418")
+		)
+		(pin "CountEn" input
+			(at 46.99 121.92 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "c0fe4f60-ff6e-4ec8-b944-331cc7cd7d84")
+		)
+		(pin "RA7" output
+			(at 73.66 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "65563997-f553-432c-92af-dcf57f8b66fb")
+		)
+		(pin "RA6" output
+			(at 73.66 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ff90e21b-67b8-4cd2-8135-91e48c48a442")
+		)
+		(pin "RA5" output
+			(at 73.66 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2a7aa4ff-47d4-43f8-883e-82fc01f5136c")
+		)
+		(pin "RA0" output
+			(at 73.66 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "b7d4610c-735d-4d9a-82f7-a07bedf2c5cd")
+		)
+		(pin "RA1" output
+			(at 73.66 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "b76eb19c-702f-440e-b35c-8f3cb4974da8")
+		)
+		(pin "RA2" output
+			(at 73.66 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "d61d8bf7-f8d4-43f4-9e0e-0783240ea674")
+		)
+		(pin "RA3" output
+			(at 73.66 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "f5906ba7-d4c9-4c4f-b52d-d0d4ddc36b2f")
+		)
+		(pin "RA4" output
+			(at 73.66 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "9be32982-cf14-47c9-98dc-0853a6016e6c")
+		)
+		(pin "RA8" output
+			(at 73.66 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2936cd1c-10ac-4736-be2f-46bceee05ad6")
+		)
+		(pin "RA9" output
+			(at 73.66 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "997311ff-0f6a-4177-a22c-a7dddba0ea0c")
+		)
+		(pin "RA10" output
+			(at 73.66 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "553d57fd-5ee3-4c56-ba60-dd2eda27e8fd")
+		)
+		(pin "RA11" output
+			(at 73.66 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "d895ce2e-5569-4245-b3b7-d91e2984fc62")
+		)
+		(pin "RA12" output
+			(at 73.66 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "d28ff435-b110-409d-80c6-cce495f9a3b4")
+		)
 		(instances
 			(project "HW_VGA"
 				(path "/c4bd4b39-993a-4195-805f-b4de6fa4aea5"
 					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 36.83 172.72)
+		(size 25.4 38.1)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ada96480-51d2-4212-ac45-aae2a8a63ede")
+		(property "Sheetname" "Pixgen"
+			(at 36.83 172.0084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Pixgen.kicad_sch"
+			(at 36.83 211.4046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "HW_VGA"
+				(path "/c4bd4b39-993a-4195-805f-b4de6fa4aea5"
+					(page "6")
 				)
 			)
 		)

@@ -401,6 +401,10 @@
     [
       "9d0a08ae-034d-4ad8-acf1-7aa7822f05f4",
       "ReadAddr"
+    ],
+    [
+      "ada96480-51d2-4212-ac45-aae2a8a63ede",
+      "Pixgen"
     ]
   ],
   "text_variables": {}
