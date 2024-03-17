@@ -405,6 +405,10 @@
     [
       "ada96480-51d2-4212-ac45-aae2a8a63ede",
       "Pixgen"
+    ],
+    [
+      "706a6120-faf3-47ba-a3e5-b10b60a27b10",
+      "ReadVRAM"
     ]
   ],
   "text_variables": {}

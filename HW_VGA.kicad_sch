@@ -3612,6 +3612,44 @@
 		)
 	)
 	(sheet
+		(at 93.98 116.84)
+		(size 27.94 45.72)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "706a6120-faf3-47ba-a3e5-b10b60a27b10")
+		(property "Sheetname" "ReadVRAM"
+			(at 93.98 116.1284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ReadVRAM.kicad_sch"
+			(at 93.98 163.1446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "HW_VGA"
+				(path "/c4bd4b39-993a-4195-805f-b4de6fa4aea5"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 46.99 113.03)
 		(size 26.67 39.37)
 		(fields_autoplaced yes)
