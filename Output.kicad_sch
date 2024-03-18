@@ -2231,6 +2231,17 @@
 		)
 		(uuid "ff153b75-7541-4c66-b9a6-dfe9b05e7359")
 	)
+	(text "This chip can be 74HC rather than\n74HCT because its inputs are driven\nfrom the attribute register\n(which has a sufficient logic high\nfor 74HC input.)"
+		(exclude_from_sim no)
+		(at 56.642 70.866 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "354fe687-1c09-4ceb-9bf4-b8a78260bc4e")
+	)
 	(text "The main purpose of U402 is to\nbuffer the intensity bit separately\nfor each color component. The\ncolor component values are also\nbuffered to (hopefully) factor out\nthe effect of the propagation delays."
 		(exclude_from_sim no)
 		(at 127 129.54 0)
@@ -2241,6 +2252,17 @@
 			(justify left)
 		)
 		(uuid "7131a262-4f61-4ca3-addd-0c139dbcc186")
+	)
+	(text "This chip can also be 74HC,\nsince its inputs come from\nU401, the fg/bg multiplexer."
+		(exclude_from_sim no)
+		(at 152.654 66.802 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9f8ec597-477b-46dd-894a-421f23fc73ba")
 	)
 	(hierarchical_label "-VIS"
 		(shape input)

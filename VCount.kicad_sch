@@ -7431,7 +7431,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74HC163"
+		(property "Value" "74HCT163"
 			(at 158.4041 64.77 0)
 			(effects
 				(font
@@ -7613,7 +7613,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74HC163"
+		(property "Value" "74HCT163"
 			(at 50.4541 64.77 0)
 			(effects
 				(font
@@ -8739,7 +8739,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74HC163"
+		(property "Value" "74HCT163"
 			(at 103.7941 64.77 0)
 			(effects
 				(font
