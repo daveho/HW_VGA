@@ -6370,7 +6370,7 @@
 		)
 		(uuid "10496cc7-ce55-4041-8e30-08bf39088b81")
 	)
-	(text "Vertical count control GAL:\nlogic is in HCntCtrl.pld"
+	(text "Vertical count control GAL:\nlogic is in VCntCtrl.pld"
 		(exclude_from_sim no)
 		(at 220.98 68.58 0)
 		(effects
