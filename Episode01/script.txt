@@ -2,7 +2,7 @@ Hello!
 
 This video begins a new sub-project of the DIY 8 bit computer series.
 It's going to take a bit of explaining, but I promise there will be
-actual technical content, including some interesting hardware. I'm
+actual technical content, including some interesting hardware. I'm very
 excited about this new project, and I think it will lead to some
 interesting content.
 
