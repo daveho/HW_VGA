@@ -1,0 +1,210 @@
+Hello!
+
+This video begins a new sub-project of the DIY 8 bit computer series.
+It's going to take a bit of explaining, but I promise there will be
+actual technical content, including some interesting hardware. I'm
+excited about this new project, and I think it will lead to some
+interesting content.
+
+So...before we get to the technical stuff, let me explain the idea
+behind this project, and also explain why I haven't been actively
+making videos for the past couple of years.
+
+When I started the 8-bit computer project, it was super fun to work
+on, I was learning a ton, and I made steady progress towards my
+goal of a "complete" 8 bit computer system. Eventually I reached
+the point where I needed a display, and that's where things got
+bogged down.
+
+In my original analysis, I identified two options for a display
+controller:
+
+1. An authentic "retro" display controller (e.g., TMS9918A)
+2. An FPGA-based display controller
+
+For several reasons, I thought that option 2 made more sense.
+VGA monitors are plentiful, cheap, and look great. The resolution
+would be much higher. The flexibility offered by a FPGA would allow
+me to create a a display controller that prioritized the features I
+was most interested in (mainly text mode).
+
+I think this analysis was valid. What I didn't anticipate is how
+difficult it would be to work with FPGAs. The main problem is that
+it's quite difficult to know exactly what is going on *inside*
+the FPGA. You certainly can't monitor internal signals with an
+oscilloscope or logic analyzer.
+
+I realize now that a proper FPGA workflow involves simulation,
+test benches, timing analysis, and potentially even formal validation.
+Someday I hope to learn how to program FPGAs properly.
+
+But here's the real problem: I just don't find FPGAs to be *fun*. A
+huge part of why I got into digital electronics is because it involves
+*building things*, meaning real, *tangible* things. I love building
+circuits on breadboards. I love building circuits on protoboards with
+lots of point to point soldering. I love designing and assembling
+PCBs. I love debugging circuits using a multimeter or oscilloscope.
+For me, FPGAs don't really offer these experiences.
+
+I have experimented with option 1 --- using a retro display controller ---
+and I will likely be making a video about a combined TMS9918A / YM2149F
+board in the near future. However, I don't really like the arcane
+programming model and terrible graphics quality of this era of devices.
+From a practical standpoint, just finding a way of displaying video signals
+from these devices is inconvenient and often expensive.
+
+So, for the last year or so, I've felt unmotivated to push further on either
+of these options. And that brings us to where we are now.
+
+But...WHAT IF THERE WAS A THIRD OPTION? What if there was a path towards
+a display controller that would output standard VGA, would provide a
+high-resolution text mode with colors and a simple programming model?
+What if this approach was actually fun to work on?
+
+A few months ago, I was reading Hacker News, and there was a link
+to the Wire Wrap Odyssey project. (I will link to the website in
+the video description: you should definitely check it out.) It's
+an incredibly inspiring project, a full 8 bit computer system built
+with logic chips. What caught my attention was the display controller,
+which generates a VGA text model using logic chips. This is an idea that
+honestly had never occurred to me.  I started thinking about whether I
+might be able to do something similar.
+
+Before too long I was convinced that building a VGA text display from
+logic chips would be a lot of fun. I would be working with hardware
+rather than editing HDL code in a text editor. I would be able to
+probe internal signals using my oscilloscope. If I used a modular
+design approach, I could build and test it incrementally.
+
+Of course, there are some important challenges associated with building a
+display controller using discrete logic. I've thought about these
+challenges, and I think I have ways to address them.
+
+1. Hardware complexity
+
+A display controller will require a fair amount of logic to implement. A design
+could need large numbers of logic chips.
+
+Fortunately, there is an easy way to cheat: PROGRAMMABLE LOGIC. "But wait,"
+you say, "I though you said you didn't like programmable logic." Well, actually,
+there is one category of programmable logic device that I'm quite fond of:
+the humble GAL. A GAL22V10 can easily replace a handful of discrete chips.
+I have a reasonable amount of experience working with GALs. They are fairly
+easy to find used on EBay, and Atmel even had compatible parts still in
+production. They can be programmed with the ubiquitous TL866ii plus programmer.
+They are fast enough to work at the clock frequencies needed for VGA.
+They have actual input and output pins you can probe. Because a GAL is
+reprogrammable, you can fix hardware bugs by popping it out, reprogramming it,
+and popping it back in.
+
+2. Design complexity
+
+A text display controller has a fair amount of complexity. The dot clock
+for 640x480 VGA is 25.175 MHz. That means that during visible regions of
+scan lines, the hardware must yield a pixel about every 39.7 nanoseconds.
+The sequencing of operations needed to fetch characters and attributes
+from video memory will be fairly intricate. It will be vital to have
+confidence that a design of a module is correct before building it as
+hardware.
+
+I think the way to address this challenge will be simulation. Specifically,
+Logisim Evolution is a powerful open source logic simulator that will allow
+me to try out my design ideas before building the actual hardware.
+Logisim has models of a fairly large number of 74 series logic ICs, and
+I will also be able to build models of the logic that I will be programming
+into GAL chips. So, I think I will able to prove significant parts of
+the design in Logisim before building the hardware.
+
+3. High frequency
+
+As I mentioned, the display controller will need to be clocked at
+25.175 MHz if we want to generate full 640x480 VGA output. This
+is much faster than any digital circuits I've worked with previously.
+At best, the 74HC and 74HCT logic families are marginal at this
+frequency, and at worst, unreliable.  I also lack experience in
+circuit design and construction at these higher frequencies.
+
+Fortunately, higher-speed logic families exist. In particular, the
+74ACT logic family is good up to about 125 MHz, so 25.175 MHz is
+easily within its design parameters. Also, because GALs are fast
+enough to work at this frequency, any part I can't easily source
+from the 74ACT family can be substituted with a custom-programmed
+GAL. The circuit design and construction issues are still an open
+question to some extent. However, as you will see in this video,
+I've already had some success with one of the more speed-critical
+parts of the design, so I think this problem will be manageable.
+
+4. Video memory
+
+A critical problem in a display controller is how to share video
+memory with the host system. The display controller must be able to
+read character and attribute data while visible lines are being
+generated. The host system must be able to write data to the
+video memory, and, ideally, be able to read it back out. With
+standard RAM devices, some time-sharing scheme is needed, significantly
+increasing the hardware complexity and possibly reducing the system
+performance.
+
+The easy solution to this problem is to use dual-ported RAM for
+the video memory. With dual-ported RAM, the display controller can be
+reading from video memory at the same time that the host system is
+reading or writing video memory. My current thought is to use two
+IDT7134 chips, which would give me 8 KB of video memory. My 8 bit
+computer system has 4 KB of addresses reserved for I/O. A small part
+of this region is used for peripheral devices. However, the upper
+2 KB could easily be used as a window for the VRAM. Then, we would just
+need a writable register to choose which 2 KB bank the host system wants to
+access.
+
+5. Rendering pipeline
+
+A critical problem in the display controller is reading the
+character and attribute information from VRAM and delivering them to
+the rasterization hardware at the time they are needed to allow
+pixel generation.
+
+I think the solution here will be a FIFO memory chip. (If you have seen
+my previous videos, then you might be aware that I am a huge fan of
+FIFO memory chips.) One one side of the FIFO is the "character and
+attribute data fetcher", which reads character and attribute information
+from VRAM and writes them to the FIFO. On the other side is the
+"character and attribute decoder", which reads character and attribute
+information from the FIFO and uses them to render the pixels of one
+scanline of a row of characters.
+
+6. Physical size
+
+If you've seen previous videos in this series, then you may be aware
+that I'm building my 8 bit computer system as cards connected to a
+passive backplane. The cards are 15 cm by 10 cm, and there are only
+so many DIP ICs that you can fit onto a card of this size. It's a
+distinct possibility that even if I get a design working, it won't
+actually fit on a standard card, at least if I use through hole ICs.
+
+One workaround this issue would be to use surface mount parts.
+You can fit a fairly large number of SOIC parts in 150 cm^2. The GALs,
+FIFO memory, and dual port RAM chips will probably still be through
+hole, but I think there's a possibility that I can find a way to make
+everything fit if all of the other parts are SMD.
+
+7. Time and effort
+
+At the time I'm making this video (April 2024), my spring semester is
+winding down. During the summer, I won't be working on any accreditation
+self studies (looking at you ABET), and as far as I know, Nintendo isn't
+planning on releasing new Zelda games or DLC. So, I think I will be able
+to devote some significant time to this project over the summer.
+It remains to be seen how much progress I will make, but if I knew
+what I was doing, it wouldn't be as much fun! I guess we'll see how
+it goes.
+
+All right, let's get to work! In this video, my goal is to generate the
+horizontal and vertical sync signals for 640x480 VGA. We will also
+compute visibility information to distinguish between pixels that are
+in the visible area of the frame and pixels that aren't visible.
+This should get us to the point where we can display a blank screen.
+I realize that this might not seem too exciting. However, the horizontal
+and vertical counters needed to generate the sync signals can also be
+used to provide timing signals to the more interesting parts of the design,
+such as the memory fetcher and the rasterizer. So, just showing a blank
+screen is pretty good progress.
