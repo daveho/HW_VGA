@@ -2407,7 +2407,7 @@
 		)
 		(uuid "20787af6-025d-4985-81eb-f7570e3fef57")
 	)
-	(label "VIS"
+	(label "-Vis"
 		(at 241.3 78.74 0)
 		(fields_autoplaced yes)
 		(effects
@@ -2462,7 +2462,7 @@
 		)
 		(uuid "8dea93a0-f97b-48a9-b591-da64c8ff0a70")
 	)
-	(label "Vis"
+	(label "-Vis"
 		(at 207.01 68.58 0)
 		(fields_autoplaced yes)
 		(effects
@@ -3639,16 +3639,6 @@
 			)
 			(uuid "103f22d0-626f-4f15-b4f5-17ebec6a3e8b")
 		)
-		(pin "VIS" input
-			(at 251.46 78.74 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "bf49c373-daa0-46e7-92be-3f7385861e61")
-		)
 		(pin "CLK" input
 			(at 251.46 81.28 180)
 			(effects
@@ -3658,6 +3648,16 @@
 				(justify left)
 			)
 			(uuid "e21e843b-f752-4fa1-bde7-a5c8a85ecf46")
+		)
+		(pin "-VIS" input
+			(at 251.46 78.74 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "92f7f131-6df7-4a5f-9c55-6e2df620ddd2")
 		)
 		(instances
 			(project "HW_VGA"

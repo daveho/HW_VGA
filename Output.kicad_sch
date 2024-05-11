@@ -2705,7 +2705,7 @@
 		)
 		(uuid "ff153b75-7541-4c66-b9a6-dfe9b05e7359")
 	)
-	(text "U402: generate color\n(if VIS asserted) or\nblack (if VIS not\nasserted)"
+	(text "U402: generate color\n(if -VIS asserted) or\nblack (if -VIS not\nasserted)"
 		(exclude_from_sim no)
 		(at 115.316 28.956 0)
 		(effects
@@ -2843,7 +2843,7 @@
 		)
 		(uuid "d806ca97-bda1-4803-876c-02d4d2fb1b5a")
 	)
-	(hierarchical_label "VIS"
+	(hierarchical_label "-VIS"
 		(shape input)
 		(at 33.02 91.44 180)
 		(fields_autoplaced yes)
