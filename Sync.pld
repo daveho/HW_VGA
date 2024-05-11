@@ -47,12 +47,10 @@ VVis.R  =   NRST * HCEND * VCEND
           + NRST * VVisEnd * /HCEND * VVis
 
 ; Current pixel visibility
-; Note that this output is active-low, because it controls the
-; enable input of the 75HC157 multiplexor that selects the foreground
-; or background color value. By de-asserting the mux's enable inut,
-; it outputs a low on all outputs, corresponding to black (0V).
-; It's important that we don't output colors during the non-visible
-; parts of the frame.
+; Note that this output is active-low.
+; The Output module uses this signal to ensure that the color
+; signals output 0V (black) in the non-visible regions of the
+; frame.
 NVis     =   /HVis
           + /VVis
 
