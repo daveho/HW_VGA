@@ -2721,7 +2721,7 @@
 	)
 	(hierarchical_label "FGRed"
 		(shape input)
-		(at 34.29 73.66 180)
+		(at 34.29 68.58 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2745,7 +2745,7 @@
 	)
 	(hierarchical_label "BGRed"
 		(shape input)
-		(at 34.29 43.18 180)
+		(at 34.29 38.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2769,7 +2769,7 @@
 	)
 	(hierarchical_label "FGBlue"
 		(shape input)
-		(at 34.29 68.58 180)
+		(at 34.29 73.66 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2889,7 +2889,7 @@
 	)
 	(hierarchical_label "BGBlue"
 		(shape input)
-		(at 34.29 38.1 180)
+		(at 34.29 43.18 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
