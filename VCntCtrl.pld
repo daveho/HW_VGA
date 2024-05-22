@@ -36,7 +36,7 @@ Pin functions:
 VC0..VC9  current VCOUNT
 HCEND     input HCOUNT_END signal, from HCount module
 VCEND     generated active-high VCOUNT_END signal
-            (when HCOUNT_END & VCOUNT=799)
+            (when HCOUNT_END & VCOUNT=524)
 NVCCLR    generated active-low clear signal to counters
             (on reset or HCOUNT_END & VCOUNT_END)
 PulseBeg  generated active-high signal telling VSync module

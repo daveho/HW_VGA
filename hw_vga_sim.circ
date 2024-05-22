@@ -1080,7 +1080,7 @@
       <a name="halign" val="left"/>
       <a name="text" val="EndPulse when HCOUNT_END and VCOUNT=491"/>
     </comp>
-    <comp lib="8" loc="(380,78)" name="Text">
+    <comp lib="8" loc="(380,75)" name="Text">
       <a name="text" val="VCOUNT_END when count is 524"/>
     </comp>
     <wire from="(130,100)" to="(140,100)"/>
@@ -1109,19 +1109,19 @@
     <wire from="(210,520)" to="(270,520)"/>
     <wire from="(210,530)" to="(540,530)"/>
     <wire from="(210,540)" to="(320,540)"/>
-    <wire from="(210,550)" to="(540,550)"/>
-    <wire from="(210,560)" to="(540,560)"/>
-    <wire from="(210,570)" to="(540,570)"/>
-    <wire from="(210,580)" to="(540,580)"/>
+    <wire from="(210,550)" to="(340,550)"/>
+    <wire from="(210,560)" to="(330,560)"/>
+    <wire from="(210,570)" to="(320,570)"/>
+    <wire from="(210,580)" to="(310,580)"/>
     <wire from="(210,670)" to="(540,670)"/>
     <wire from="(210,680)" to="(540,680)"/>
     <wire from="(210,690)" to="(270,690)"/>
     <wire from="(210,700)" to="(540,700)"/>
     <wire from="(210,710)" to="(320,710)"/>
-    <wire from="(210,720)" to="(540,720)"/>
-    <wire from="(210,730)" to="(540,730)"/>
-    <wire from="(210,740)" to="(540,740)"/>
-    <wire from="(210,750)" to="(540,750)"/>
+    <wire from="(210,720)" to="(370,720)"/>
+    <wire from="(210,730)" to="(360,730)"/>
+    <wire from="(210,740)" to="(350,740)"/>
+    <wire from="(210,750)" to="(340,750)"/>
     <wire from="(210,850)" to="(540,850)"/>
     <wire from="(210,860)" to="(540,860)"/>
     <wire from="(210,870)" to="(540,870)"/>
@@ -1140,13 +1140,33 @@
     <wire from="(300,400)" to="(340,400)"/>
     <wire from="(300,520)" to="(540,520)"/>
     <wire from="(300,690)" to="(540,690)"/>
+    <wire from="(310,580)" to="(310,590)"/>
+    <wire from="(310,590)" to="(540,590)"/>
+    <wire from="(320,570)" to="(320,580)"/>
+    <wire from="(320,580)" to="(540,580)"/>
     <wire from="(330,170)" to="(450,170)"/>
+    <wire from="(330,560)" to="(330,570)"/>
+    <wire from="(330,570)" to="(540,570)"/>
     <wire from="(340,400)" to="(340,420)"/>
     <wire from="(340,400)" to="(350,400)"/>
     <wire from="(340,420)" to="(470,420)"/>
-    <wire from="(350,540)" to="(540,540)"/>
-    <wire from="(350,710)" to="(540,710)"/>
+    <wire from="(340,550)" to="(340,560)"/>
+    <wire from="(340,560)" to="(540,560)"/>
+    <wire from="(340,750)" to="(340,760)"/>
+    <wire from="(340,760)" to="(540,760)"/>
+    <wire from="(350,540)" to="(370,540)"/>
+    <wire from="(350,710)" to="(380,710)"/>
+    <wire from="(350,740)" to="(350,750)"/>
+    <wire from="(350,750)" to="(540,750)"/>
+    <wire from="(360,730)" to="(360,740)"/>
+    <wire from="(360,740)" to="(540,740)"/>
     <wire from="(370,180)" to="(440,180)"/>
+    <wire from="(370,540)" to="(370,550)"/>
+    <wire from="(370,550)" to="(540,550)"/>
+    <wire from="(370,720)" to="(370,730)"/>
+    <wire from="(370,730)" to="(540,730)"/>
+    <wire from="(380,710)" to="(380,720)"/>
+    <wire from="(380,720)" to="(540,720)"/>
     <wire from="(400,380)" to="(470,380)"/>
     <wire from="(410,190)" to="(430,190)"/>
     <wire from="(420,200)" to="(420,210)"/>
@@ -1337,11 +1357,11 @@
       <a name="halign" val="left"/>
       <a name="text" val="This circuit is intended to be equivalent to Sync.pld"/>
     </comp>
-    <comp lib="8" loc="(697,865)" name="Text">
+    <comp lib="8" loc="(695,865)" name="Text">
       <a name="halign" val="left"/>
       <a name="text" val=" (VCOUNT starts in back porch)"/>
     </comp>
-    <comp lib="8" loc="(706,842)" name="Text">
+    <comp lib="8" loc="(705,840)" name="Text">
       <a name="halign" val="left"/>
       <a name="text" val="VVis is initially false"/>
     </comp>
