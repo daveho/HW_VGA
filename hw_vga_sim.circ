@@ -542,7 +542,7 @@
       <a name="incoming" val="4"/>
     </comp>
     <comp lib="0" loc="(50,470)" name="Constant">
-      <a name="value" val="0x1ec"/>
+      <a name="value" val="0x1e9"/>
       <a name="width" val="10"/>
     </comp>
     <comp lib="0" loc="(670,70)" name="Splitter">
