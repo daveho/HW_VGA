@@ -49,9 +49,10 @@ For me, FPGAs don't really offer these experiences.
 I have experimented with option 1 --- using a retro display controller ---
 and I will likely be making a video about a combined TMS9918A / YM2149F
 board in the near future. However, I don't really like the arcane
-programming model and terrible graphics quality of this era of devices.
-From a practical standpoint, just finding a way of displaying video signals
-from these devices is inconvenient and often expensive.
+programming model and terrible image quality of this era of devices.
+From a practical standpoint, even just finding a way to displaying a
+video signal produced by one of these devices is inconvenient and often
+expensive.
 
 So, for the last year or so, I've felt unmotivated to push further on either
 of these options. And that brings us to where we are now.
@@ -91,9 +92,9 @@ there is one category of programmable logic device that I'm quite fond of:
 the humble GAL. A GAL22V10 can easily replace a handful of discrete chips.
 I have a reasonable amount of experience working with GALs. They are fairly
 easy to find used on EBay, and Atmel even had compatible parts still in
-production. They can be programmed with the ubiquitous TL866ii plus programmer.
-They are fast enough to work at the clock frequencies needed for VGA.
-They have actual input and output pins you can probe. Because a GAL is
+production. They can be programmed with the ubiquitous TL866ii plus and
+T48 programmers.  They are fast enough to work at the clock frequencies needed
+for VGA.  They have actual input and output pins you can probe. Because a GAL is
 reprogrammable, you can fix hardware bugs by popping it out, reprogramming it,
 and popping it back in.
 
@@ -131,8 +132,8 @@ enough to work at this frequency, any part I can't easily source
 from the 74ACT family can be substituted with a custom-programmed
 GAL. The circuit design and construction issues are still an open
 question to some extent. However, as you will see in this video,
-I've already had some success with one of the more speed-critical
-parts of the design, so I think this problem will be manageable.
+I've already had success with several speed-critical parts of the design,
+so I think this problem will be manageable.
 
 4. Video memory
 
@@ -163,14 +164,15 @@ character and attribute information from VRAM and delivering them to
 the rasterization hardware at the time they are needed to allow
 pixel generation.
 
-I think the solution here will be a FIFO memory chip. (If you have seen
-my previous videos, then you might be aware that I am a huge fan of
-FIFO memory chips.) One one side of the FIFO is the "character and
-attribute data fetcher", which reads character and attribute information
-from VRAM and writes them to the FIFO. On the other side is the
-"character and attribute decoder", which reads character and attribute
-information from the FIFO and uses them to render the pixels of one
-scanline of a row of characters.
+I think this will be the most difficult part of the design.
+However, it boils down to fetching one character value and one
+attribute value from video memory for each block of 8 pixels.
+As long as this happens just before the pixel output logic
+needs the rasterized pixel data, the hardware will work.
+We have 4 clock cycles per byte fetched from VRAM, meaning
+about 158.8 ns for each byte. The dual port memory chips have
+an access time of 70 ns or faster, so this timing should be feasible.
+The interesting challenge will be to generate the control signals.
 
 6. Physical size
 
@@ -179,7 +181,7 @@ that I'm building my 8 bit computer system as cards connected to a
 passive backplane. The cards are 15 cm by 10 cm, and there are only
 so many DIP ICs that you can fit onto a card of this size. It's a
 distinct possibility that even if I get a design working, it won't
-actually fit on a standard card, at least if I use through hole ICs.
+actually fit on a standard card, at least if I use through-hole ICs.
 
 One workaround this issue would be to use surface mount parts.
 You can fit a fairly large number of SOIC parts in 150 cm^2. The GALs,
@@ -189,8 +191,8 @@ everything fit if all of the other parts are SMD.
 
 7. Time and effort
 
-At the time I'm making this video (April 2024), my spring semester is
-winding down. During the summer, I won't be working on any accreditation
+At the time I'm making this video (May 2024), my spring semester is
+done. During the summer, I won't be working on any accreditation
 self studies (looking at you ABET), and as far as I know, Nintendo isn't
 planning on releasing new Zelda games or DLC. So, I think I will be able
 to devote some significant time to this project over the summer.
@@ -202,9 +204,8 @@ All right, let's get to work! In this video, my goal is to generate the
 horizontal and vertical sync signals for 640x480 VGA. We will also
 compute visibility information to distinguish between pixels that are
 in the visible area of the frame and pixels that aren't visible.
-This should get us to the point where we can display a blank screen.
-I realize that this might not seem too exciting. However, the horizontal
-and vertical counters needed to generate the sync signals can also be
-used to provide timing signals to the more interesting parts of the design,
-such as the memory fetcher and the rasterizer. So, just showing a blank
-screen is pretty good progress.
+This should get us to the point where we can display a screen with a solid
+background or foreground color.  I realize that this might not seem too exciting.
+However, the horizontal and vertical counters needed to generate the sync signals
+can also be used to provide timing signals to the more interesting parts of the
+design, such as the memory fetcher and the rasterizer.
