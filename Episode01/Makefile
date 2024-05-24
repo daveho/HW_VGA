@@ -53,6 +53,12 @@ METADATA =
 %.tex : %.md metadata/dates.csv
 	pandoc -s $(FILTERS) $(METADATA) -t beamer $*.md -o $*.tex
 
+all : episode01.pdf
+
+# Generate frame image PNGs (for the video)
+render : episode01.pdf
+	convert -density 900 -resize 1920x1080 episode01.pdf 'frame/episode01_%02d.png'
+
 all : $(PDFS)
 
 .PHONY: depend
