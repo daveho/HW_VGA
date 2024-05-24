@@ -635,3 +635,110 @@ Solution: 74ACT series, GALs
   for any functions where a 74ACT chip isn't readily available
 
 Some initial high-speed parts of the design are already working!
+
+## Challenge \#4: Video Memory { .t }
+
+## Challenge \#4: Video Memory { .t }
+
+Problem: how to allow host system and display controller to
+share access to VRAM?
+
+## Challenge \#4: Video Memory { .t }
+
+Problem: how to allow host system and display controller to
+share access to VRAM?
+
+* Could time-share: complex, possibly detrimental for performance
+
+## Challenge \#4: Video Memory { .t }
+
+Problem: how to allow host system and display controller to
+share access to VRAM?
+
+* Could time-share: complex, possibly detrimental for performance
+
+Solution: dual-port static RAM
+
+## Challenge \#4: Video Memory { .t }
+
+Problem: how to allow host system and display controller to
+share access to VRAM?
+
+* Could time-share: complex, possibly detrimental for performance
+
+Solution: dual-port static RAM
+
+* Specifically 2 $\times$ IDT7134 for a total  
+  of 8 KB VRAM
+
+::: { .absolute x=3.5in y=1.5in width=2.5in }
+
+![](figures/episode01/IDT7134.jpg){ width=2.5in }
+
+:::
+
+## Challenge \#4: Video Memory { .t }
+
+Problem: how to allow host system and display controller to
+share access to VRAM?
+
+* Could time-share: complex, possibly detrimental for performance
+
+Solution: dual-port static RAM
+
+* Specifically 2 $\times$ IDT7134 for a total  
+  of 8 KB VRAM
+* Display controller can read while host  
+  system  is reading or writing
+
+::: { .absolute x=3.5in y=1.5in width=2.5in }
+
+![](figures/episode01/IDT7134.jpg){ width=2.5in }
+
+:::
+
+## Challenge \#4: Video Memory { .t }
+
+Problem: how to allow host system and display controller to
+share access to VRAM?
+
+* Could time-share: complex, possibly detrimental for performance
+
+Solution: dual-port static RAM
+
+* Specifically 2 $\times$ IDT7134 for a total  
+  of 8 KB VRAM
+* Display controller can read while host  
+  system  is reading or writing
+* Map into host system address space using  
+  2 KB  of  4 KB I/O area
+
+::: { .absolute x=3.5in y=1.5in width=2.5in }
+
+![](figures/episode01/IDT7134.jpg){ width=2.5in }
+
+:::
+
+## Challenge \#4: Video Memory { .t }
+
+Problem: how to allow host system and display controller to
+share access to VRAM?
+
+* Could time-share: complex, possibly detrimental for performance
+
+Solution: dual-port static RAM
+
+* Specifically 2 $\times$ IDT7134 for a total  
+  of 8 KB VRAM
+* Display controller can read while host  
+  system  is reading or writing
+* Map into host system address space using  
+  2 KB  of  4 KB I/O area
+  * Have a writable register to select a  
+    2 KB bank
+
+::: { .absolute x=3.5in y=1.5in width=2.5in }
+
+![](figures/episode01/IDT7134.jpg){ width=2.5in }
+
+:::
