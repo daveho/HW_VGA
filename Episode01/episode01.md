@@ -568,3 +568,70 @@ Solution: simulation using Logisim Evolution
 * Includes 74 series devices in library (e.g., 74x163 counter)
 * GALs can easily be modeled using combinational logic and
   D-type flip flops
+
+## Challenge \#3: High Frequency { .t }
+
+## Challenge \#3: High Frequency { .t }
+
+Problem: dot clock is $25.175$ MHz
+
+## Challenge \#3: High Frequency { .t }
+
+Problem: dot clock is $25.175$ MHz
+
+* 74HC and 74HCT series chips can't operate reliably!
+
+## Challenge \#3: High Frequency { .t }
+
+Problem: dot clock is $25.175$ MHz
+
+* 74HC and 74HCT series chips can't operate reliably!
+* I have limited experience with implementing designs at this frequency
+
+## Challenge \#3: High Frequency { .t }
+
+Problem: dot clock is $25.175$ MHz
+
+* 74HC and 74HCT series chips can't operate reliably!
+* I have limited experience with implementing designs at this frequency
+
+Solution: 74ACT series, GALs
+
+## Challenge \#3: High Frequency { .t }
+
+Problem: dot clock is $25.175$ MHz
+
+* 74HC and 74HCT series chips can't operate reliably!
+* I have limited experience with implementing designs at this frequency
+
+Solution: 74ACT series, GALs
+
+* 74ACT chips: can operate up to 125 MHz or so
+
+## Challenge \#3: High Frequency { .t }
+
+Problem: dot clock is $25.175$ MHz
+
+* 74HC and 74HCT series chips can't operate reliably!
+* I have limited experience with implementing designs at this frequency
+
+Solution: 74ACT series, GALs
+
+* 74ACT chips: can operate up to 125 MHz or so
+* GALs can also operate at high frequency, so can use them
+  for any functions where a 74ACT chip isn't readily available
+
+## Challenge \#3: High Frequency { .t }
+
+Problem: dot clock is $25.175$ MHz
+
+* 74HC and 74HCT series chips can't operate reliably!
+* I have limited experience with implementing designs at this frequency
+
+Solution: 74ACT series, GALs
+
+* 74ACT chips: can operate up to 125 MHz or so
+* GALs can also operate at high frequency, so can use them
+  for any functions where a 74ACT chip isn't readily available
+
+Some initial high-speed parts of the design are already working!
