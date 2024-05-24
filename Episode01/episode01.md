@@ -1,0 +1,22 @@
+---
+title: "Episode 1"
+aspectratio: 169
+colorlinks: true
+pandoc-beamer-block:
+  - classes: [info]
+  - classes: [alert]
+    type: alert
+header-includes:
+  - \usepackage{graphbox}
+  - \usepackage[export]{adjustbox}
+  - \usepackage[absolute,overlay]{textpos}
+  - \usecolortheme{orchid}
+---
+
+## 
+
+::: { .absolute x=1.5in y=0.85in width=3in }
+
+![](block-diagram.pdf){ width=3in }
+
+:::
