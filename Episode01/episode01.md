@@ -17,6 +17,6 @@ header-includes:
 
 ::: { .absolute x=1.5in y=0.85in width=3in }
 
-![](block-diagram.pdf){ width=3in }
+![](figures/episode01/block-diagram.pdf){ width=3in }
 
 :::
