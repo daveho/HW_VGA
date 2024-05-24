@@ -67,7 +67,7 @@ to the Wire Wrap Odyssey project. (I will link to the website in
 the video description: you should definitely check it out.) It's
 an incredibly inspiring project, a full 8 bit computer system built
 with logic chips. What caught my attention was the display controller,
-which generates a VGA text model using logic chips. This is an idea that
+which generates a VGA text mode using logic chips. This is an idea that
 honestly had never occurred to me.  I started thinking about whether I
 might be able to do something similar.
 
@@ -91,7 +91,7 @@ you say, "I though you said you didn't like programmable logic." Well, actually,
 there is one category of programmable logic device that I'm quite fond of:
 the humble GAL. A GAL22V10 can easily replace a handful of discrete chips.
 I have a reasonable amount of experience working with GALs. They are fairly
-easy to find used on EBay, and Atmel even had compatible parts still in
+easy to find used on EBay, and Atmel even has compatible parts still in
 production. They can be programmed with the ubiquitous TL866ii plus and
 T48 programmers.  They are fast enough to work at the clock frequencies needed
 for VGA.  They have actual input and output pins you can probe. Because a GAL is
@@ -105,7 +105,7 @@ for 640x480 VGA is 25.175 MHz. That means that during visible regions of
 scan lines, the hardware must yield a pixel about every 39.7 nanoseconds.
 The sequencing of operations needed to fetch characters and attributes
 from video memory will be fairly intricate. It will be vital to have
-confidence that a design of a module is correct before building it as
+confidence that the design of a module is correct before building it as
 hardware.
 
 I think the way to address this challenge will be simulation. Specifically,
@@ -120,7 +120,7 @@ the design in Logisim before building the hardware.
 
 As I mentioned, the display controller will need to be clocked at
 25.175 MHz if we want to generate full 640x480 VGA output. This
-is much faster than any digital circuits I've worked with previously.
+is much faster than any digital circuit I've worked with previously.
 At best, the 74HC and 74HCT logic families are marginal at this
 frequency, and at worst, unreliable.  I also lack experience in
 circuit design and construction at these higher frequencies.
@@ -176,7 +176,7 @@ The interesting challenge will be to generate the control signals.
 
 6. Physical size
 
-If you've seen previous videos in this series, then you may be aware
+If you've seen previous videos in the 8-bit computer series, then you may be aware
 that I'm building my 8 bit computer system as cards connected to a
 passive backplane. The cards are 15 cm by 10 cm, and there are only
 so many DIP ICs that you can fit onto a card of this size. It's a
@@ -191,7 +191,7 @@ everything fit if all of the other parts are SMD.
 
 7. Time and effort
 
-At the time I'm making this video (May 2024), my spring semester is
+At the time I'm making this video (in May 2024), my spring semester is
 done. During the summer, I won't be working on any accreditation
 self studies (looking at you ABET), and as far as I know, Nintendo isn't
 planning on releasing new Zelda games or DLC. So, I think I will be able
