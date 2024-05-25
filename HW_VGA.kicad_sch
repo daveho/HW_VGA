@@ -4120,6 +4120,44 @@
 		)
 	)
 	(sheet
+		(at 101.6 120.65)
+		(size 27.94 39.37)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "5c8f70a9-e360-4ba4-b352-4320618fb690")
+		(property "Sheetname" "VRAM"
+			(at 101.6 119.9384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "VRAM.kicad_sch"
+			(at 101.6 160.6046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "HW_VGA"
+				(path "/c4bd4b39-993a-4195-805f-b4de6fa4aea5"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 264.16 46.99)
 		(size 21.59 44.45)
 		(fields_autoplaced yes)

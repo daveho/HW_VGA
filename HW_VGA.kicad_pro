@@ -409,6 +409,10 @@
     [
       "706a6120-faf3-47ba-a3e5-b10b60a27b10",
       "ReadVRAM"
+    ],
+    [
+      "5c8f70a9-e360-4ba4-b352-4320618fb690",
+      "VRAM"
     ]
   ],
   "text_variables": {}
