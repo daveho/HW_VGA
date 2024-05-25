@@ -178,13 +178,13 @@ The interesting challenge will be to generate the control signals.
 
 If you've seen previous videos in the 8-bit computer series, then you may be aware
 that I'm building my 8 bit computer system as cards connected to a
-passive backplane. The cards are 15 cm by 10 cm, and there are only
+passive backplane. The cards are 15 cm by 9 cm, and there are only
 so many DIP ICs that you can fit onto a card of this size. It's a
 distinct possibility that even if I get a design working, it won't
 actually fit on a standard card, at least if I use through-hole ICs.
 
 One workaround this issue would be to use surface mount parts.
-You can fit a fairly large number of SOIC parts in 150 cm^2. The GALs,
+You can fit a fairly large number of SOIC parts in 135 cm^2. The GALs,
 FIFO memory, and dual port RAM chips will probably still be through
 hole, but I think there's a possibility that I can find a way to make
 everything fit if all of the other parts are SMD.

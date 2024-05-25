@@ -742,3 +742,150 @@ Solution: dual-port static RAM
 ![](figures/episode01/IDT7134.jpg){ width=2.5in }
 
 :::
+
+## Challenge \#5: Rendering Pipeline { .t }
+
+## Challenge \#5: Rendering Pipeline { .t }
+
+Problem: need to fetch character and attribute data, look up
+font data, and deliver to pixel output hardware *exactly* when
+needed
+
+## Challenge \#5: Rendering Pipeline { .t }
+
+Problem: need to fetch character and attribute data, look up
+font data, and deliver to pixel output hardware *exactly* when
+needed
+
+* Timing of control signals will need to be very precise
+
+## Challenge \#5: Rendering Pipeline { .t }
+
+Problem: need to fetch character and attribute data, look up
+font data, and deliver to pixel output hardware *exactly* when
+needed
+
+* Timing of control signals will need to be very precise
+
+IDT7134 chips have access time of 70 ns or better, so 2 clock
+cycles
+
+## Challenge \#5: Rendering Pipeline { .t }
+
+Problem: need to fetch character and attribute data, look up
+font data, and deliver to pixel output hardware *exactly* when
+needed
+
+* Timing of control signals will need to be very precise
+
+IDT7134 chips have access time of 70 ns or better, so 2 clock
+cycles
+
+This will be the most challenging part of the design!
+
+## Challenge \#6: Physical Size { .t }
+
+## Challenge \#6: Physical Size { .t }
+
+Problem: cards are 15 cm $\times$ 9 cm in size
+
+## Challenge \#6: Physical Size { .t }
+
+Problem: cards are 15 cm $\times$ 9 cm in size
+
+* Design will likely require quite a few chips
+
+## Challenge \#6: Physical Size { .t }
+
+Problem: cards are 15 cm $\times$ 9 cm in size
+
+* Design will likely require quite a few chips
+* Using through-hole parts, might not fit!
+
+## Challenge \#6: Physical Size { .t }
+
+Problem: cards are 15 cm $\times$ 9 cm in size
+
+* Design will likely require quite a few chips
+* Using through-hole parts, might not fit!
+
+Solution: use surface mount parts
+
+## Challenge \#6: Physical Size { .t }
+
+Problem: cards are 15 cm $\times$ 9 cm in size
+
+* Design will likely require quite a few chips
+* Using through-hole parts, might not fit!
+
+Solution: use surface mount parts
+
+* Should be able to fit quite a few SOIC footprint parts on one card
+
+## Challenge \#6: Physical Size { .t }
+
+Problem: cards are 15 cm $\times$ 9 cm in size
+
+* Design will likely require quite a few chips
+* Using through-hole parts, might not fit!
+
+Solution: use surface mount parts
+
+* Should be able to fit quite a few SOIC footprint parts on one card
+* Will probably leave VRAM and GALs as through-hole so they
+  can be socketed
+
+## Challenge \#7: Time and Effort { .t }
+
+Problem: this project will take some time
+
+## Challenge \#7: Time and Effort { .t }
+
+Problem: this project will take some time
+
+Solution: I should have some time!
+
+## Challenge \#7: Time and Effort { .t }
+
+Problem: this project will take some time
+
+Solution: I should have some time!
+
+* No accreditation self study report
+
+::: { .absolute x=4in y=1.5in width=1.25in }
+
+![](figures/episode01/ABET_logo.svg){ width=1.25in }
+
+:::
+
+## Challenge \#7: Time and Effort { .t }
+
+Problem: this project will take some time
+
+Solution: I should have some time!
+
+* No accreditation self study report
+* No new Zelda or DLC
+
+::: { .absolute x=3.75in y=0.75in width=1.75in }
+
+![](figures/episode01/totk.jpg){ width=1.75in }
+
+:::
+
+## Challenge \#7: Time and Effort { .t }
+
+Problem: this project will take some time
+
+Solution: I should have some time!
+
+* No accreditation self study report
+* No new Zelda or DLC
+* I'm excited about working on this!
+
+::: { .absolute x=3.25in y=1in width=2.75in }
+
+![](figures/episode01/prototype.jpg){ width=2.75in }
+
+:::
