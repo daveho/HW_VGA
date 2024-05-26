@@ -7493,7 +7493,7 @@
 		)
 		(uuid "ffd04c8e-5cb6-419b-ab85-05a92444260d")
 	)
-	(text "Decode host control\nsignals, generate control\nsignals for VRAM and\nbank reg: logic is in\nHostCtrl.pld"
+	(text "Decode host control\nsignals, generate control\nsignals for VRAM and\nbank reg: logic is in\nVRAMCtrl.pld"
 		(exclude_from_sim no)
 		(at 100.33 93.98 0)
 		(effects
