@@ -889,3 +889,72 @@ Solution: I should have some time!
 ![](figures/episode01/prototype.jpg){ width=2.75in }
 
 :::
+
+## Getting Started... { .t }
+
+## Getting Started... { .t }
+
+Initial goals:
+
+## Getting Started... { .t }
+
+Initial goals:
+
+* Generate horizontal and vertical sync signals
+
+## Getting Started... { .t }
+
+Initial goals:
+
+* Generate horizontal and vertical sync signals
+* Generate pixel visibility
+
+## Getting Started... { .t }
+
+Initial goals:
+
+* Generate horizontal and vertical sync signals
+* Generate pixel visibility
+* Implement sync and color output
+
+## Getting Started... { .t }
+
+Initial goals:
+
+* Generate horizontal and vertical sync signals
+* Generate pixel visibility
+* Implement sync and color output
+
+This should allow us to display a solid foreground or background
+color on a VGA monitor
+
+## Getting Started... { .t }
+
+Initial goals:
+
+* Generate horizontal and vertical sync signals
+* Generate pixel visibility
+* Implement sync and color output
+
+This should allow us to display a solid foreground or background
+color on a VGA monitor
+
+Might not sound too exciting, but this is a fairly substantial
+part of the overall problem
+
+## Getting Started... { .t }
+
+Initial goals:
+
+* Generate horizontal and vertical sync signals
+* Generate pixel visibility
+* Implement sync and color output
+
+This should allow us to display a solid foreground or background
+color on a VGA monitor
+
+Might not sound too exciting, but this is a fairly substantial
+part of the overall problem
+
+* Timing of sync signals can be leveraged for other internal
+  control signals
