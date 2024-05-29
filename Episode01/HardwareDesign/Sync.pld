@@ -1,0 +1,83 @@
+GAL22V10
+Sync
+
+Clock   NRST   HBPulse  HEPulse VBPulse VEPulse HCEND  VCEND  HVisEnd VVisEnd NC  GND
+NC      HSync  VSync    HVis    VVis    NVis    NC     NC     NC      NC      NC  VCC
+
+; Sync pulses are negative
+; (which means that in reset we definitely want a high output)
+
+; Horizontal sync:
+;   - if /NRST is asserted, next HSync should be high
+;   - if HEPulse is asserted, next HSync should be high
+;   - if neither HBPulse nor HEPulse is asserted, next HSync value
+;     should be the same as the current one
+HSync.R =   /NRST
+          + HEPulse
+          + /HBPulse * /HEPulse * HSync
+
+; Vertical sync:
+;   - if /NRST is asserted, next VSync should be high
+;   - if VEPulse is asserted, next VSync should be high
+;   - if neither VBPulse nor VEPulse is asserted, next VSync value
+;     should be the same as the current one
+VSync.R =   /NRST
+          + VEPulse
+          + /VBPulse * /VEPulse * VSync
+
+; Horizontal visibility:
+;   - true on reset or when HCOUNT_END is asserted
+;   - if HVisEnd is not asserted, next HVis value should
+;     be the same as the current one
+HVis.R  =   /NRST
+          + HCEND
+          + /HVisEnd * HVis
+
+; Vertical visibility:
+;   - next VVis **false** on reset (we assume that the initial VCOUNT
+;     is in the back porch, which is not visisble)
+;   - if -RST is NOT asserted, then
+;     * next VVis true if HCOUNT_END & VCOUNT_END (end of frame)
+;     * if VVisEnd is not asserted, next VVis value should be
+;       the same as the current one
+;     * if VVisEnd is asserted and HCOUNT_END is not asserted,
+;       next VVis value should be the same as the current one
+VVis.R  =   NRST * HCEND * VCEND
+          + NRST * /VVisEnd * VVis
+          + NRST * VVisEnd * /HCEND * VVis
+
+; Current pixel visibility
+; Note that this output is active-low.
+; The Output module uses this signal to ensure that the color
+; signals output 0V (black) in the non-visible regions of the
+; frame.
+NVis     =   /HVis
+          + /VVis
+
+DESCRIPTION
+
+HSync, VSync, and pixel visibility signal generation.
+
+Inputs (active-high unless otherwise noted):
+
+  Clock    25.175 MHz pixel clock
+  NRST     active-low reset signal
+  HBPulse  a HSync pulse should start
+  HEPulse  the HSync pulse should end
+  VBPulse  a VSync pulse should start
+  VEPulse  the VSync pulse should end
+  HCEND    end of horizontal count (HCOUNT=799)
+  VCEND    end of vertical count (VCOUNT=524)
+  HVisEnd  end of horizontal visible region (HCOUNT=639)
+  VVisEnd  end of vertical visible region (VCOUNT=479)
+  NOE      active-low output enable
+
+Outputs:
+
+  HSync    horizontal sync
+  VSync    vertical sync
+  HVis     active-high: current pixel is in the visible horizontal region
+  VVis     active-high: current pixel is in the visible vertical region
+  NVis     active-low: current pixel is visible (HVis & VVis)
+
+; vim:ft=text:
