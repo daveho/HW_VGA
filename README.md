@@ -12,4 +12,4 @@ I'm using [GALasm](https://github.com/daveho/GALasm) to compile the GAL logic eq
 
 The [HardwareDesign](HardwareDesign) directory contains the most up-to-date hardware design. The schematics were created using (of course!) [KiCAD](https://www.kicad.org/). There is a [PDF of the schematic](HardwareDesign/HW_VGA.pdf) which may or may not be up to date.
 
-This is a work in progress! I don't make any guarantees about its usefulness or correctness. Feed back can be sent to <mailto:david.hovemeyer@gmail.com>.
+This is a work in progress! I don't make any guarantees about its usefulness or correctness. Feedback can be sent to <mailto:david.hovemeyer@gmail.com>.
