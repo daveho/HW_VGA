@@ -211,29 +211,29 @@
     <comp lib="5" loc="(870,270)" name="Hex Digit Display"/>
     <comp lib="5" loc="(910,120)" name="Hex Digit Display"/>
     <comp lib="5" loc="(910,270)" name="Hex Digit Display"/>
-    <comp lib="8" loc="(954,116)" name="Text">
+    <comp lib="8" loc="(950,115)" name="Text">
       <a name="halign" val="left"/>
       <a name="text" val="End of scanline at 31F"/>
     </comp>
-    <comp lib="8" loc="(954,93)" name="Text">
+    <comp lib="8" loc="(950,90)" name="Text">
       <a name="halign" val="left"/>
       <a name="text" val="End hsync pulse at 2EF"/>
     </comp>
-    <comp lib="8" loc="(955,72)" name="Text">
-      <a name="halign" val="left"/>
-      <a name="text" val="Start hsync pulse at 28F"/>
-    </comp>
-    <comp lib="8" loc="(958,215)" name="Text">
+    <comp lib="8" loc="(955,215)" name="Text">
       <a name="halign" val="left"/>
       <a name="text" val="Start vsync pulse at 1E9"/>
     </comp>
-    <comp lib="8" loc="(958,238)" name="Text">
+    <comp lib="8" loc="(955,235)" name="Text">
       <a name="halign" val="left"/>
       <a name="text" val="End vsync pulse at 1EB"/>
     </comp>
-    <comp lib="8" loc="(958,261)" name="Text">
+    <comp lib="8" loc="(955,260)" name="Text">
       <a name="halign" val="left"/>
       <a name="text" val="End of frame at 20C"/>
+    </comp>
+    <comp lib="8" loc="(955,70)" name="Text">
+      <a name="halign" val="left"/>
+      <a name="text" val="Start hsync pulse at 28F"/>
     </comp>
     <comp loc="(460,260)" name="VCount"/>
     <comp loc="(460,40)" name="HCount"/>
@@ -409,7 +409,7 @@
       <a name="ShowInternalStructure" val="true"/>
     </comp>
     <comp lib="8" loc="(440,315)" name="Text">
-      <a name="text" val="Counters reset when nRST or nHCOUNT_END asserted"/>
+      <a name="text" val="Counters reset when nRST or HCOUNT_END asserted"/>
     </comp>
     <comp loc="(660,450)" name="HCntCtrl"/>
     <wire from="(110,180)" to="(110,260)"/>
