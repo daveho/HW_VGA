@@ -2,7 +2,7 @@ GAL22V10
 Sync
 
 Clock   NRST   HBPulse  HEPulse VBPulse VEPulse HCEND  VCEND  HVisEnd VVisEnd NC  GND
-NOE     HSync  VSync    HVis    VVis    NVis    NC     NC     NC      NC      NC  VCC
+NC      HSync  VSync    HVis    VVis    NVis    NC     NC     NC      NC      NC  VCC
 
 ; Sync pulses are negative
 ; (which means that in reset we definitely want a high output)
