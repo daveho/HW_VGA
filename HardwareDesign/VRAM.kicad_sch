@@ -9515,18 +9515,6 @@
 		)
 		(uuid "4831da43-1f23-4412-ba6c-85442fd46e0a")
 	)
-	(hierarchical_label "FontA14"
-		(shape output)
-		(at 113.03 50.8 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "4c502354-c0c0-4998-84d1-fb06fa66d85c")
-	)
 	(hierarchical_label "HostD3"
 		(shape bidirectional)
 		(at 29.21 24.13 180)
@@ -9671,18 +9659,6 @@
 		)
 		(uuid "94327864-b893-4a2f-bfb0-04f1ccc76b29")
 	)
-	(hierarchical_label "FontA15"
-		(shape output)
-		(at 113.03 53.34 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "9507902b-2882-4f5f-bdb1-c8d2a68b3656")
-	)
 	(hierarchical_label "HostA1"
 		(shape input)
 		(at 25.4 105.41 180)
@@ -9791,6 +9767,18 @@
 		)
 		(uuid "b4b3557b-eb5a-43f1-bd27-ccabb799c1c8")
 	)
+	(hierarchical_label "FontA15"
+		(shape output)
+		(at 113.03 53.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b6d08a77-3cb1-4f92-8c9a-ba190f27581b")
+	)
 	(hierarchical_label "HostA2"
 		(shape input)
 		(at 25.4 107.95 180)
@@ -9862,6 +9850,18 @@
 			(justify right)
 		)
 		(uuid "d3293382-cce3-44fa-81b4-4cd57d8cf5b7")
+	)
+	(hierarchical_label "FontA14"
+		(shape output)
+		(at 113.03 50.8 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d76ba827-107b-48d5-9496-a537c7765be1")
 	)
 	(hierarchical_label "ReadoutD3"
 		(shape output)
