@@ -2565,6 +2565,12 @@
 		(uuid "433f8e4d-2166-4bf9-8a6b-6a76843f704b")
 	)
 	(junction
+		(at 60.96 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "575012d2-fe4c-4aee-ab21-285451f4c9c8")
+	)
+	(junction
 		(at 60.96 203.2)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3475,15 +3481,6 @@
 		(uuid "9e2e4cf0-85a0-4bad-9214-534771e6ec3c")
 	)
 	(bus_entry
-		(at 50.8 125.73)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a176923a-d378-447b-ba30-91553fe7eca1")
-	)
-	(bus_entry
 		(at 281.94 67.31)
 		(size 2.54 -2.54)
 		(stroke
@@ -3635,15 +3632,6 @@
 			(type default)
 		)
 		(uuid "c38b7d51-f23d-4aa5-a9cf-d2b2ae750a35")
-	)
-	(bus_entry
-		(at 50.8 123.19)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c3e02a7a-b04f-435b-9f04-af3fb3994889")
 	)
 	(bus_entry
 		(at 289.56 82.55)
@@ -4196,16 +4184,6 @@
 			(type default)
 		)
 		(uuid "183201fe-de1f-4d1b-9409-b06cda127736")
-	)
-	(bus
-		(pts
-			(xy 50.8 82.55) (xy 50.8 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1893aa09-6c80-471c-b287-099470b2e362")
 	)
 	(wire
 		(pts
@@ -5129,6 +5107,16 @@
 	)
 	(wire
 		(pts
+			(xy 60.96 125.73) (xy 60.96 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56adbeb6-e376-489f-b217-f24c3f6b7640")
+	)
+	(wire
+		(pts
 			(xy 242.57 41.91) (xy 242.57 25.4)
 		)
 		(stroke
@@ -5216,6 +5204,16 @@
 			(type default)
 		)
 		(uuid "5e12b023-dec6-436b-a64b-685129992a79")
+	)
+	(wire
+		(pts
+			(xy 60.96 128.27) (xy 60.96 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ee1dc59-5441-4455-b46c-a88ea764ad40")
 	)
 	(wire
 		(pts
@@ -5599,16 +5597,6 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 125.73) (xy 82.55 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7ab6b5da-71d3-4f1b-9da4-f7068b1a9d53")
-	)
-	(wire
-		(pts
 			(xy 242.57 205.74) (xy 242.57 193.04)
 		)
 		(stroke
@@ -5937,6 +5925,16 @@
 		)
 		(uuid "921e1539-fe7d-43a7-b9da-7cd5c274bce0")
 	)
+	(wire
+		(pts
+			(xy 82.55 125.73) (xy 60.96 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93681e78-db93-40b9-9296-31c63d11f446")
+	)
 	(bus
 		(pts
 			(xy 40.64 128.27) (xy 40.64 125.73)
@@ -5966,16 +5964,6 @@
 			(type default)
 		)
 		(uuid "942f9243-6751-470b-ab43-dff221384f6d")
-	)
-	(wire
-		(pts
-			(xy 53.34 128.27) (xy 82.55 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "94eb2234-8081-430e-a96b-56168fa335af")
 	)
 	(wire
 		(pts
@@ -6487,16 +6475,6 @@
 		)
 		(uuid "b783cbf4-b7d2-4dd9-9d49-8bf308559abd")
 	)
-	(bus
-		(pts
-			(xy 50.8 123.19) (xy 50.8 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b79d6b70-8a15-4f58-ad2e-9ac9fe83abdb")
-	)
 	(wire
 		(pts
 			(xy 247.65 137.16) (xy 247.65 120.65)
@@ -6759,7 +6737,7 @@
 	)
 	(bus
 		(pts
-			(xy 50.8 125.73) (xy 50.8 128.27)
+			(xy 50.8 82.55) (xy 50.8 128.27)
 		)
 		(stroke
 			(width 0)
@@ -7446,6 +7424,16 @@
 			(type default)
 		)
 		(uuid "fae96f93-95e8-4e9f-b65f-a45edac796ab")
+	)
+	(wire
+		(pts
+			(xy 60.96 128.27) (xy 82.55 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb588777-8352-40b4-ae92-b2315fa10f7d")
 	)
 	(wire
 		(pts
@@ -8366,17 +8354,6 @@
 		)
 		(uuid "69aa6c6a-d744-441c-91c1-ca1e62860654")
 	)
-	(label "HostA9"
-		(at 72.39 125.73 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "69c6eae1-b6e8-4b0e-9903-c510e9f66c27")
-	)
 	(label "ReadoutA9"
 		(at 237.49 109.22 90)
 		(fields_autoplaced yes)
@@ -9080,17 +9057,6 @@
 			(justify left bottom)
 		)
 		(uuid "cb53374a-d003-4e5a-9ae0-3f58163118c7")
-	)
-	(label "HostA10"
-		(at 72.39 128.27 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "cd120a68-f953-4aaf-a2a1-ba875fa2be8a")
 	)
 	(label "HostA6"
 		(at 234.95 36.83 90)
@@ -10238,6 +10204,72 @@
 			(project "HW_VGA"
 				(path "/c4bd4b39-993a-4195-805f-b4de6fa4aea5/5c8f70a9-e360-4ba4-b352-4320618fb690"
 					(reference "#PWR068")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 60.96 149.86 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2df84d7f-d5c1-473f-b0be-b2338473ecd8")
+		(property "Reference" "#PWR070"
+			(at 60.96 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 60.96 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 60.96 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "11346769-d34d-413b-b1a6-d2e3dbf3b7ba")
+		)
+		(instances
+			(project "HW_VGA"
+				(path "/c4bd4b39-993a-4195-805f-b4de6fa4aea5/5c8f70a9-e360-4ba4-b352-4320618fb690"
+					(reference "#PWR070")
 					(unit 1)
 				)
 			)

@@ -1,7 +1,7 @@
 GAL22V10
 VRAMCtrl
 
-nHstRMEM nHstWMEM nVBRegEN HostA9  HostA10  HostA11  HostA12  HostA13  HostA14  HostA15 BankA12 GND
+nHstRMEM nHstWMEM nVBRegEN NC      NC       HostA11  HostA12  HostA13  HostA14  HostA15 BankA12 GND
 ROutA12  VBRegCP  nLowerOE LowerRW nLowerCE nUpperOE UpperRW  nUpperCE nROutA12 NC      NC      VCC
 
 ; Bank register write clock pulse signal. It goes low when
