@@ -1,20 +1,19 @@
 GAL22V10
 Sync
 
-Clock   NRST   HBPulse  HEPulse VBPulse VEPulse HCEND  VCEND  HVisEnd VVisEnd NC  GND
+Clock   NRST   HBPulse  HEPulse VBPulse VEPulse HSEND  VCEND  HVisEnd VVisEnd NC  GND
 NC      HSync  VSync    HVis    VVis    NVis    NC     NC     NC      NC      NC  VCC
 
 ; Sync pulses are negative
-; (which means that in reset we definitely want a high output)
+; (which means that in reset we definitely want a high output,
+; except that the horizontal timing STARTS with the hsync
+; pulse being generate, so HSync should be low on reset)
 
-; Horizontal sync:
-;   - if /NRST is asserted, next HSync should be high
-;   - if HEPulse is asserted, next HSync should be high
-;   - if neither HBPulse nor HEPulse is asserted, next HSync value
-;     should be the same as the current one
-HSync.R =   /NRST
-          + HEPulse
-          + /HBPulse * /HEPulse * HSync
+; Horizontal sync: Should be high if
+;   - -RST is not asserted and HEPulse is asserted, or
+;   - -RST is not asserted and HBPulse is not asserted and HSync is high currently
+HSync.R =   NRST * HEPulse
+          + NRST * /HBPulse * HSync
 
 ; Vertical sync:
 ;   - if /NRST is asserted, next VSync should be high
@@ -26,25 +25,25 @@ VSync.R =   /NRST
           + /VBPulse * /VEPulse * VSync
 
 ; Horizontal visibility:
-;   - true on reset or when HCOUNT_END is asserted
+;   - true on reset or when HSCAN_END is asserted
 ;   - if HVisEnd is not asserted, next HVis value should
 ;     be the same as the current one
 HVis.R  =   /NRST
-          + HCEND
+          + HSEND
           + /HVisEnd * HVis
 
 ; Vertical visibility:
 ;   - next VVis **false** on reset (we assume that the initial VCOUNT
-;     is in the back porch, which is not visisble)
+;     is past the vertical visible region)
 ;   - if -RST is NOT asserted, then
-;     * next VVis true if HCOUNT_END & VCOUNT_END (end of frame)
+;     * next VVis true if HSCAN_END & VCOUNT_END (end of frame)
 ;     * if VVisEnd is not asserted, next VVis value should be
 ;       the same as the current one
-;     * if VVisEnd is asserted and HCOUNT_END is not asserted,
+;     * if VVisEnd is asserted and HSCAN_END is not asserted,
 ;       next VVis value should be the same as the current one
-VVis.R  =   NRST * HCEND * VCEND
+VVis.R  =   NRST * HSEND * VCEND
           + NRST * /VVisEnd * VVis
-          + NRST * VVisEnd * /HCEND * VVis
+          + NRST * VVisEnd * /HSEND * VVis
 
 ; Current pixel visibility
 ; Note that this output is active-low.
@@ -66,7 +65,7 @@ Inputs (active-high unless otherwise noted):
   HEPulse  the HSync pulse should end
   VBPulse  a VSync pulse should start
   VEPulse  the VSync pulse should end
-  HCEND    end of horizontal count (HCOUNT=799)
+  HSEND    end of horizontal scanline
   VCEND    end of vertical count (VCOUNT=524)
   HVisEnd  end of horizontal visible region (HCOUNT=639)
   VVisEnd  end of vertical visible region (VCOUNT=479)
