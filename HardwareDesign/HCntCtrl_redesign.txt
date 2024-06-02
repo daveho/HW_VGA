@@ -1,0 +1,27 @@
+Redesign of HCntCtrl so that the sync pulse and back porch
+come *before* the visible part of the line. The motivation
+is to have VCOUNT accurately reflect the true pixel row
+when the the contents of a visible line are being generated.
+(The issue with the original approach is that if we initiate
+fetching data from video memory before the visible part of
+the scanline is generated, VCOUNT reflects the "previous" line.
+The revised approach means that the hsync pulse and back porch
+are now considered part of the "next" line, meaning that the
+VCOUNT value is the same as the visible region of the scanline
+that immediately follows them.)
+
+Original timing vs. revised timing (HCOUNT values when timing pulses are
+generated):
+
+Event          Orig       Revised    Description
+
+BeginPulse     655         799       Beginning of hsync pulse
+EndPulse       751          95       End of hsync pulse
+HVisEnd        639         783       End of visible part of scanline
+HSCAN_END      799         143       End of scanline (and begin next
+                                       visible region)
+
+Basically, all times are moved later by 144 clocks.
+
+Note that the -HCOUNT_CLR signal (resetting the HCOUNT counters)
+will need to be generated on PulseBegin rather than HCOUNT_END.
