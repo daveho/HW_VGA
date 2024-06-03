@@ -2,24 +2,24 @@ GAL22V10
 HCntCtrl
 
 NRST  HC0    HC1   HC2      HC3      HC4     HC5   HC6   HC7   HC8   HC9   GND
-NC    HSEND NHCCLR BegPulse EndPulse HVisEnd NC    NC    NC    NC    NC    VCC
+NC    HCEND NHCCLR PulseBeg PulseEnd HVisEnd NC    NC    NC    NC    NC    VCC
 
-; HSCAN_END is when HCOUNT=143 (binary 0010001111)
-HSEND   = /HC9 * /HC8 * HC7 * /HC6 * /HC5 * /HC4 * HC3 * HC2 * HC1 * HC0
+; HCOUNT_END is when HCOUNT=799 (1100011111 binary)
+HCEND   = HC9 * HC8 * /HC7 * /HC6 * /HC5 * HC4 * HC3 * HC2 * HC1 * HC0
 
 ; Counters should be cleared (reset to 0) if either NRST is asserted
-; or HSCAN_END is asserted
+; or HCOUNT_END is asserted
 /NHCCLR =   /NRST
-          + HSEND
+          + HCEND
 
-; Sync pulse initiated when HCOUNT=799 (binary 1100011111)
-BegPulse = HC9 * HC8 * /HC7 * /HC6 * /HC5 * HC4 * HC3 * HC2 * HC1 * HC0
+; Sync pulse initiated when HCOUNT=655 (binary 1010001111)
+PulseBeg = HC9 * /HC8 * HC7 * /HC6 * /HC5 * /HC4 * HC3 * HC2 * HC1 * HC0
 
-; Sync pulse terminated when HCOUNT=95 (binary 0001011111)
-EndPulse = /HC9 * /HC8 * /HC7 * HC6 * /HC5 * HC4 * HC3 * HC2 * HC1 * HC0
+; Sync pulse terminated when HCOUNT=751 (binary 1011101111)
+PulseEnd = HC9 * /HC8 * HC7 * HC6 * HC5 * /HC4 * HC3 * HC2 * HC1 * HC0
 
-; Visible line ends at HCOUNT=783 (binary 1100001111)
-HVisEnd = HC9 * HC8 * /HC7 * /HC6 * /HC5 * /HC4 * HC3 * HC2 * HC1 * HC0
+; Visible line ends at HCOUNT=639 (binary 1001111111)
+HVisEnd = HC9 * /HC8 * /HC7 * HC6 * HC5 * HC4 * HC3 * HC2 * HC1 * HC0
 
 DESCRIPTION
 
@@ -29,15 +29,14 @@ combinational logic.
 Pin functions:
 
 HC0..HC9  current HCOUNT
-HSEND     generated active-high HSCAN_END signal (end of horizontal
-            scanline)
+HCEND     generated active-high HCOUNT_END signal (when HCOUNT=799)
 NHCCLR    generated active-low clear signal to counters
-            (on reset or HSCAN_END)
-BegPulse  generated active-high signal telling HSync module
+            (on reset or HCOUNT_END)
+PulseBeg  generated active-high signal telling HSync module
             to begin the HSync pulse
-EndPulse  generated active-high signal telling HSync module
+PulseEnd  generated active-high signal telling HSync module
             to end the HSync pulse
 HVisEnd   generated active-high signal indicating when the end of
-            horizontal visible region is reached (HCOUNT=783)
+            horizontal visible region is reached (HCOUNT=639)
 
 ; vim:ft=text:
