@@ -1910,6 +1910,12 @@
 		(uuid "bc0bd3b2-c642-48fa-b486-08446b40d2a1")
 	)
 	(junction
+		(at 100.33 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ca320527-bec9-4441-b15e-ba0657b5fe4e")
+	)
+	(junction
 		(at 165.1 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2817,6 +2823,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 50.8) (xy 100.33 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "954754da-da08-459c-ad2a-9c492dd28e89")
+	)
+	(wire
+		(pts
 			(xy 97.79 104.14) (xy 151.13 104.14)
 		)
 		(stroke
@@ -3217,6 +3233,16 @@
 	)
 	(wire
 		(pts
+			(xy 100.33 50.8) (xy 100.33 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e043c04a-fed2-4595-a53f-9b28a48c4121")
+	)
+	(wire
+		(pts
 			(xy 285.75 52.07) (xy 302.26 52.07)
 		)
 		(stroke
@@ -3583,17 +3609,6 @@
 			(justify left bottom)
 		)
 		(uuid "5ab34ca7-72ed-4ac4-aed5-4a5a3619d6f8")
-	)
-	(label "VCOUNT_END"
-		(at 158.75 73.66 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5c4e4a27-2454-4202-aa9a-97e72ddbee85")
 	)
 	(label "HostA5"
 		(at 27.94 160.02 0)
@@ -4078,6 +4093,17 @@
 			(justify left bottom)
 		)
 		(uuid "f1dc1de6-4ad7-4716-b8dc-b27006e31685")
+	)
+	(label "VCOUNT_ZERO"
+		(at 156.21 73.66 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f5321a75-4450-4535-b73a-2ed5163e6521")
 	)
 	(label "HostD4"
 		(at 27.94 199.39 0)
@@ -6106,16 +6132,6 @@
 			)
 			(uuid "675cbc97-16d3-42f4-937a-ff30c2770d96")
 		)
-		(pin "VCOUNT_END" output
-			(at 129.54 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "109eead8-c2ad-467f-afd9-2e8b909311c4")
-		)
 		(pin "VC4" output
 			(at 129.54 53.34 0)
 			(effects
@@ -6235,6 +6251,26 @@
 				(justify left)
 			)
 			(uuid "d3ecf762-cb4f-41fb-b9c2-c53ddf4a1492")
+		)
+		(pin "VCOUNT_ZERO" output
+			(at 129.54 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "d5b401bb-c9cb-43e1-a5ec-76aa85177047")
+		)
+		(pin "VCOUNT_INCR" input
+			(at 109.22 50.8 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "44339746-af23-41cb-97b4-74841f89824b")
 		)
 		(instances
 			(project "HW_VGA"
