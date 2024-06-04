@@ -4401,6 +4401,16 @@
 	)
 	(wire
 		(pts
+			(xy 241.3 101.6) (xy 260.35 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23163721-02a0-42ac-a5e9-e8620e874956")
+	)
+	(wire
+		(pts
 			(xy 143.51 76.2) (xy 139.7 76.2)
 		)
 		(stroke
@@ -6474,6 +6484,17 @@
 			(justify left bottom)
 		)
 		(uuid "3c0af3d5-9a9f-41eb-8a3f-726cf751945c")
+	)
+	(label "VCOUNT_END"
+		(at 243.84 101.6 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "40ad7124-66e6-4698-9928-e0ec5264aa91")
 	)
 	(label "InitVC2"
 		(at 26.67 76.2 0)
