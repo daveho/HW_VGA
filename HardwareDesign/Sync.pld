@@ -1,8 +1,8 @@
 GAL22V10
 Sync
 
-Clock   NRST   HBPulse  HEPulse VBPulse VEPulse HCEND  VCZERO HVisEnd VVisEnd NC  GND
-NC      HSync  VSync    HVis    VVis    NVis    NC     NC     NC      NC      NC  VCC
+Clock    NRST   HBPulse  HEPulse VBPulse VEPulse HCEND   VCZERO HVisEnd VVisEnd VCEND GND
+VEActive HSync  VSync    HVis    VVis    NVis    VActive NC     NC      NC      NC       VCC
 
 ; Sync pulses are negative
 ; (which means that in reset we definitely want a high output)
@@ -54,6 +54,22 @@ VVis.R  =   NRST * HCEND * VCZERO
 NVis     =   /HVis
           + /VVis
 
+; Vertical activity signal. Is high on scanlines where memory
+; fetch and rasterization should occur. This is slightly different
+; than vertical visibility, since activity must start *before*
+; the first visible line of the frame.
+;   - is *false* on reset (initial VCOUNT should be in the
+;     back porch, but not on the last line of the frame)
+;   - if -RST is NOT asserted, then
+;     * next VActive is true if HCOUNT_END & VBeginActive
+;     * if VEndActive is not asserted, next VActive value should be
+;       the same as the current one
+;     * if VEndActive is asserted and HCOUNT_END is not asserted,
+;       next VActive value should be the same as the current one
+VActive.R =   NRST * HCEND * VCEND
+            + NRST * /VEActive * VActive
+            + NRST * VEActive * /HCEND * VActive
+
 DESCRIPTION
 
 HSync, VSync, and pixel visibility signal generation.
@@ -71,7 +87,9 @@ Inputs (active-high unless otherwise noted):
              back in the vertical visible region)
   HVisEnd  end of horizontal visible region (HCOUNT=639)
   VVisEnd  end of vertical visible region (VCOUNT=479)
-  NOE      active-low output enable
+  VCEND    beginning of vertical activity (memfetch+rasterization),
+            which occurs when VCOUNT is at its maximum (VCOUNT=479)
+  VEActive end of vertical activity (memfetch+rasterization)
 
 Outputs:
 
@@ -80,5 +98,7 @@ Outputs:
   HVis     active-high: current pixel is in the visible horizontal region
   VVis     active-high: current pixel is in the visible vertical region
   NVis     active-low: current pixel is visible (HVis & VVis)
+  VActive  active-high: asserted when in vertical activity region
+             (where memory fetch and rasterization should occur)
 
 ; vim:ft=text:
