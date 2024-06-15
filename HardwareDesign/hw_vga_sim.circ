@@ -63,11 +63,8 @@
       <a name="halign" val="left"/>
     </tool>
     <sep/>
+    <tool lib="0" name="Pin"/>
     <tool lib="0" name="Pin">
-      <a name="appearance" val="classic"/>
-    </tool>
-    <tool lib="0" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
     </tool>
@@ -702,7 +699,7 @@
       <a name="incoming" val="4"/>
     </comp>
     <comp lib="0" loc="(50,470)" name="Constant">
-      <a name="value" val="0x20b"/>
+      <a name="value" val="0x20c"/>
       <a name="width" val="10"/>
     </comp>
     <comp lib="0" loc="(670,70)" name="Splitter">
@@ -1065,11 +1062,11 @@
       <a name="halign" val="left"/>
       <a name="text" val="HCOUNT_END asserted when HCOUNT=799"/>
     </comp>
-    <comp lib="8" loc="(472,1042)" name="Text">
+    <comp lib="8" loc="(470,1040)" name="Text">
       <a name="halign" val="left"/>
       <a name="text" val="EndActive when HCOUNT=631"/>
     </comp>
-    <comp lib="8" loc="(474,963)" name="Text">
+    <comp lib="8" loc="(470,960)" name="Text">
       <a name="halign" val="left"/>
       <a name="text" val="BeginActive when HCOUNT=791"/>
     </comp>
@@ -1954,6 +1951,8 @@
     <wire from="(260,300)" to="(260,400)"/>
     <wire from="(260,300)" to="(470,300)"/>
     <wire from="(260,400)" to="(470,400)"/>
+    <wire from="(260,580)" to="(260,780)"/>
+    <wire from="(260,580)" to="(560,580)"/>
     <wire from="(260,780)" to="(260,860)"/>
     <wire from="(260,780)" to="(400,780)"/>
     <wire from="(260,80)" to="(260,300)"/>
