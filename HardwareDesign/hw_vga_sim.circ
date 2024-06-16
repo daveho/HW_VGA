@@ -163,7 +163,7 @@
       <a name="facing" val="east"/>
       <a name="label" val="VCOUNT_ZERO"/>
     </comp>
-    <comp lib="0" loc="(230,1150)" name="Tunnel">
+    <comp lib="0" loc="(180,1060)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="VCOUNT_END"/>
     </comp>
@@ -187,9 +187,6 @@
       <a name="label" val="VCOUNT_ZERO"/>
     </comp>
     <comp lib="0" loc="(540,600)" name="Tunnel">
-      <a name="label" val="VBeginActive"/>
-    </comp>
-    <comp lib="0" loc="(540,630)" name="Tunnel">
       <a name="label" val="VEndActive"/>
     </comp>
     <comp lib="0" loc="(560,160)" name="Tunnel">
@@ -284,10 +281,6 @@
       <a name="facing" val="east"/>
       <a name="label" val="HEndActive"/>
     </comp>
-    <comp lib="0" loc="(890,1060)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="VBeginActive"/>
-    </comp>
     <comp lib="5" loc="(1220,710)" name="LED"/>
     <comp lib="5" loc="(1220,730)" name="LED"/>
     <comp lib="5" loc="(1220,750)" name="LED"/>
@@ -368,9 +361,7 @@
     <wire from="(160,840)" to="(270,840)"/>
     <wire from="(170,860)" to="(170,880)"/>
     <wire from="(170,860)" to="(270,860)"/>
-    <wire from="(180,1060)" to="(180,1120)"/>
     <wire from="(180,1060)" to="(230,1060)"/>
-    <wire from="(180,1120)" to="(270,1120)"/>
     <wire from="(180,880)" to="(180,910)"/>
     <wire from="(180,880)" to="(270,880)"/>
     <wire from="(190,900)" to="(190,940)"/>
@@ -383,12 +374,10 @@
     <wire from="(210,940)" to="(270,940)"/>
     <wire from="(220,960)" to="(220,1030)"/>
     <wire from="(220,960)" to="(270,960)"/>
-    <wire from="(230,1150)" to="(270,1150)"/>
     <wire from="(230,980)" to="(230,1060)"/>
     <wire from="(230,980)" to="(270,980)"/>
     <wire from="(240,1000)" to="(240,1090)"/>
     <wire from="(240,1000)" to="(270,1000)"/>
-    <wire from="(270,1120)" to="(270,1150)"/>
     <wire from="(450,440)" to="(510,440)"/>
     <wire from="(450,460)" to="(520,460)"/>
     <wire from="(450,480)" to="(540,480)"/>
@@ -396,7 +385,6 @@
     <wire from="(450,520)" to="(520,520)"/>
     <wire from="(450,540)" to="(500,540)"/>
     <wire from="(450,560)" to="(490,560)"/>
-    <wire from="(450,580)" to="(480,580)"/>
     <wire from="(460,160)" to="(560,160)"/>
     <wire from="(460,180)" to="(540,180)"/>
     <wire from="(460,200)" to="(530,200)"/>
@@ -404,8 +392,6 @@
     <wire from="(460,240)" to="(510,240)"/>
     <wire from="(460,260)" to="(500,260)"/>
     <wire from="(460,280)" to="(490,280)"/>
-    <wire from="(480,580)" to="(480,630)"/>
-    <wire from="(480,630)" to="(540,630)"/>
     <wire from="(490,280)" to="(490,340)"/>
     <wire from="(490,340)" to="(560,340)"/>
     <wire from="(490,560)" to="(490,600)"/>
@@ -797,12 +783,6 @@
     <comp lib="0" loc="(830,690)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
-      <a name="label" val="VBeginActive"/>
-      <a name="output" val="true"/>
-    </comp>
-    <comp lib="0" loc="(830,710)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="facing" val="west"/>
       <a name="label" val="VEndActive"/>
       <a name="output" val="true"/>
     </comp>
@@ -911,7 +891,6 @@
     <wire from="(620,650)" to="(830,650)"/>
     <wire from="(620,670)" to="(830,670)"/>
     <wire from="(620,690)" to="(830,690)"/>
-    <wire from="(620,710)" to="(830,710)"/>
     <wire from="(630,270)" to="(630,390)"/>
     <wire from="(630,90)" to="(630,210)"/>
     <wire from="(640,200)" to="(650,200)"/>
@@ -1259,13 +1238,7 @@
       <a name="label" val="VVisEnd"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="0" loc="(1030,1300)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="facing" val="west"/>
-      <a name="label" val="VBeginActive"/>
-      <a name="output" val="true"/>
-    </comp>
-    <comp lib="0" loc="(1030,1440)" name="Pin">
+    <comp lib="0" loc="(1030,1250)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="VEndActive"/>
@@ -1310,12 +1283,8 @@
       <a name="fanout" val="12"/>
       <a name="incoming" val="12"/>
     </comp>
-    <comp lib="0" loc="(510,1450)" name="Constant">
+    <comp lib="0" loc="(510,1260)" name="Constant">
       <a name="value" val="0x1df"/>
-      <a name="width" val="12"/>
-    </comp>
-    <comp lib="0" loc="(520,1310)" name="Constant">
-      <a name="value" val="0x20b"/>
       <a name="width" val="12"/>
     </comp>
     <comp lib="0" loc="(760,160)" name="Pin">
@@ -1374,11 +1343,7 @@
     <comp lib="1" loc="(670,890)" name="AND Gate">
       <a name="inputs" val="9"/>
     </comp>
-    <comp lib="3" loc="(650,1300)" name="Comparator">
-      <a name="mode" val="unsigned"/>
-      <a name="width" val="12"/>
-    </comp>
-    <comp lib="3" loc="(650,1440)" name="Comparator">
+    <comp lib="3" loc="(650,1250)" name="Comparator">
       <a name="mode" val="unsigned"/>
       <a name="width" val="12"/>
     </comp>
@@ -1398,14 +1363,6 @@
       <a name="halign" val="left"/>
       <a name="text" val="VVisEnd generated when VCOUNT=480 (binary 111100000)"/>
     </comp>
-    <comp lib="8" loc="(281,1247)" name="Text">
-      <a name="halign" val="left"/>
-      <a name="text" val="VBeginActive generated when VCOUNT=523"/>
-    </comp>
-    <comp lib="8" loc="(292,1362)" name="Text">
-      <a name="halign" val="left"/>
-      <a name="text" val="VEndActive generated when VCOUNT=479"/>
-    </comp>
     <comp lib="8" loc="(330,460)" name="Text">
       <a name="halign" val="left"/>
       <a name="text" val="BeginPulse when HCOUNT_END and VCOUNT=490 (binary 111101010)"/>
@@ -1422,11 +1379,9 @@
     <wire from="(170,450)" to="(280,450)"/>
     <wire from="(220,100)" to="(220,490)"/>
     <wire from="(220,100)" to="(260,100)"/>
-    <wire from="(220,1060)" to="(220,1290)"/>
+    <wire from="(220,1060)" to="(220,1240)"/>
     <wire from="(220,1060)" to="(270,1060)"/>
-    <wire from="(220,1290)" to="(220,1430)"/>
-    <wire from="(220,1290)" to="(610,1290)"/>
-    <wire from="(220,1430)" to="(610,1430)"/>
+    <wire from="(220,1240)" to="(610,1240)"/>
     <wire from="(220,490)" to="(220,660)"/>
     <wire from="(220,490)" to="(270,490)"/>
     <wire from="(220,660)" to="(220,840)"/>
@@ -1534,10 +1489,9 @@
     <wire from="(490,890)" to="(620,890)"/>
     <wire from="(500,200)" to="(500,210)"/>
     <wire from="(500,210)" to="(610,210)"/>
-    <wire from="(510,1450)" to="(610,1450)"/>
+    <wire from="(510,1260)" to="(610,1260)"/>
     <wire from="(510,190)" to="(510,200)"/>
     <wire from="(510,200)" to="(610,200)"/>
-    <wire from="(520,1310)" to="(610,1310)"/>
     <wire from="(520,180)" to="(520,190)"/>
     <wire from="(520,190)" to="(610,190)"/>
     <wire from="(530,1120)" to="(610,1120)"/>
@@ -1550,8 +1504,7 @@
     <wire from="(550,490)" to="(620,490)"/>
     <wire from="(550,660)" to="(620,660)"/>
     <wire from="(570,1130)" to="(610,1130)"/>
-    <wire from="(650,1300)" to="(1030,1300)"/>
-    <wire from="(650,1440)" to="(1030,1440)"/>
+    <wire from="(650,1250)" to="(1030,1250)"/>
     <wire from="(660,1110)" to="(1010,1110)"/>
     <wire from="(660,160)" to="(690,160)"/>
     <wire from="(660,350)" to="(770,350)"/>
