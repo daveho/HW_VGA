@@ -14,9 +14,32 @@ NC      Active  Count0   Count1    Phase     UpdRBCP nLdRDA IncRDA RDA12 NC     
 Active.R =   NRST * /HEActive * VActive * Active
            + NRST * HBActive * VActive
 
+; Two-bit timing counter. In general, we'll increment the readout
+; address when count is 1 (so initiate the pulse when count is 0),
+; and commit data from VRAM (to the character register or attribute
+; register) when count is 0 (so initiate the pulse when count is 3).
 
+; Low counter bit.
+; It just toggles when there is activity.
+Count0.R = Active * /Count0
 
+; High counter bit.
+; Note that this is forced high when Active is not asserted,
+; which means that the counter begins with Count=2.
+; More generally, Count1 should transition to 1 if Count=01 or
+; Count=10.
+Count1.R =   /Active
+           + Active * /Count1 * Count0
+           + Active * Count1 * /Count0
 
+; Phase bit.
+; Phase=0 means we're fetching a character from VRAM,
+; and Phase=1 means we're fetching an attribute from VRAM.
+; This is essentially a 3rd counter bit, since each phase
+; is 4 cycles long.
+Phase.R =   Active * Count1 * Count0 * /Phase    ; Phase goes high if Count=11 and Phase=0
+          + Active * /Count1 * Phase             ; Phase stays same if Count=0x
+          + Active * /Count0 * Phase             ; Phase stays same if Count=x0
 
 DESCRIPTION
 
