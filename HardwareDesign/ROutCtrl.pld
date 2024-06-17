@@ -1,0 +1,67 @@
+GAL22V10
+ROutCtrl
+
+Clock   NRST    VActive  HBActive  HEActive  VC0     VC1    VC2    VC3   RowBA12 VSync  GND
+NC      Active  Count0   Count1    Phase     UpdRBCP nLdRDA IncRDA RDA12 NC      NC     VCC
+
+; Active register.
+; Next value should be high if
+;   - not in reset, and HEActive not asserted, and VActive is asserted,
+;     and currently active (maintain current value)
+;   - not in reset, and HBActive is asserted, and VActive is asserted
+;     (turn on when HBActive pulse is seen, and in we're ready to start
+;     generating the visible part of the frame)
+Active.R =   NRST * /HEActive * VActive * Active
+           + NRST * HBActive * VActive
+
+
+
+
+
+DESCRIPTION
+
+Readout control logic.
+
+The readout module has two registers:
+
+  The readout address register (a.k.a. memory fetch address register),
+  which is implemented as three 74ACT163 counters.
+
+  The row begin address register, which is implemented as two
+  74ACT273 registers.
+
+Because VRAM addresses are 13 bits, and three 74ACT163 counters is
+only 12 bits, this GAL maintains the thirteenth bit of the readout
+address.
+
+Inputs:
+
+  Clock    - VGA 25.175MHz dot clock
+  NRST     - active-low reset signal
+  VActive  - active-high vertical activity signal
+  HBActive - high if horizontal activity should begin
+  HEActive - high if horizontal activity should end
+  VC0..VC3 - least significant 4 bits of VCOUNT
+  RowBA12  - current value of bit 12 of row begin address register
+  VSync    - vertical sync signal (clears row begin address register bits
+               when low)
+
+Outputs:
+
+  Active   - true during activity
+  Count0   - low bit of 2-bit counter used for control signal generation
+  Count1   - high bit of 2-bit counter used for control signal generation
+  Phase    - which 4 cycle phase is active (phase 0 reads a character
+               from VRAM, phase 1 reads an attribute from VRAM)
+  UpdRBCP  - update row begin address clock pulse: used to set the row
+               begin address to the current readout address (happens
+               after each full character row is rendered, in order to
+               advance to the next row of characters)
+  nLdRDA   - a low value indicates that a value should be loaded into
+               the readout address register from the row begin address
+               register; done before rendering each row of pixels
+  IncRDA   - a high value indicates that the readout address should be
+               incremented
+  RDA12    - thirteenth bit (A12) of the readout address
+
+vim:ft=text:

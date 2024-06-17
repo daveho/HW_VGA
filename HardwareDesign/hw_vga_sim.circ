@@ -2288,7 +2288,7 @@ e 6*8 c8 28 18 8 5*0 b8
     <comp lib="0" loc="(950,1680)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
-      <a name="label" val="nIncrReadoutAddr"/>
+      <a name="label" val="IncrReadoutAddr"/>
       <a name="output" val="true"/>
     </comp>
     <comp lib="0" loc="(950,1810)" name="Pin">
@@ -2317,7 +2317,7 @@ e 6*8 c8 28 18 8 5*0 b8
       <a name="inputs" val="3"/>
     </comp>
     <comp lib="1" loc="(520,320)" name="AND Gate">
-      <a name="inputs" val="3"/>
+      <a name="inputs" val="4"/>
     </comp>
     <comp lib="1" loc="(520,420)" name="AND Gate">
       <a name="inputs" val="3"/>
@@ -2408,18 +2408,20 @@ e 6*8 c8 28 18 8 5*0 b8
     <wire from="(380,900)" to="(380,950)"/>
     <wire from="(380,900)" to="(400,900)"/>
     <wire from="(380,950)" to="(830,950)"/>
-    <wire from="(390,130)" to="(390,440)"/>
+    <wire from="(390,130)" to="(390,340)"/>
+    <wire from="(390,340)" to="(390,440)"/>
+    <wire from="(390,340)" to="(470,340)"/>
     <wire from="(390,440)" to="(470,440)"/>
     <wire from="(410,180)" to="(410,420)"/>
     <wire from="(410,420)" to="(470,420)"/>
-    <wire from="(430,270)" to="(430,340)"/>
+    <wire from="(430,270)" to="(430,330)"/>
     <wire from="(430,270)" to="(780,270)"/>
-    <wire from="(430,340)" to="(470,340)"/>
+    <wire from="(430,330)" to="(470,330)"/>
     <wire from="(450,1130)" to="(530,1130)"/>
     <wire from="(450,1210)" to="(560,1210)"/>
     <wire from="(450,1300)" to="(530,1300)"/>
-    <wire from="(450,230)" to="(450,320)"/>
-    <wire from="(450,320)" to="(470,320)"/>
+    <wire from="(450,230)" to="(450,310)"/>
+    <wire from="(450,310)" to="(470,310)"/>
     <wire from="(450,800)" to="(540,800)"/>
     <wire from="(450,880)" to="(540,880)"/>
     <wire from="(520,320)" to="(570,320)"/>
