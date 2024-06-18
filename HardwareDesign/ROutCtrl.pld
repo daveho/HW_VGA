@@ -2,7 +2,7 @@ GAL22V10
 ROutCtrl
 
 Clock   NRST    VActive  HBActive  HEActive  VC0     VC1    VC2    VC3   RowBA12 VSync  GND
-NC      Active  Count0   Count1    Phase     UpdRBCP nLdRDA IncRDA RDA12 NC      NC     VCC
+HBPulse Active  Count0   Count1    Phase     UpdRBCP nLdRDA IncRDA RDA12 NC      NC     VCC
 
 ; Active register.
 ; Next value should be high if
@@ -26,8 +26,8 @@ Count0.R = Active * /Count0
 ; High counter bit.
 ; Note that this is forced high when Active is not asserted,
 ; which means that the counter begins with Count=2.
-; More generally, Count1 should transition to 1 if Count=01 or
-; Count=10.
+; More generally, Count1 should change to or remain at
+; 1 if Count=01 (change to 1) or Count=10 (stay at 1).
 Count1.R =   /Active
            + Active * /Count1 * Count0
            + Active * Count1 * /Count0
@@ -40,6 +40,38 @@ Count1.R =   /Active
 Phase.R =   Active * Count1 * Count0 * /Phase    ; Phase goes high if Count=11 and Phase=0
           + Active * /Count1 * Phase             ; Phase stays same if Count=0x
           + Active * /Count0 * Phase             ; Phase stays same if Count=x0
+
+; Update row begin clock pulse.
+; If VCOUNT[0..3] = 15, and HBPulse is asserted, generate a single
+; positive pulse to copy current readout address into the row begin
+; address register.
+;
+; Note that VActive must be asserted, but we don't require
+; Active to be asserted. This is because HBPulse is asserted
+; outside the horizontal activity region. (This is desirable:
+; updating the row begin and/or readout address registers
+; should be done at a time when we're not actively fetching
+; values from VRAM.)
+UpdRBCP.R = VActive * HBPulse * VC3 * VC2 * VC1 * VC0
+
+; Active-low load readout address signal. Goes low in order to load the
+; contents of the row begin address register into the readout address
+; register. This happens whenever VCOUNT[0..3] != 15, i.e., when
+; the next row of pixels is part of the same character row as the
+; current one.
+;
+; Controlled by VActive rather than Active for same reasons that
+; UpdRBCP is.
+/nLdRDA.R =   VActive * HBPulse * /VC3
+            + VActive * HBPulse * /VC2
+            + VActive * HBPulse * /VC1
+            + VActive * HBPulse * /VC0
+
+; Active-high increment readout address signal. Goes high in order to
+; increment the readout address register. Relative to the 2-bit (4-cycle)
+; counter, we want the counter to increment exactly when Count=1, so this
+; registered output checks for Count=0.
+IncRDA.R =   Active * /Count1 * /Count0 
 
 DESCRIPTION
 
@@ -68,6 +100,8 @@ Inputs:
   RowBA12  - current value of bit 12 of row begin address register
   VSync    - vertical sync signal (clears row begin address register bits
                when low)
+  HBPulse  - true when the horizontal sync pulse should be initiated;
+               used in this module for timing of "once per row" events
 
 Outputs:
 
