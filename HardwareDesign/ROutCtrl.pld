@@ -70,8 +70,10 @@ UpdRBCP.R = VActive * HBPulse * VC3 * VC2 * VC1 * VC0
 ; Active-high increment readout address signal. Goes high in order to
 ; increment the readout address register. Relative to the 2-bit (4-cycle)
 ; counter, we want the counter to increment exactly when Count=1, so this
-; registered output checks for Count=0.
-IncRDA.R =   Active * /Count1 * /Count0 
+; combinational output checks for Count=0. (Bear in mind that '163 counters
+; are completely synchronous, so the count enable and parallel load inputs
+; tell the chip what to do when the next positive clock edge arrives.)
+IncRDA   =   Active * /Count1 * /Count0
 
 DESCRIPTION
 
