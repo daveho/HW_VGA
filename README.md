@@ -10,7 +10,7 @@ The project will be documented as a series of youtube videos:
 
 * [Episode 01](https://youtu.be/FBDaKUfpmKo)
 
-This project was inspired by the [Wire Wrap Oddyssey](https://wirewrapodyssey.com) project.
+This project was inspired by the [Wire Wrap Odyssey](https://wirewrapodyssey.com) project.
 
 I'm using [Logisim Evolution](https://github.com/logisim-evolution/logisim-evolution) to simulate parts of the design before building the hardware.
 
