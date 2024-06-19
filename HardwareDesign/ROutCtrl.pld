@@ -2,7 +2,7 @@ GAL22V10
 ROutCtrl
 
 Clock   NRST    VActive  HBActive  HEActive  VC0     VC1    VC2    VC3   RowBA12 VSync  GND
-HBPulse Active  Count0   Count1    Phase     UpdRBCP nLdRDA IncRDA RDA12 NC      NC     VCC
+HBPulse Active  Count0   Count1    Phase     UpdRBCP nLdRDA IncRDA RDA12 NC      RATCnt VCC
 
 ; Active register.
 ; Next value should be high if
@@ -75,6 +75,23 @@ UpdRBCP.R = VActive * HBPulse * VC3 * VC2 * VC1 * VC0
 ; tell the chip what to do when the next positive clock edge arrives.)
 IncRDA   =   Active * /Count1 * /Count0
 
+; Bit A12 of the readout address. This is maintained by this GAL
+; because the three '163 counters implementing the other bits
+; only allow for a total of 12 bits (A0..A11), and it seemed excessive
+; to add a fourth '163 for a single bit. Mostly, this bit will be 0.
+; However, it transitions to 1 when the readout counter is
+; incremented while the rest of the counter is at terminal count,
+; and counting is enabled. If the readout address register is being
+; updated (i.e., initialized with the contents of the row begin
+; address register), then the current value of A12 of the row
+; begin address is copied into bit A12 of the readout address.
+RDA12.R   =   Active * /Count1 * /Count0 * RATCnt  ; set to 1 on readout address increment at terminal count
+            + /nLdRDA * RowBA12                    ; copy from RowBA12 if loading readout address from row begin address
+            + nLdRDA * /Active * RDA12             ; keep current if neither incrementing nor loading
+            + nLdRDA * Count1 * RDA12              ; keep current if neither incrementing nor loading
+            + nLdRDA * Count0 * RDA12              ; keep current if neither incrementing nor loading
+            + nLdRDA * /RATCnt * RDA12             ; keep current if neither incrementing nor loading
+
 DESCRIPTION
 
 Readout control logic.
@@ -104,6 +121,9 @@ Inputs:
                when low)
   HBPulse  - true when the horizontal sync pulse should be initiated;
                used in this module for timing of "once per row" events
+  RATCnt   - true when address bits 0..11 of the readout address register
+               are at the terminal count (all set to 1), and counting
+               is enabled
 
 Outputs:
 
