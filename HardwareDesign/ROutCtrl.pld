@@ -2,7 +2,7 @@ GAL22V10
 ROutCtrl
 
 Clock   NRST    VActive  HBActive  HEActive  VC0     VC1    VC2    VC3   RowBA12 VSync  GND
-HBPulse Active  Count0   Count1    Phase     UpdRBCP nLdRDA IncRDA RDA12 NC      RATCnt VCC
+HBPulse Active  Count0   Count1    Phase     UpdRBCP nLdRDA IncRDA RDA12 nRBClr  RATCnt VCC
 
 ; Active register.
 ; Next value should be high if
@@ -91,6 +91,11 @@ RDA12.R   =   Active * /Count1 * /Count0 * RATCnt  ; set to 1 on readout address
             + nLdRDA * Count1 * RDA12              ; keep current if neither incrementing nor loading
             + nLdRDA * Count0 * RDA12              ; keep current if neither incrementing nor loading
             + nLdRDA * /RATCnt * RDA12             ; keep current if neither incrementing nor loading
+
+; Clear the row begin register if either
+;   -RST is asserted, or
+;   VSync is low
+nRBClr.R  = NRST * VSync
 
 DESCRIPTION
 
