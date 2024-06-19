@@ -3038,9 +3038,6 @@ e 6*8 c8 28 18 8 5*0 b8
     <comp lib="0" loc="(1020,160)" name="Tunnel">
       <a name="label" val="ReadoutTCnt"/>
     </comp>
-    <comp lib="0" loc="(1090,280)" name="Tunnel">
-      <a name="label" val="ReadoutA12"/>
-    </comp>
     <comp lib="0" loc="(1200,970)" name="Splitter">
       <a name="facing" val="west"/>
       <a name="fanout" val="13"/>
@@ -3154,7 +3151,7 @@ e 6*8 c8 28 18 8 5*0 b8
     <comp lib="0" loc="(640,1260)" name="Tunnel">
       <a name="label" val="IncrReadoutAddr"/>
     </comp>
-    <comp lib="0" loc="(640,1290)" name="Tunnel">
+    <comp lib="0" loc="(640,1320)" name="Tunnel">
       <a name="label" val="ReadoutA12"/>
     </comp>
     <comp lib="0" loc="(710,1130)" name="Pin">
@@ -3203,6 +3200,7 @@ e 6*8 c8 28 18 8 5*0 b8
     <wire from="(1000,10)" to="(1230,10)"/>
     <wire from="(1010,1090)" to="(1180,1090)"/>
     <wire from="(1010,620)" to="(1010,670)"/>
+    <wire from="(1010,620)" to="(1140,620)"/>
     <wire from="(1010,750)" to="(1010,1090)"/>
     <wire from="(1030,640)" to="(1030,670)"/>
     <wire from="(1030,640)" to="(1130,640)"/>
@@ -3213,6 +3211,9 @@ e 6*8 c8 28 18 8 5*0 b8
     <wire from="(1100,510)" to="(1100,1210)"/>
     <wire from="(1130,640)" to="(1130,930)"/>
     <wire from="(1130,930)" to="(1310,930)"/>
+    <wire from="(1140,1100)" to="(1140,1290)"/>
+    <wire from="(1140,1100)" to="(1180,1100)"/>
+    <wire from="(1140,620)" to="(1140,1100)"/>
     <wire from="(1200,970)" to="(1230,970)"/>
     <wire from="(1230,10)" to="(1230,970)"/>
     <wire from="(1230,970)" to="(1230,1370)"/>
@@ -3353,7 +3354,9 @@ e 6*8 c8 28 18 8 5*0 b8
     <wire from="(610,1250)" to="(610,1260)"/>
     <wire from="(610,1260)" to="(640,1260)"/>
     <wire from="(610,1270)" to="(610,1290)"/>
-    <wire from="(610,1290)" to="(640,1290)"/>
+    <wire from="(610,1290)" to="(1140,1290)"/>
+    <wire from="(610,1290)" to="(610,1320)"/>
+    <wire from="(610,1320)" to="(640,1320)"/>
     <wire from="(610,650)" to="(610,670)"/>
     <wire from="(610,650)" to="(680,650)"/>
     <wire from="(610,750)" to="(610,1010)"/>
@@ -3418,9 +3421,6 @@ e 6*8 c8 28 18 8 5*0 b8
     <wire from="(910,620)" to="(910,670)"/>
     <wire from="(910,620)" to="(930,620)"/>
     <wire from="(910,750)" to="(910,1060)"/>
-    <wire from="(920,140)" to="(920,280)"/>
-    <wire from="(920,140)" to="(980,140)"/>
-    <wire from="(920,280)" to="(1090,280)"/>
     <wire from="(930,1070)" to="(1180,1070)"/>
     <wire from="(930,620)" to="(930,670)"/>
     <wire from="(930,620)" to="(990,620)"/>
@@ -3430,7 +3430,6 @@ e 6*8 c8 28 18 8 5*0 b8
     <wire from="(970,750)" to="(970,910)"/>
     <wire from="(970,910)" to="(1310,910)"/>
     <wire from="(990,1080)" to="(1180,1080)"/>
-    <wire from="(990,620)" to="(1010,620)"/>
     <wire from="(990,620)" to="(990,670)"/>
     <wire from="(990,750)" to="(990,1080)"/>
   </circuit>
