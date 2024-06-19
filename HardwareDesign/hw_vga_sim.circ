@@ -15,7 +15,6 @@
     </tool>
     <tool name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="width" val="13"/>
     </tool>
     <tool name="Constant">
       <a name="value" val="0x0"/>
@@ -207,6 +206,9 @@
       <a name="facing" val="east"/>
       <a name="label" val="nRST"/>
     </comp>
+    <comp lib="0" loc="(550,580)" name="Tunnel">
+      <a name="label" val="VSync"/>
+    </comp>
     <comp lib="0" loc="(580,730)" name="Tunnel">
       <a name="label" val="VActive"/>
     </comp>
@@ -269,6 +271,10 @@
       <a name="facing" val="east"/>
       <a name="label" val="VCOUNT_OUT"/>
       <a name="width" val="12"/>
+    </comp>
+    <comp lib="0" loc="(840,620)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="VSync"/>
     </comp>
     <comp lib="0" loc="(840,650)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -757,11 +763,14 @@ e 6*8 c8 28 18 8 5*0 b8
     <wire from="(340,390)" to="(340,400)"/>
     <wire from="(340,390)" to="(360,390)"/>
     <wire from="(500,630)" to="(540,630)"/>
-    <wire from="(500,650)" to="(540,650)"/>
+    <wire from="(500,650)" to="(520,650)"/>
     <wire from="(500,670)" to="(540,670)"/>
     <wire from="(500,690)" to="(540,690)"/>
     <wire from="(500,710)" to="(540,710)"/>
     <wire from="(500,730)" to="(580,730)"/>
+    <wire from="(520,580)" to="(520,650)"/>
+    <wire from="(520,580)" to="(550,580)"/>
+    <wire from="(520,650)" to="(540,650)"/>
     <wire from="(580,330)" to="(640,330)"/>
     <wire from="(580,350)" to="(650,350)"/>
     <wire from="(580,370)" to="(670,370)"/>
@@ -810,6 +819,7 @@ e 6*8 c8 28 18 8 5*0 b8
     <wire from="(80,30)" to="(140,30)"/>
     <wire from="(80,80)" to="(140,80)"/>
     <wire from="(820,850)" to="(850,850)"/>
+    <wire from="(840,620)" to="(870,620)"/>
     <wire from="(840,650)" to="(850,650)"/>
     <wire from="(840,680)" to="(850,680)"/>
     <wire from="(840,710)" to="(930,710)"/>
@@ -822,6 +832,8 @@ e 6*8 c8 28 18 8 5*0 b8
     <wire from="(850,800)" to="(870,800)"/>
     <wire from="(860,730)" to="(860,740)"/>
     <wire from="(860,730)" to="(930,730)"/>
+    <wire from="(870,620)" to="(870,650)"/>
+    <wire from="(870,650)" to="(930,650)"/>
     <wire from="(870,750)" to="(870,770)"/>
     <wire from="(870,750)" to="(930,750)"/>
     <wire from="(870,790)" to="(870,800)"/>
