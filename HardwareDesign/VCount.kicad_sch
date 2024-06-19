@@ -3508,10 +3508,6 @@
 		(uuid "993e71ab-0691-4136-bcab-8391af51620e")
 	)
 	(no_connect
-		(at 241.3 99.06)
-		(uuid "b3cd15b4-3ce6-4b91-b744-f98ec41e6975")
-	)
-	(no_connect
 		(at 241.3 96.52)
 		(uuid "cd5cd1e1-fcae-47a2-85ea-18fb42d0ad60")
 	)
@@ -4401,7 +4397,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 101.6) (xy 260.35 101.6)
+			(xy 241.3 101.6) (xy 251.46 101.6)
 		)
 		(stroke
 			(width 0)
@@ -5028,6 +5024,16 @@
 			(type default)
 		)
 		(uuid "63bdc999-5ebf-4609-89ab-a9090bde2734")
+	)
+	(wire
+		(pts
+			(xy 241.3 99.06) (xy 251.46 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63e38f70-943a-4042-b65c-25e3c354d126")
 	)
 	(wire
 		(pts
@@ -6485,17 +6491,6 @@
 		)
 		(uuid "3c0af3d5-9a9f-41eb-8a3f-726cf751945c")
 	)
-	(label "VCOUNT_END"
-		(at 243.84 101.6 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "40ad7124-66e6-4698-9928-e0ec5264aa91")
-	)
 	(label "InitVC2"
 		(at 26.67 76.2 0)
 		(fields_autoplaced yes)
@@ -7104,6 +7099,30 @@
 			(justify left)
 		)
 		(uuid "ba53caf5-3019-45c7-aed2-89e79d5d59d8")
+	)
+	(hierarchical_label "VCOUNT_END"
+		(shape output)
+		(at 251.46 101.6 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c47cfb37-d6a6-4211-bf19-ae85bf01ccff")
+	)
+	(hierarchical_label "VEndActive"
+		(shape output)
+		(at 251.46 99.06 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c4c19256-4fd3-4965-8f62-215dec0738f6")
 	)
 	(hierarchical_label "VCOUNT_ZERO"
 		(shape output)

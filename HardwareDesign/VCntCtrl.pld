@@ -1,8 +1,8 @@
 GAL22V10
 VCntCtrl
 
-VC0    VC1    VC2      VC3      VC4     VC5   VC6    VC7   VC8   VC9   HCEND GND
-VCIncr VCZERO NVCCLR PulseBeg PulseEnd VVisEnd VCEND NC    NC    NC    NC    VCC
+VC0    VC1    VC2      VC3      VC4     VC5   VC6    VC7      VC8   VC9   HCEND GND
+VCIncr VCZERO NVCCLR PulseBeg PulseEnd VVisEnd VCEND VEActive NC    NC    NC    VCC
 
 ; VCCOUNT_END asserted when VCOUNT=524 (binary 1000001100)
 VCEND    = VC9 * /VC8 * /VC7 * /VC6 * /VC5 * /VC4 * VC3 * VC2 * /VC1 * /VC0
