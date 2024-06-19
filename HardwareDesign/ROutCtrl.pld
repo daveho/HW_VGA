@@ -147,5 +147,7 @@ Outputs:
   IncRDA   - a high value indicates that the readout address should be
                incremented
   RDA12    - thirteenth bit (A12) of the readout address
+  nRBClr   - driven low to clear the row begin address register
+               (either during reset or during a VSync pulse)
 
 vim:ft=text:
