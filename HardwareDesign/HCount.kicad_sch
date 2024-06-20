@@ -1695,10 +1695,6 @@
 		(uuid "fd3588f5-8b8e-4757-8b1a-4d315941959a")
 	)
 	(no_connect
-		(at 234.95 110.49)
-		(uuid "0bf1894d-6cfb-43f4-ac16-efa94458a0b0")
-	)
-	(no_connect
 		(at 234.95 105.41)
 		(uuid "132f832b-9618-4faf-8f92-6ad92af9a15a")
 	)
@@ -1709,10 +1705,6 @@
 	(no_connect
 		(at 234.95 107.95)
 		(uuid "59bc67a5-ee02-4bc4-8718-00bf96313bd2")
-	)
-	(no_connect
-		(at 234.95 113.03)
-		(uuid "e98fd64c-0b13-48f2-83cb-e69ddea37362")
 	)
 	(bus_entry
 		(at 181.61 44.45)
@@ -2584,6 +2576,16 @@
 	)
 	(wire
 		(pts
+			(xy 234.95 110.49) (xy 250.19 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "517a8d96-3994-4047-827e-43bc47776306")
+	)
+	(wire
+		(pts
 			(xy 35.56 151.13) (xy 35.56 121.92)
 		)
 		(stroke
@@ -3261,6 +3263,16 @@
 			(type default)
 		)
 		(uuid "b3b70aac-4292-4035-8c61-eba41cbe93f8")
+	)
+	(wire
+		(pts
+			(xy 234.95 113.03) (xy 250.19 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b57f663d-475b-48ae-91c9-fbe0d13815b4")
 	)
 	(wire
 		(pts
@@ -4175,6 +4187,18 @@
 		)
 		(uuid "8fad4f98-4fd3-4333-bafa-2d5445c85161")
 	)
+	(hierarchical_label "HEndActive"
+		(shape output)
+		(at 250.19 110.49 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9645914a-5f50-4d56-85b6-f47cabad947c")
+	)
 	(hierarchical_label "HC0"
 		(shape output)
 		(at 196.85 41.91 0)
@@ -4210,6 +4234,18 @@
 			(justify left)
 		)
 		(uuid "ce58c33f-960e-42b5-bfdd-b1da81897981")
+	)
+	(hierarchical_label "HBeginActive"
+		(shape output)
+		(at 250.19 113.03 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d46357a3-04bf-437c-823c-46b978e971c7")
 	)
 	(hierarchical_label "PulseBegin"
 		(shape output)
