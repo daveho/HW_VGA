@@ -5371,6 +5371,17 @@
 		)
 		(uuid "835b5251-fd80-4712-8ed2-9454ff44d933")
 	)
+	(label "RowBeginA12"
+		(at 35.56 67.31 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "837cdfc6-6f29-4236-90af-1c3a86aa83b9")
+	)
 	(label "RST"
 		(at 35.56 46.99 0)
 		(fields_autoplaced yes)
@@ -6037,18 +6048,6 @@
 			(justify left)
 		)
 		(uuid "2cf474e1-6c17-4635-83e4-49b8509cfcf8")
-	)
-	(hierarchical_label "RowBeginA12"
-		(shape input)
-		(at 33.02 67.31 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "330448c9-8b46-44b6-aa04-7981f8778f37")
 	)
 	(hierarchical_label "CLK"
 		(shape input)
