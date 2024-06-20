@@ -1,63 +1,48 @@
 GAL22V10
 ShiftReg
 
-Clock NRST   D0  D1  D2  D3  D4  D5  D6  D7  NPL  GND
-NOE   NShift Q0  Q1  Q2  Q3  Q4  Q5  Q6  Q7  NC   VCC
+Clock  NRST D0  D1  D2  D3  D4  D5  D6  D7  NPL  GND
+NShift Q0   Q1  Q2  Q3  Q4  Q5  Q6  Q7  NC  NC   VCC
 
 Q7.R =   NRST * /NPL * D7
        + NRST * NPL * /NShift * Q6
        + NRST * NPL * NShift * Q7
 
-Q7.E = /NOE
-
 Q6.R =   NRST * /NPL * D6
        + NRST * NPL * /NShift * Q5
        + NRST * NPL * NShift * Q6
-
-Q6.E = /NOE
 
 Q5.R =   NRST * /NPL * D5
        + NRST * NPL * /NShift * Q4
        + NRST * NPL * NShift * Q5
 
-Q5.E = /NOE
-
 Q4.R =   NRST * /NPL * D4
        + NRST * NPL * /NShift * Q3
        + NRST * NPL * NShift * Q4
-
-Q4.E = /NOE
 
 Q3.R =   NRST * /NPL * D3
        + NRST * NPL * /NShift * Q2
        + NRST * NPL * NShift * Q3
 
-Q3.E = /NOE
-
 Q2.R =   NRST * /NPL * D2
        + NRST * NPL * /NShift * Q1
        + NRST * NPL * NShift * Q2
-
-Q2.E = /NOE
 
 Q1.R =   NRST * /NPL * D1
        + NRST * NPL * /NShift * Q0
        + NRST * NPL * NShift * Q1
 
-Q1.E = /NOE
-
 ; Note when /NShift is asserted, a 0 is shifted into Q0.
 Q0.R =   NRST * /NPL * D0
        + NRST * NPL * NShift * Q0
 
-Q0.E = /NOE
-
 DESCRIPTION
 
 8 bit synchronous shift register with parallel load.
-I was originally planning to use a 7HCT166, but I'm a bit
+I was originally planning to use a 74HCT166, but I'm a bit
 concerned it won't be stable when clocked at 25.175 MHz
-(the 640x480 VGA dot clock frequency.)
+(the 640x480 VGA dot clock frequency.) A 74ACT166 would
+be perfect, but doesn't seem to be widely available.
 
 A 25 ns GAL22V10 (the slowest speed grade) should in theory be
 good to 40 MHz.
