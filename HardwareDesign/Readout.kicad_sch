@@ -4964,17 +4964,6 @@
 		)
 		(uuid faeb4917-2c63-44ed-bda0-617c4964f5e6)
 	)
-	(text "Positive horizontal timing pulses:\n\nHActiveBegin: when memory fetch/raster activity should begin\nHActiveEnd: when memory fetch/raster activity should end\nHNextByte: when the next byte of vmem should be fetched\nHUpdateReadoutAddr: when the readout address should be updated\n  (update to row begin address, unless a new row is about\n  to start)\n\nNote that no memory fetch or raster activity happens when\nVVis is not asserted"
-		(exclude_from_sim no)
-		(at 26.67 88.392 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "1dfcd495-6dea-4534-bb86-d5e9509e8f00")
-	)
 	(text "Readout terminal count goes to\nGAL since it maintains the\n13th bit (ReadoutA12) of the\nreadout address."
 		(exclude_from_sim no)
 		(at 228.854 156.718 0)
