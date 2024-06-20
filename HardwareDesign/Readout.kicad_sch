@@ -4986,6 +4986,16 @@
 		)
 		(uuid "5ddfad30-d0e4-498f-bcf1-c47e509aafd1")
 	)
+	(text "Logic is defined in\nROutCtrl.pld"
+		(exclude_from_sim no)
+		(at 79.248 24.13 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a04e1f84-3f15-4dd3-b66e-fa2fe25945b1")
+	)
 	(text "Row begin address register"
 		(exclude_from_sim no)
 		(at 139.7 93.726 0)
