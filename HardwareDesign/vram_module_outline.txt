@@ -1,4 +1,4 @@
-VRAM module outline
+Now let's take a look at the VRAM module.
 
 The main idea of the VRAM module is that dual port static RAM works
 more or less the same way as "normal" asynchronous single-port static RAM.
