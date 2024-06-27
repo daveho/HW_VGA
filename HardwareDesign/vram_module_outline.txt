@@ -42,7 +42,7 @@ access is a read or write. Based on this information, and the BankA12 signal
 (which determines which VRAM chip is being accessed), the GAL generates
 control signals (read/write, chip select, output enable) as appropriate.
 
-On the display controller side, the VRAM module is even simpler. The
+On the display controller side, the VRAM interface is even simpler. The
 read/write input is tied to VCC, meaning that data is always read from
 the VRAM, never written. (This makes sense because only the host system
 should ever write data to VRAM.) The ReadoutA12 signal, and its inversion
