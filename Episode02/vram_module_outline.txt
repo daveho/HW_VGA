@@ -35,7 +35,8 @@ The theory of operation of the VRAM module is fairly straightforward.
 
 On the host side, the VRAM just looks like 2KB of memory in the window
 $8800-$8FFF. Writing to the bank register, which is mapped at address
-$80E0, chooses which 2K VRAM bank the host can access. The GAL uses the
+$80E0, chooses which 2K VRAM bank the host can access. >>The upper 4 bits
+of the bank register are used to select a font from the font ROM.<< The GAL uses the
 upper 5 bits of the host address to determine when the VRAM window is being
 accessed. It uses the host read and write strobes to determine whether an
 access is a read or write. Based on this information, and the BankA12 signal
