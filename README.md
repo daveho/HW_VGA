@@ -4,7 +4,7 @@
 
 This repository documents my attempt to implement a VGA text mode using logic chips and GAL devices for my [8-bit computer project](https://github.com/daveho/DIY8bit).
 
-As of the current time (end of May 2024) the hardware can produce a valid 640x480 VGA video signal and display a solid color.
+As of the current time (end of June 2024) the hardware can produce a valid 640x480 VGA video signal and display a solid color, and 8KB of video memory has been implemented.
 
 The project will be documented as a series of youtube videos:
 
