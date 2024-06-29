@@ -4,7 +4,7 @@ The main idea of the VRAM module is that dual port static RAM works
 more or less the same way as "normal" asynchronous single-port static RAM.
 The only difference is that there are two independent interfaces to the memory,
 consisting of an address bus, data bus, and control signals (chip select,
-read/write, output enable.) One interface is used by the host system, the other
+read/write, and output enable.) One interface is used by the host system, the other
 by the display controller.
 
 The VRAM module has four ICS:
