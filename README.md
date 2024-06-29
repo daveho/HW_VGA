@@ -6,12 +6,12 @@ This repository documents my attempt to implement a VGA text mode using logic ch
 
 As of the current time (end of June 2024) the hardware can produce a valid 640x480 VGA video signal and display a solid color, and 8KB of video memory has been implemented.
 
-The project will be documented as a series of youtube videos:
+The project is being documented as a series of youtube videos:
 
 Video | Topic(s) | Supporting materials
 ----- | -------- |--------------------
 [Episode 01](https://youtu.be/FBDaKUfpmKo) | Sync gen and pixel output | [Episode01](Episode01)
-Episode 02 | VRAM | [Episode02](Episode02)
+[Episode 02](https://youtu.be/wY-jgFELOBk) | VRAM | [Episode02](Episode02)
 
 This project was inspired by the [Wire Wrap Odyssey](https://wirewrapodyssey.com) project.
 
