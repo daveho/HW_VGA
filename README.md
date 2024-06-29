@@ -8,10 +8,10 @@ As of the current time (end of May 2024) the hardware can produce a valid 640x48
 
 The project will be documented as a series of youtube videos:
 
-Video | Supporting materials
------ | --------------------
-[Episode 01](https://youtu.be/FBDaKUfpmKo) | [Episode01](Episode01)
-Episode 02 | [Episode02](Episode02)
+Video | Topic(s) | Supporting materials
+----- | -------- |--------------------
+[Episode 01](https://youtu.be/FBDaKUfpmKo) | Sync gen and pixel output | [Episode01](Episode01)
+Episode 02 | VRAM | [Episode02](Episode02)
 
 This project was inspired by the [Wire Wrap Odyssey](https://wirewrapodyssey.com) project.
 
