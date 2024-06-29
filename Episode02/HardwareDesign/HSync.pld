@@ -1,0 +1,31 @@
+GAL16V8
+HSync
+
+Clock NRST  HC0   HC1   HC2   HC3   HC4   HC5   HC6   GND
+NOE   HC7   HC8   HC9   BEGIN END   NC    NC    HSYNC VCC
+
+; Sync pulse generation should begin at count 655
+; (655 in base 2 is 1010001111)
+BEGIN = NRST * HC9 * /HC8 * HC7 * /HC6 * /HC5 * /HC4 * HC3 * HC2 * HC1 * HC0
+
+; Sync pulse ends at count 751
+; (751 in base 2 is 1011101111)
+END = NRST * HC9 * /HC8 * HC7 * HC6 * HC5 * /HC4 * HC3 * HC2 * HC1 * HC0
+
+; Sync pulse is negative
+; (which means that in reset we definitely want a high output).
+; General idea:
+;   - if /NRST is asserted, next HSYNC should be high
+;   - if END is asserted, next HSYNC should be high
+;   - if neither BEGIN nor END is asserted, next HSYNC value
+;     should be the same as the current one
+HSYNC.R =   /NRST
+          + END
+          + /BEGIN * /END * HSYNC
+
+DESCRIPTION
+
+VGA 640x480 horizontal sync generation.
+HC0..HC9 represent the horizontal pixel count.
+
+; vim:ft=text:
