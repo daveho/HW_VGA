@@ -10,8 +10,8 @@ The project will be documented as a series of youtube videos:
 
 Video | Supporting materials
 ----- | --------------------
-[Episode 01](https://youtu.be/FBDaKUfpmKo) | <Episode01>
-Episode 02 | <Episode02>
+[Episode 01](https://youtu.be/FBDaKUfpmKo) | [Episode01](Episode01)
+Episode 02 | [Episode02](Episode02)
 
 This project was inspired by the [Wire Wrap Odyssey](https://wirewrapodyssey.com) project.
 
