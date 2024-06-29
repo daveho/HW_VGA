@@ -1,6 +1,6 @@
 # Hardware VGA text mode project
 
-![photo of the prototype hardware](Episode01/figures/episode01/prototype.jpg)
+![photo of the prototype hardware](Episode01/Materials/figures/episode01/prototype.jpg)
 
 This repository documents my attempt to implement a VGA text mode using logic chips and GAL devices for my [8-bit computer project](https://github.com/daveho/DIY8bit).
 
