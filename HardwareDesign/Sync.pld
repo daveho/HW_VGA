@@ -61,7 +61,10 @@ NVis     =   /HVis
 ;   - is *false* on reset (initial VCOUNT should be in the
 ;     back porch, but not on the last line of the frame)
 ;   - if -RST is NOT asserted, then
-;     * next VActive is true if HCOUNT_END & VBeginActive
+;     * next VActive is true if HCOUNT_END & VCOUNT_END
+;       (i.e., both HCOUNT and VCOUNT are at their terminal count,
+;       so activity should start on the next scanline, just prior
+;       to the first visible scanline)
 ;     * if VEndActive is not asserted, next VActive value should be
 ;       the same as the current one
 ;     * if VEndActive is asserted and HCOUNT_END is not asserted,
