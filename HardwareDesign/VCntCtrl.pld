@@ -22,6 +22,9 @@ VVisEnd = VC8 * VC7 * VC6 * VC5 * /VC4 * /VC3 * /VC2 * /VC1 * /VC0
 ; VCOUNT_ZERO is asserted when VCOUNT=0
 VCZERO = /VC9 * /VC8 * /VC7 * /VC6 * /VC5 * /VC4 * /VC3 * /VC2 * /VC1 * /VC0
 
+; VEndActive is asserted when VCOUNT=479 (binary 111011111)
+VEActive = VC8 * VC7 * VC6 * /VC5 * VC4 * VC3 * VC2 * VC1 * VC0
+
 DESCRIPTION
 
 Control logic for VCount module. Note that this is entirely
@@ -49,5 +52,8 @@ VVisEnd   generated active-high signal indicating when the end of
 VCEND     generated active-high VCOUNT_END signal
             (when VCOUNT=524): note that this signal
             is only used internally to this GAL
+VEActive  generated active-high signal indicating when readout
+            activity can end: this is on the last visible scanline,
+            VCOUNT=479
 
 ; vim:ft=text:
