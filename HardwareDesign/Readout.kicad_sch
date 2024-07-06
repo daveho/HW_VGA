@@ -1817,6 +1817,18 @@
 		(color 0 0 0 0)
 		(uuid "f99b4ca5-667f-4862-99de-5e9e64ee526f")
 	)
+	(no_connect
+		(at 252.73 62.23)
+		(uuid "186bb892-07ae-47e4-895e-85201d9248c8")
+	)
+	(no_connect
+		(at 252.73 57.15)
+		(uuid "447f99cc-c21b-49b5-826d-39a327398eba")
+	)
+	(no_connect
+		(at 252.73 59.69)
+		(uuid "665e25e6-7710-4039-9646-26a585eb14ac")
+	)
 	(bus_entry
 		(at 266.7 49.53)
 		(size 2.54 2.54)
@@ -1933,15 +1945,6 @@
 			(type default)
 		)
 		(uuid "368fa8b3-eef6-459b-ac88-207dee6f7f38")
-	)
-	(bus_entry
-		(at 266.7 62.23)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "381de4f3-c3ef-44d4-b0aa-9b323634c9fe")
 	)
 	(bus_entry
 		(at 31.75 139.7)
@@ -2322,15 +2325,6 @@
 		(uuid "d778fdb4-ee7c-4720-8bf0-82301b25cc92")
 	)
 	(bus_entry
-		(at 266.7 59.69)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d81c3313-584e-416a-89ca-2dfd0adbb331")
-	)
-	(bus_entry
 		(at 95.25 134.62)
 		(size 2.54 2.54)
 		(stroke
@@ -2374,15 +2368,6 @@
 			(type default)
 		)
 		(uuid "e7eae7ee-9708-4c07-9572-220df5743c06")
-	)
-	(bus_entry
-		(at 266.7 57.15)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f2fe2334-ff5e-4cd9-902d-2bce899f5f02")
 	)
 	(bus_entry
 		(at 281.94 30.48)
@@ -2729,16 +2714,6 @@
 			(type default)
 		)
 		(uuid "2201776e-22c7-42cf-abcb-c0058b951e7d")
-	)
-	(bus
-		(pts
-			(xy 269.24 62.23) (xy 269.24 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "22534e77-7236-45b9-b14d-432d508ace27")
 	)
 	(wire
 		(pts
@@ -3140,16 +3115,6 @@
 		)
 		(uuid "4828e160-9a01-4e32-a22e-277e8e6ae4f5")
 	)
-	(bus
-		(pts
-			(xy 269.24 59.69) (xy 269.24 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "494bae9c-dbc0-42cc-87f7-b079158213af")
-	)
 	(wire
 		(pts
 			(xy 33.02 46.99) (xy 60.96 46.99)
@@ -3432,16 +3397,6 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 62.23) (xy 266.7 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "67da35d8-ff90-4c5f-8c2f-b17f41df7b3a")
-	)
-	(wire
-		(pts
 			(xy 154.94 81.28) (xy 154.94 67.31)
 		)
 		(stroke
@@ -3512,7 +3467,7 @@
 	)
 	(bus
 		(pts
-			(xy 269.24 64.77) (xy 269.24 105.41)
+			(xy 269.24 57.15) (xy 269.24 105.41)
 		)
 		(stroke
 			(width 0)
@@ -4082,16 +4037,6 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 57.15) (xy 266.7 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a7207e56-7882-460b-802d-428e4107d0ae")
-	)
-	(wire
-		(pts
 			(xy 129.54 46.99) (xy 129.54 83.82)
 		)
 		(stroke
@@ -4260,16 +4205,6 @@
 		)
 		(uuid "bc5c9e8c-40ba-4b84-8aa2-957c2b057f55")
 	)
-	(bus
-		(pts
-			(xy 269.24 57.15) (xy 269.24 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bd5ddfd5-0a65-4450-9e94-5e1d1d5d33f0")
-	)
 	(wire
 		(pts
 			(xy 142.24 44.45) (xy 160.02 44.45)
@@ -4369,16 +4304,6 @@
 			(type default)
 		)
 		(uuid "c80f92b1-ce1d-4a7d-99ea-10ce5e6b87cd")
-	)
-	(wire
-		(pts
-			(xy 252.73 59.69) (xy 266.7 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c95a8819-e8df-4b2c-9232-bb90dee64536")
 	)
 	(wire
 		(pts
@@ -5216,17 +5141,6 @@
 		)
 		(uuid "42dd0910-6cbb-46c9-a1d0-eab1ecd57a48")
 	)
-	(label "RowBeginA15"
-		(at 254 62.23 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4a632d13-99d0-4ad6-a7b3-74a9efc122df")
-	)
 	(label "RowBeginA1"
 		(at 38.1 139.7 0)
 		(fields_autoplaced yes)
@@ -5325,17 +5239,6 @@
 			(justify left bottom)
 		)
 		(uuid "71bd479b-3376-4a7c-96bb-fd31a9870652")
-	)
-	(label "RowBeginA13"
-		(at 254 57.15 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "723553ef-450c-41a5-a2da-2c482726fb60")
 	)
 	(label "Count1"
 		(at 110.49 62.23 0)
@@ -5930,17 +5833,6 @@
 			(justify left bottom)
 		)
 		(uuid "f5999dcc-e935-4a56-a7f8-8da7fca9042a")
-	)
-	(label "RowBeginA14"
-		(at 254 59.69 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "f6ecdaab-8d82-4596-b3ea-4fe8618715d8")
 	)
 	(label "ReadoutA6"
 		(at 140.97 142.24 0)
