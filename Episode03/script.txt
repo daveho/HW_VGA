@@ -1,0 +1,26 @@
+The purpose of the readout module is to generate the addresses of character
+and attribute bytes so that the pixel generator can use them to generate
+pixels and colors to send to the output module.
+
+In order to understand the design of the readout module, let's first discuss
+the organization of video memory.
+
+The display controller uses the VGA 640 by 480 mode to generate a text display
+using a font with 8 by 16 characters. Dividing 640 by 8 and dividing 480 by 16
+yields a text display with 80 columns and 30 rows of characters. Each displayed
+character is represented by two bytes, one for the character and one for
+the attribute byte containing the foreground and background colors. That means
+that each row of characters requires 160 bytes of data. The total number of
+bytes of memory needed for the display is 80 times 30 times 2, which is 4800.
+This is why the VRAM module uses two 4KB dual port RAM chips rather than just 1:
+with only one 4KB RAM chip, there would not be enough room for all of the
+character and attribute information.
+
+Each row of chararacters is displayed as 16 rows of pixels. The pixels are
+rendered on the fly by fetching the appropriate bytes of character and attribute
+information at the exact times they are needed by the pixel generator. This
+means that the addresses of the bytes fetched for each of the 16 rows of pixels
+in a character row are exactly the same each time. The only thing that
+distinguishes the pixel rows in one character row from each other is the
+low 4 bits of the vertical count, which selects the correct row of pixels
+from the representation of the character glyph in the font ROM.
