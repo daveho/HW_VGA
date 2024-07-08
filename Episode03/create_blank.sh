@@ -16,7 +16,7 @@ rm -f blank*.pdf
 
 i=1
 while [ "$i" -le "$npages" ]; do
-  convert xc:none -page Legal  blank${i}.pdf
+  convert xc:none -units PixelsPerInch -density 300 -page 1012.5x1800  blank${i}.pdf
   qpdf blank${i}.pdf blank${i}_rot.pdf --rotate=90:1-1
   i=$(expr ${i} + 1)
 done
