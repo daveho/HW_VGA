@@ -13,9 +13,9 @@ the organization of video memory.
 [06] using a font with 8 by 16 characters. Dividing 640 by 8 and dividing 480 by 16
 yields [07] a text display with 80 columns and 30 rows of characters. [08] Each displayed
 character is represented by two bytes, [09] one for the character and [10] one for
-the attribute byte containing the foreground and background colors. That means
+the attribute byte containing the foreground and background colors. [11] That means
 that each row of characters requires 160 bytes of data. The total number of
-bytes of memory needed for the display is 80 times 30 times 2, which is 4800.
+bytes of memory needed for the display is [12] 80 times 30 times 2, which is 4800.
 This is why the VRAM module uses two 4KB dual port RAM chips rather than just 1:
 with only one 4KB RAM chip, which can store only 4096 bytes of data,
 there would not be enough room for all of the character and attribute information.
