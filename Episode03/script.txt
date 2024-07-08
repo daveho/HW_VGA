@@ -1,8 +1,8 @@
-Since we're going to describe design and operation of the Readout module
+[01] Since we're going to describe design and operation of the Readout module
 in some detail, let's take a page from CuriousMarc and enjoy some elevator
 music.
 
-The purpose of the Readout module is to generate the addresses of character
+[02] The purpose of the Readout module is to [03] generate the addresses of character
 and attribute bytes so that the pixel generator can use them to generate
 pixels and colors to send to the output module.
 
