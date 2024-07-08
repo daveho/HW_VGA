@@ -37,3 +37,49 @@ and each row is rendered by fetching the bytes at addresses 160 through 319.
 The third character row requires fetching bytes starting at address 320,
 and in general, the memory fetches for character row i start at address
 160 × i.
+
+The Readout module employs a relatively simple strategy for generating the
+video memory addresses for each pixel row. There are two registers, the
+*row begin address register* and the *readout address register*. The row
+begin address register, as the name suggests, keeps track of the address
+where memory fetches should start for the current row of pixels. The readout
+address register generates the address of the next data byte that needs to
+fetched from video memory.
+
+For every row of pixels in a character row other than the first one, before
+starting to fetch memory for that row of pixels, the Readout module will
+copy the address in the row begin address register to the readout address
+register. This ensures that the last 15 pixel rows in a character row are
+fetched from the correct range of video memory addresses.
+
+Before rendering the first row of pixels in a character row, the current
+value in the readout address register is copied to the row begin address
+register. The idea here is that after fetching the memory address for
+the final pixel row in the previous character row, the readout address
+register will naturally contain the video memory address of the first
+byte that should be fetched for the next character row. For example,
+after fetching bytes 0 through 159 in order to render a row of pixels
+for the first character row, the readout address register will contain
+the value 160, which is the correct start address for fetching bytes
+for the second character row.
+
+The row begin register has two control signals. The clear signal, when
+asserted, causes the value in the register to be set to 0. This happens
+before rendering of a frame starts. The load signal, when asserted, causes
+the contents of the readout address register to be copied into the
+row begin address register. This means that the data outputs of the
+readout address register are connected to the data inputs of the
+row begin address register.
+
+The readout address register has two control signals. The increment
+signal, when asserted, causes the current value of the register to be
+incremented by 1. For this reason, the readout address register is
+implemented using binary counter chips. The load signal, when asserted,
+causes the contents of the row begin address register to be copied into
+the readout address register. This means that the outputs of the row begin
+address register are connected to the inputs of the readout address
+register.
+
+The outputs of the readout address register are sent to the VRAM module,
+so in general, the data outputs on the display controller side of the VRAM
+module will reflect whatever data byte the Readout module wants to fetch.
