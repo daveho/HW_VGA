@@ -1,3 +1,7 @@
+Since we're going to describe design and operation of the Readout module
+in some detail, let's take a page from CuriousMarc and enjoy some elevator
+music.
+
 The purpose of the Readout module is to generate the addresses of character
 and attribute bytes so that the pixel generator can use them to generate
 pixels and colors to send to the output module.
@@ -100,3 +104,56 @@ from the VCount module, which allows the GAL to know which pixel row in the
 current character row is being rendered, which as we mentioned earlier,
 determines the direction of data transfer between the row begin address
 register and the readout address register.
+
+Now let's return to the horizontal activity timing. As we mentioned, its
+purpose is to make sure that data values are fetched from video memory at the
+exact times that the pixel generator needs them. A horizontal scanline consists
+of 800 clock cycles. The visible part of a scanline occurs bettween clocks
+0 and 639. The horizontal sync pulse begins at clock 655, and ends at
+clock 751. Horizontal activity --- meaning fetching data bytes from video
+memory and rendering them as pixels --- must start before the beginning
+of the scanline, in order that a block of 8 pixels and color information can
+sent to the pixel generator at exactly clock 0 of the pixel row being
+rendered. Horizontal activity thus begins at time 791, 9 clock cycles before
+the first visible pixel in the next line is rendered. 9 cycles are needed
+because each byte fetched from video memory requires 4 cycles, for a total
+of 8 cycles, and because the control signals are registered outputs,
+we need to initiate them one cycle early. Horizontal activity ends
+at clock 633, just before the end of the visible part of the scanline.
+At this point, all of the data for the scanline has been fetched,
+and the readout address register has been incremented 160 times.
+
+Now, let's consider how bytes of data are fetched from video memory.
+The GAL implements a 3 bit binary counter which counts from 0 to 7,
+then repeats. At counts 1 and 5, the readout address register is incremented.
+These times are the beginning of the memory fetches for character data and
+attribute data, respectively. Character data is fetched before attribute
+data because it needs to be fed to the font ROM in order to select a row
+of pixels from the correct glyph, which requires additional time.
+At count 4, the fetched character data is clocked into a character
+register, and at time 0, the fetched attribute data is clocked into an
+attribute register. Because there are three clock cycles between the
+address increment and clocking the data from video memory into a register,
+and because clock cycles are about 39.7 ns, that means that the VRAM
+module has about 119 ns to yield a byte of data, although incrementing
+a counter is not instantaneous, and we need to meet the setup requirements
+for the registers in which the data will be saved, so in reality we
+need the data to appear within 100 ns or so. The IDT7314 chips I
+am using have an access time of 70 ns, which should meet this requirement
+comfortably.
+
+This cadence --- increment, commit data to a register, increment, commit data
+to a register --- continues until the horizontal activity period ends. As long
+as we deliver the first character and attribute pair in a scanline at the correct
+time, we are guaranteed to deliver all of the character/attribute pairs at the
+correct time.
+
+If you are thinking about this scheme carefully, you may have noticed a problem.
+We increment the readout address at count 1, prior to committing the first byte
+of character byte to a register. If the row begin register is reset to 0 before
+the frame starts, this would suggest that the first character byte would be
+fetched from address 1 rather than address 0. To avoid this problem, we actually
+start horizontal activity at time 793 rather than 791, and start the count at
+2 rather than 0. This effectively skips the first increment --- the one we
+don't want --- and allows the first character to be fetched at address 0.
+
