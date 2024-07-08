@@ -1,8 +1,8 @@
-The purpose of the readout module is to generate the addresses of character
+The purpose of the Readout module is to generate the addresses of character
 and attribute bytes so that the pixel generator can use them to generate
 pixels and colors to send to the output module.
 
-In order to understand the design of the readout module, let's first discuss
+In order to understand the design of the Readout module, let's first discuss
 the organization of video memory.
 
 The display controller uses the VGA 640 by 480 mode to generate a text display
@@ -13,8 +13,8 @@ the attribute byte containing the foreground and background colors. That means
 that each row of characters requires 160 bytes of data. The total number of
 bytes of memory needed for the display is 80 times 30 times 2, which is 4800.
 This is why the VRAM module uses two 4KB dual port RAM chips rather than just 1:
-with only one 4KB RAM chip, there would not be enough room for all of the
-character and attribute information.
+with only one 4KB RAM chip, which can store only 4096 bytes of data,
+there would not be enough room for all of the character and attribute information.
 
 Each row of chararacters is displayed as 16 rows of pixels. The pixels are
 rendered on the fly by fetching the appropriate bytes of character and attribute
@@ -24,3 +24,16 @@ in a character row are exactly the same each time. The only thing that
 distinguishes the pixel rows in one character row from each other is the
 low 4 bits of the vertical count, which selects the correct row of pixels
 from the representation of the character glyph in the font ROM.
+
+Now that we know how video memory is organized, we can appreciate the
+essential function of the Readout module. It needs to be able to generate the
+correct sequence of video memory addresses for each row of pixels.
+It should start at address 0 in video memory for each pixel row in the first
+row of characters. Each row of pixels in the first character row is rendered
+by fetching the bytes at video memory addresses 0 through 159. After each
+pixel row in the first character row has been displayed, the start address
+for each pixel row in the second character row should start at address 160,
+and each row is rendered by fetching the bytes at addresses 160 through 319.
+The third character row requires fetching bytes starting at address 320,
+and in general, the memory fetches for character row i start at address
+160 × i.
