@@ -3,15 +3,15 @@ in some detail, let's take a page from CuriousMarc and enjoy some elevator
 music.
 
 [02] The purpose of the Readout module is to [03] generate the addresses of character
-and attribute bytes so that the pixel generator can use them to generate
+and attribute bytes so that [04] the pixel generator can use them to generate
 pixels and colors to send to the output module.
 
-In order to understand the design of the Readout module, let's first discuss
+[01] In order to understand the design of the Readout module, let's first discuss
 the organization of video memory.
 
-The display controller uses the VGA 640 by 480 mode to generate a text display
-using a font with 8 by 16 characters. Dividing 640 by 8 and dividing 480 by 16
-yields a text display with 80 columns and 30 rows of characters. Each displayed
+[05] The display controller uses the VGA 640 by 480 mode to generate a text display
+[06] using a font with 8 by 16 characters. Dividing 640 by 8 and dividing 480 by 16
+yields [07] a text display with 80 columns and 30 rows of characters. [08] Each displayed
 character is represented by two bytes, one for the character and one for
 the attribute byte containing the foreground and background colors. That means
 that each row of characters requires 160 bytes of data. The total number of
