@@ -174,3 +174,27 @@ vertical count, we would be guaranteed to render the wrong block of part of
 the character glyph for the first column of characters displayed. Looking
 back at my failed attempts to implement a VGA text mode using an FPGA, I'm
 fairly certain I made exactly that mistake, so I'm correcting it in this project.
+
+Now that we have a somewhat detailed understanding of what the Readout module
+is trying to do, let's take a look at the schematic. It's fairly straightforward.
+The row begin address register is implemented as two 74ACT273 devices.
+I chose the 74ACT273 because it can store 8 bits, and it has an input that
+allows the contents of the register to be cleared. The readout address
+register is implemented as three 74ACT163 devices, which you might recall
+from Episode 01 is a 4-bit synchronous binary counter. If you're thinking
+carefully, you might realize that we have 8 KB of video memory, and 8 KB
+is 2^13, so we need 13 address bits. So, how do we represent a 13 bit VRAM
+address using 3 4-bit counters? The answer is that the GAL device actually
+maintains the high bit of the readout address register. I could have added
+a fourth 74ACT163 to implement the 13th readout address bit in a more "natural"
+way, and in general I'm very much in favor of brute force over cleverness,
+but in this case I just couldn't justify adding another chip just to implement
+a 1 bit counter. It actually didn't end up being too complicated to have the
+GAL implement the high readout address bit: it just needs to keep track of
+when the readout address is incremented or loaded, and update a registered
+output appropriately.
+
+I won't cover the equations programmed into the Readout module GAL in this video,
+but you can follow the link in the video description to check them out on your
+own if you're interested. You can also have a look at the simulation implemented
+in Logisim Evolution, which has logic circuits equivalent to the GAL design.
