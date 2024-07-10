@@ -20,11 +20,12 @@ This is why the VRAM module uses two 4KB dual port RAM chips rather than just 1:
 with only one 4KB RAM chip, which can store only 4096 bytes of data,
 there would not be enough room for all of the character and attribute information.
 
-Each row of chararacters is displayed as 16 rows of pixels. The pixels are
-rendered on the fly by fetching the appropriate bytes of character and attribute
-information at the exact times they are needed by the pixel generator. This
-means that the addresses of the bytes fetched for each of the 16 rows of pixels
-in a character row are exactly the same each time. The only thing that
+[13] Each row of chararacters is displayed as [14] 16 rows of pixels. [15] The pixels are
+rendered on the fly [16] by fetching the appropriate bytes of character and attribute
+information at the exact times they are needed by the pixel generator, with each
+block of 8 pixels being rendered from two bytes of data, the character and
+the attribute. [17] So, the addresses of the bytes fetched for each of the 16 rows of pixels
+in one character row are exactly the same each time. [18] The only thing that
 distinguishes the pixel rows in one character row from each other is the
 low 4 bits of the vertical count, which selects the correct row of pixels
 from the representation of the character glyph in the font ROM.
