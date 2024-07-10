@@ -68,9 +68,9 @@ for the first character row, the readout address register will contain
 the value 160, [33] which is the correct start address for fetching bytes
 for the second character row.
 
-The row begin register has two control signals. The clear signal, when
-asserted, causes the value in the register to be set to 0. This happens
-before rendering of a frame starts. The load signal, when asserted, causes
+[34] The row begin register has two control signals. [35] The clear signal, when
+asserted, causes the value in the register to be set to 0. [36] This happens
+before rendering of a frame starts. [37] The load signal, when asserted, causes
 the contents of the readout address register to be copied into the
 row begin address register. This means that the data outputs of the
 readout address register are connected to the data inputs of the
