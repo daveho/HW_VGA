@@ -45,19 +45,19 @@ and [24] in general, the memory fetches for character row i start at address
 
 [01] The Readout module employs a relatively simple strategy for generating the
 video memory addresses for each pixel row. There are two registers, [25] the
-*row begin address register* and the [26] *readout address register*. The row
+*row begin address register* and the [26] *readout address register*. [27] The row
 begin address register, as the name suggests, keeps track of the address
-where memory fetches should start for the current row of pixels. The readout
+where memory fetches should start for the current row of pixels. [28] The readout
 address register generates the address of the next data byte that needs to
 fetched from video memory.
 
 For every row of pixels in a character row other than the first one, before
-starting to fetch memory for that row of pixels, the Readout module will
+starting to fetch memory for that row of pixels, [29] the Readout module will
 copy the address in the row begin address register to the readout address
 register. This ensures that the last 15 pixel rows in a character row are
 fetched from the correct range of video memory addresses.
 
-Before rendering the first row of pixels in a character row, the current
+[30] Before rendering the first row of pixels in a character row, [31] the current
 value in the readout address register is copied to the row begin address
 register. The idea here is that after fetching the memory address for
 the final pixel row in the previous character row, the readout address
