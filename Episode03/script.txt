@@ -43,9 +43,9 @@ and each row is rendered by fetching the bytes at addresses 160 through 319.
 and [24] in general, the memory fetches for character row i start at address
 160 × i.
 
-The Readout module employs a relatively simple strategy for generating the
-video memory addresses for each pixel row. There are two registers, the
-*row begin address register* and the *readout address register*. The row
+[01] The Readout module employs a relatively simple strategy for generating the
+video memory addresses for each pixel row. There are two registers, [25] the
+*row begin address register* and the [26] *readout address register*. The row
 begin address register, as the name suggests, keeps track of the address
 where memory fetches should start for the current row of pixels. The readout
 address register generates the address of the next data byte that needs to
