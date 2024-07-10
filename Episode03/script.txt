@@ -63,9 +63,9 @@ register. The idea here is that after fetching the memory address for
 the final pixel row in the previous character row, the readout address
 register will naturally contain the video memory address of the first
 byte that should be fetched for the next character row. For example,
-after fetching bytes 0 through 159 in order to render a row of pixels
+[32] after fetching bytes 0 through 159 in order to render a row of pixels
 for the first character row, the readout address register will contain
-the value 160, which is the correct start address for fetching bytes
+the value 160, [33] which is the correct start address for fetching bytes
 for the second character row.
 
 The row begin register has two control signals. The clear signal, when
