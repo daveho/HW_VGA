@@ -30,17 +30,17 @@ distinguishes the pixel rows in one character row from each other is the
 low 4 bits of the vertical count, which selects the correct row of pixels
 from the representation of the character glyph in the font ROM.
 
-Now that we know how video memory is organized, we can appreciate the
-essential function of the Readout module. It needs to be able to generate the
+[01] Now that we know how video memory is organized, we can appreciate the
+essential function of the Readout module. [19] It needs to be able to generate the
 correct sequence of video memory addresses for each row of pixels.
-It should start at address 0 in video memory for each pixel row in the first
+[20] It should start at address 0 in video memory for each pixel row in the first
 row of characters. Each row of pixels in the first character row is rendered
-by fetching the bytes at video memory addresses 0 through 159. After each
-pixel row in the first character row has been displayed, the start address
+by fetching the bytes at video memory addresses [21] 0 through 159. After each
+pixel row in the first character row has been displayed, [22] the start address
 for each pixel row in the second character row should start at address 160,
 and each row is rendered by fetching the bytes at addresses 160 through 319.
-The third character row requires fetching bytes starting at address 320,
-and in general, the memory fetches for character row i start at address
+[23] The third character row requires fetching bytes starting at address 320,
+and [24] in general, the memory fetches for character row i start at address
 160 × i.
 
 The Readout module employs a relatively simple strategy for generating the
