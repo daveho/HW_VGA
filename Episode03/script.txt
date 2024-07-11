@@ -154,7 +154,7 @@ If you are thinking about this scheme carefully, you may have noticed a problem.
 [063] We increment the readout address at count 1, prior to committing the first byte
 of character byte to a register. If the row begin register is reset to 0 before
 the frame starts, this would suggest that the first character byte would be
-fetched from address 1 rather than address 0. To avoid this problem, we actually
+fetched from address 1 rather than address 0. To avoid this problem, [064] we actually
 start horizontal activity at time 793 rather than 791, and start the count at
 2 rather than 0. This effectively skips the first increment --- the one we
 don't want --- and allows the first character to be fetched at address 0.
