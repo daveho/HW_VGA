@@ -144,14 +144,14 @@ of pixels to be read from the character ROM. I have flash memory chips
 with access times of 70 ns and 45 ns, so there should be plenty of time
 to meet the font ROM's timing requirement as well.
 
-This cadence --- increment, commit data to a register, increment, commit data
+[062] This cadence --- increment, commit data to a register, increment, commit data
 to a register --- continues until the horizontal activity period ends. As long
 as we deliver the first character and attribute pair in a scanline at the correct
 time, we are guaranteed to deliver all of the character/attribute pairs at the
 correct time.
 
 If you are thinking about this scheme carefully, you may have noticed a problem.
-We increment the readout address at count 1, prior to committing the first byte
+[063] We increment the readout address at count 1, prior to committing the first byte
 of character byte to a register. If the row begin register is reset to 0 before
 the frame starts, this would suggest that the first character byte would be
 fetched from address 1 rather than address 0. To avoid this problem, we actually
