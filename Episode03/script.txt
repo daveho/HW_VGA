@@ -70,17 +70,17 @@ for the second character row.
 
 [34] The row begin register has two control signals. [35] The clear signal, when
 asserted, causes the value in the register to be set to 0. [36] This happens
-before rendering of a frame starts. [37] The load signal, when asserted, causes
+before rendering of a frame starts. [37] The load signal, when asserted, [37a] causes
 the contents of the readout address register to be copied into the
-row begin address register. This means that the data outputs of the
-readout address register are connected to the data inputs of the
-row begin address register.
+row begin address register. This means that the outputs of the readout
+address register are connected to the inputs of the row begin address
+register.
 
-The readout address register has two control signals. The increment
+[34] The readout address register has two control signals. [38] The increment
 signal, when asserted, causes the current value of the register to be
 incremented by 1. For this reason, the readout address register is
-implemented using binary counter chips. The load signal, when asserted,
-causes the contents of the row begin address register to be copied into
+implemented using binary counter chips. [39] The load signal, when asserted,
+[39a] causes the contents of the row begin address register to be copied into
 the readout address register. This means that the outputs of the row begin
 address register are connected to the inputs of the readout address
 register.
