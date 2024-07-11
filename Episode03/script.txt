@@ -125,10 +125,10 @@ and the readout address register has been incremented 160 times.
 [056] The GAL implements a 3 bit binary counter which counts from 0 to 7,
 then repeats. [057] At counts 1 and 5, the readout address register is incremented.
 These times are the beginning of the memory fetches for character data and
-attribute data, respectively. Character data is fetched before attribute
+attribute data, respectively. [058] Character data is fetched before attribute
 data because it needs to be fed to the font ROM in order to select a row
 of pixels from the correct glyph, which requires additional time.
-At count 4, the fetched character data is clocked into a character
+[059] At count 4, the fetched character data is clocked into a character
 register, and at time 0, the fetched attribute data is clocked into an
 attribute register. Because there are three clock cycles between the
 address increment and clocking the data from video memory into a register,
