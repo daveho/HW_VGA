@@ -121,9 +121,9 @@ at clock 633, just before the end of the visible part of the scanline.
 At this point, [055] all of the data for the scanline has been fetched,
 and the readout address register has been incremented 160 times.
 
-Now, let's consider how bytes of data are fetched from video memory.
-The GAL implements a 3 bit binary counter which counts from 0 to 7,
-then repeats. At counts 1 and 5, the readout address register is incremented.
+[001] Now, let's consider how bytes of data are fetched from video memory.
+[056] The GAL implements a 3 bit binary counter which counts from 0 to 7,
+then repeats. [057] At counts 1 and 5, the readout address register is incremented.
 These times are the beginning of the memory fetches for character data and
 attribute data, respectively. Character data is fetched before attribute
 data because it needs to be fed to the font ROM in order to select a row
