@@ -85,7 +85,7 @@ the readout address register. This means that the outputs of the row begin
 address register are connected to the inputs of the readout address
 register.
 
-The outputs of the readout address register are sent to the VRAM module,
+[40] The outputs of the readout address register are sent to the VRAM module,
 so in general, the data outputs on the display controller side of the VRAM
 module will reflect whatever data byte the Readout module wants to fetch.
 
