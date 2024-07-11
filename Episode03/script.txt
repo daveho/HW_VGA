@@ -1,111 +1,111 @@
-[01] Since we're going to describe design and operation of the Readout module
+[001] Since we're going to describe design and operation of the Readout module
 in some detail, let's take a page from CuriousMarc and enjoy some elevator
 music.
 
-[02] The purpose of the Readout module is to [03] generate the addresses of character
-and attribute bytes so that [04] the pixel generator can use them to generate
+[002] The purpose of the Readout module is to [003] generate the addresses of character
+and attribute bytes so that [004] the pixel generator can use them to generate
 pixels and colors to send to the output module.
 
-[01] In order to understand the design of the Readout module, let's first discuss
+[001] In order to understand the design of the Readout module, let's first discuss
 the organization of video memory.
 
-[05] The display controller uses the VGA 640 by 480 mode to generate a text display
-[06] using a font with 8 by 16 characters. Dividing 640 by 8 and dividing 480 by 16
-yields [07] a text display with 80 columns and 30 rows of characters. [08] Each displayed
-character is represented by two bytes, [09] one for the character and [10] one for
-the attribute byte containing the foreground and background colors. [11] That means
+[005] The display controller uses the VGA 640 by 480 mode to generate a text display
+[006] using a font with 8 by 16 characters. Dividing 640 by 8 and dividing 480 by 16
+yields [007] a text display with 80 columns and 30 rows of characters. [008] Each displayed
+character is represented by two bytes, [009] one for the character and [010] one for
+the attribute byte containing the foreground and background colors. [011] That means
 that each row of characters requires 160 bytes of data. The total number of
-bytes of memory needed for the display is [12] 80 times 30 times 2, which is 4800.
+bytes of memory needed for the display is [012] 80 times 30 times 2, which is 4800.
 This is why the VRAM module uses two 4KB dual port RAM chips rather than just 1:
 with only one 4KB RAM chip, which can store only 4096 bytes of data,
 there would not be enough room for all of the character and attribute information.
 
-[13] Each row of chararacters is displayed as [14] 16 rows of pixels. [15] The pixels are
-rendered on the fly [16] by fetching the appropriate bytes of character and attribute
+[013] Each row of chararacters is displayed as [014] 16 rows of pixels. [015] The pixels are
+rendered on the fly [016] by fetching the appropriate bytes of character and attribute
 information at the exact times they are needed by the pixel generator, with each
 block of 8 pixels being rendered from two bytes of data, the character and
-the attribute. [17] So, the addresses of the bytes fetched for each of the 16 rows of pixels
-in one character row are exactly the same each time. [18] The only thing that
+the attribute. [017] So, the addresses of the bytes fetched for each of the 16 rows of pixels
+in one character row are exactly the same each time. [018] The only thing that
 distinguishes the pixel rows in one character row from each other is the
 low 4 bits of the vertical count, which selects the correct row of pixels
 from the representation of the character glyph in the font ROM.
 
-[01] Now that we know how video memory is organized, we can appreciate the
-essential function of the Readout module. [19] It needs to be able to generate the
+[001] Now that we know how video memory is organized, we can appreciate the
+essential function of the Readout module. [019] It needs to be able to generate the
 correct sequence of video memory addresses for each row of pixels.
-[20] It should start at address 0 in video memory for each pixel row in the first
+[020] It should start at address 0 in video memory for each pixel row in the first
 row of characters. Each row of pixels in the first character row is rendered
-by fetching the bytes at video memory addresses [21] 0 through 159. After each
-pixel row in the first character row has been displayed, [22] the start address
+by fetching the bytes at video memory addresses [021] 0 through 159. After each
+pixel row in the first character row has been displayed, [022] the start address
 for each pixel row in the second character row should start at address 160,
 and each row is rendered by fetching the bytes at addresses 160 through 319.
-[23] The third character row requires fetching bytes starting at address 320,
-and [24] in general, the memory fetches for character row i start at address
+[023] The third character row requires fetching bytes starting at address 320,
+and [024] in general, the memory fetches for character row i start at address
 160 × i.
 
-[01] The Readout module employs a relatively simple strategy for generating the
-video memory addresses for each pixel row. There are two registers, [25] the
-*row begin address register* and the [26] *readout address register*. [27] The row
+[001] The Readout module employs a relatively simple strategy for generating the
+video memory addresses for each pixel row. There are two registers, [025] the
+*row begin address register* and the [026] *readout address register*. [027] The row
 begin address register, as the name suggests, keeps track of the address
-where memory fetches should start for the current row of pixels. [28] The readout
+where memory fetches should start for the current row of pixels. [028] The readout
 address register generates the address of the next data byte that needs to
 fetched from video memory.
 
 For every row of pixels in a character row other than the first one, before
-starting to fetch memory for that row of pixels, [29] the Readout module will
+starting to fetch memory for that row of pixels, [029] the Readout module will
 copy the address in the row begin address register to the readout address
 register. This ensures that the last 15 pixel rows in a character row are
 fetched from the correct range of video memory addresses.
 
-[30] Before rendering the first row of pixels in a character row, [31] the current
+[030] Before rendering the first row of pixels in a character row, [031] the current
 value in the readout address register is copied to the row begin address
 register. The idea here is that after fetching the memory address for
 the final pixel row in the previous character row, the readout address
 register will naturally contain the video memory address of the first
 byte that should be fetched for the next character row. For example,
-[32] after fetching bytes 0 through 159 in order to render a row of pixels
+[032] after fetching bytes 0 through 159 in order to render a row of pixels
 for the first character row, the readout address register will contain
-the value 160, [33] which is the correct start address for fetching bytes
+the value 160, [033] which is the correct start address for fetching bytes
 for the second character row.
 
-[34] The row begin register has two control signals. [35] The clear signal, when
-asserted, causes the value in the register to be set to 0. [36] This happens
-before rendering of a frame starts. [37] The load signal, when asserted, [37a] causes
+[034] The row begin register has two control signals. [035] The clear signal, when
+asserted, causes the value in the register to be set to 0. [036] This happens
+before rendering of a frame starts. [037] The load signal, when asserted, [037a] causes
 the contents of the readout address register to be copied into the
 row begin address register. This means that the outputs of the readout
 address register are connected to the inputs of the row begin address
 register.
 
-[34] The readout address register has two control signals. [38] The increment
+[034] The readout address register has two control signals. [038] The increment
 signal, when asserted, causes the current value of the register to be
 incremented by 1. For this reason, the readout address register is
-implemented using binary counter chips. [39] The load signal, when asserted,
-[39a] causes the contents of the row begin address register to be copied into
+implemented using binary counter chips. [039] The load signal, when asserted,
+[039a] causes the contents of the row begin address register to be copied into
 the readout address register. This means that the outputs of the row begin
 address register are connected to the inputs of the readout address
 register.
 
-[40] The outputs of the readout address register are sent to the VRAM module,
+[040] The outputs of the readout address register are sent to the VRAM module,
 so in general, the data outputs on the display controller side of the VRAM
 module will reflect whatever data byte the Readout module wants to fetch.
 
-[41] The control signals for the row begin address register and readout address
-register are generated by a GAL device. The inputs to the GAL are [42] clock
-and reset, [43] the hsync pulse begin timing signal, [44] the horizontal activity
-begin and end timing signals, [45] the low 4 bits of the vertical count,
+[041] The control signals for the row begin address register and readout address
+register are generated by a GAL device. The inputs to the GAL are [042] clock
+and reset, [043] the hsync pulse begin timing signal, [044] the horizontal activity
+begin and end timing signals, [045] the low 4 bits of the vertical count,
 used to determine when data needs to be transferred between the row begin
-address and readout address registers, [46] the vertical sync signals, and
-[47] the vertical activity signal, which is used as a simple means to reset
+address and readout address registers, [046] the vertical sync signals, and
+[047] the vertical activity signal, which is used as a simple means to reset
 row begin address register before the beginning of a frame. We will talk about
-"activity" shortly, but for now, all you need to know is that [48] the horizontal
+"activity" shortly, but for now, all you need to know is that [048] the horizontal
 activity signals allow the GAL to know the precise horizontal timing it needs
 in order to fetch data bytes from video memory at exactly the times that the
-pixel generator will need them, and [49] the vertical activity signal lets the GAL
+pixel generator will need them, and [049] the vertical activity signal lets the GAL
 know on which scanlines memory fetch activity needs to occur.
 
-Now let's return to the horizontal activity timing. As we mentioned, its
+[001] Now let's return to the horizontal activity timing. As we mentioned, its
 purpose is to make sure that data values are fetched from video memory at the
-exact times that the pixel generator needs them. A horizontal scanline consists
+exact times that the pixel generator needs them. [050] A horizontal scanline consists
 of 800 clock cycles. The visible part of a scanline occurs bettween clocks
 0 and 639. The horizontal sync pulse begins at clock 655, and ends at
 clock 751. Horizontal activity --- meaning fetching data bytes from video
