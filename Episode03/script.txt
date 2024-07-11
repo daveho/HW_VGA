@@ -129,16 +129,20 @@ attribute data, respectively. [058] Character data is fetched before attribute
 data because it needs to be fed to the font ROM in order to select a row
 of pixels from the correct glyph, which requires additional time.
 [059] At count 4, the fetched character data is clocked into a character
-register, and at time 0, the fetched attribute data is clocked into an
-attribute register. Because there are three clock cycles between the
+register, and [060] at count 0, the fetched attribute data is clocked into an
+attribute register, and one row of pixels from the appropriate font glyph
+is clocked into a shift register. Because there are three clock cycles between the
 address increment and clocking the data from video memory into a register,
-and because clock cycles are about 39.7 ns, that means that the VRAM
+and because clock cycles are about 39.7 ns, [061] that means that the VRAM
 module has about 119 ns to yield a byte of data, although incrementing
 a counter is not instantaneous, and we need to meet the setup requirements
 for the registers in which the data will be saved, so in reality we
 need the data to appear within 100 ns or so. The IDT7314 chips I
 am using have an access time of 70 ns, which should meet this requirement
-comfortably.
+comfortably. Similarly, time is needed the byte containing the correct row
+of pixels to be read from the character ROM. I have flash memory chips
+with access times of 70 ns and 45 ns, so there should be plenty of time
+to meet the font ROM's timing requirement as well.
 
 This cadence --- increment, commit data to a register, increment, commit data
 to a register --- continues until the horizontal activity period ends. As long
