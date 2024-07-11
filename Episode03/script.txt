@@ -159,15 +159,15 @@ start horizontal activity at time 793 rather than 791, and start the count at
 2 rather than 0. This effectively skips the first increment --- the one we
 don't want --- and allows the first character to be fetched at address 0.
 
-Data transfer between the row begin address register and the readout address
-register occurs after horizontal activity ends, specifically at the beginning
+[065] Data transfer between the row begin address register and the readout address
+register occurs after horizontal activity ends, [066] specifically at the beginning
 of the horizontal sync pulse. There is nothing special about the choice of
 the beginning of the horizontal sync pulse: it just happens to be a convenient
-point before the beginning of the next scanline. The vertical count is
+point before the beginning of the next scanline. [067] The vertical count is
 incremented at the end of the horizontal sync pulse. You may recall in the
 last episode I mentioned that I made a hardware mod to increment the vertical
 count before the beginning of the next scanline, and we now know enough to
-understand the motivation for that change. Because horizontal activity ---
+understand the motivation for that change. [068] Because horizontal activity ---
 meaning fetching data from memory --- starts before the scanline where that
 data will be rendered into pixels, we want the vertical count to accurately
 reflect the row of pixels within the character row that will need to be
