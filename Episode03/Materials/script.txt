@@ -79,7 +79,7 @@ register.
 [034] The readout address register also has two control signals. [038] The increment
 signal, when asserted, causes the current value of the register to be
 incremented by 1. For this reason, the readout address register is
-implemented using binary counter chips. [039] ** The load signal, when asserted,
+implemented using binary counter chips. [039] The load signal, when asserted,
 [039a] causes the contents of the row begin address register to be copied into
 the readout address register. This means that the outputs of the row begin
 address register are connected to the inputs of the readout address
@@ -140,12 +140,12 @@ and because clock cycles are about 39.7 ns, [061] that means that the VRAM
 module has about 119 ns to yield a byte of data, although incrementing
 a counter is not instantaneous, and we need to meet the setup requirements
 for the registers in which the data will be saved, so in reality we
-need the data to appear within 100 ns or so. The IDT7314 chips I
+need the data to appear within 100 ns or so. The IDT7134 chips I
 am using have an access time of 70 ns, which should meet this requirement
-comfortably. Similarly, time is needed the byte containing the correct row
+comfortably. Similarly, time is needed for the byte containing the correct row
 of pixels to be read from the character ROM. I have flash memory chips
 with access times of 70 ns and 45 ns, so there should be plenty of time
-to meet the font ROM's timing requirement as well.
+to meet the font ROM's timing requirement as well. ***HERE***
 
 [062] This cadence --- increment, commit data to a register, increment, commit data
 to a register --- continues until the horizontal activity period ends. As long
