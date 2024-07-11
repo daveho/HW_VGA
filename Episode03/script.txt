@@ -108,7 +108,7 @@ purpose is to make sure that data values are fetched from video memory at the
 exact times that the pixel generator needs them. [050] A horizontal scanline consists
 of 800 clock cycles. [051] The visible part of a scanline occurs bettween clocks
 0 and 639. [052] The horizontal sync pulse begins at clock 655, and ends at
-clock 751. Horizontal activity --- meaning fetching data bytes from video
+clock 751. [053] Horizontal activity --- meaning fetching data bytes from video
 memory and rendering them as pixels --- must start before the beginning
 of the scanline, in order that a block of 8 pixels and color information can
 sent to the pixel generator at exactly clock 0 of the pixel row being
@@ -116,9 +116,9 @@ rendered. Horizontal activity thus begins at time 791, 9 clock cycles before
 the first visible pixel in the next line is rendered. 9 cycles are needed
 because each byte fetched from video memory requires 4 cycles, for a total
 of 8 cycles, and because the control signals are registered outputs,
-we need to initiate them one cycle early. Horizontal activity ends
+we need to initiate them one cycle early. [054] Horizontal activity ends
 at clock 633, just before the end of the visible part of the scanline.
-At this point, all of the data for the scanline has been fetched,
+At this point, [055] all of the data for the scanline has been fetched,
 and the readout address register has been incremented 160 times.
 
 Now, let's consider how bytes of data are fetched from video memory.
