@@ -106,8 +106,8 @@ know on which scanlines memory fetch activity needs to occur.
 [001] Now let's return to the horizontal activity timing. As we mentioned, its
 purpose is to make sure that data values are fetched from video memory at the
 exact times that the pixel generator needs them. [050] A horizontal scanline consists
-of 800 clock cycles. The visible part of a scanline occurs bettween clocks
-0 and 639. The horizontal sync pulse begins at clock 655, and ends at
+of 800 clock cycles. [051] The visible part of a scanline occurs bettween clocks
+0 and 639. [052] The horizontal sync pulse begins at clock 655, and ends at
 clock 751. Horizontal activity --- meaning fetching data bytes from video
 memory and rendering them as pixels --- must start before the beginning
 of the scanline, in order that a block of 8 pixels and color information can
