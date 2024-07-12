@@ -76,7 +76,7 @@ row begin address register. This means that the outputs of the readout
 address register are connected to the inputs of the row begin address
 register.
 
-[034] The readout address register also has two control signals. [038] The increment
+[037b] The readout address register also has two control signals. [038] The increment
 signal, when asserted, causes the current value of the register to be
 incremented by 1. For this reason, the readout address register is
 implemented using binary counter chips. [039] The load signal, when asserted,
@@ -113,7 +113,7 @@ clock 751. [053] Horizontal activity --- meaning fetching data bytes from video
 memory and rendering them as pixels --- must start before the beginning
 of the scanline, in order that a block of 8 pixels and color information can
 sent to the pixel generator at exactly clock 0 of the pixel row being
-rendered. Horizontal activity thus begins at time 791, 9 clock cycles before
+rendered. Horizontal activity thus begins [053a] at time 791, 9 clock cycles before
 the first visible pixel in the next line is rendered. 9 cycles are needed
 because each byte fetched from video memory requires 4 cycles, for a total
 of 8 cycles, and because the video signals are registered outputs,
@@ -134,7 +134,7 @@ register, and [060] at count 0, the fetched attribute data is clocked into an
 attribute register, and one row of pixels from the appropriate font glyph
 is clocked into a shift register. Note that these registers are part of
 the pixel generator module, so we will be discussing them in the next
-video. Because there are three clock cycles between the
+video. [060a] Because there are three clock cycles between the
 address increment and clocking the data from video memory into a register,
 and because clock cycles are about 39.7 ns, [061] that means that the VRAM
 module has about 119 ns to yield a byte of data, although incrementing
@@ -145,17 +145,17 @@ am using have an access time of 70 ns, which should meet this requirement
 comfortably. Similarly, time is needed for the byte containing the correct row
 of pixels to be read from the character ROM. I have flash memory chips
 with access times of 70 ns and 45 ns, so there should be plenty of time
-to meet the font ROM's timing requirement as well. ***HERE***
+to meet the font ROM's timing requirement as well.
 
 [062] This cadence --- increment, commit data to a register, increment, commit data
 to a register --- continues until the horizontal activity period ends. As long
 as we deliver the first character and attribute pair in a scanline at the correct
 time, we are guaranteed to deliver all of the character/attribute pairs at the
-correct time.
+correct times.
 
 If you are thinking about this scheme carefully, you may have noticed a problem.
-[063] We increment the readout address at count 1, prior to committing the first byte
-of character byte to a register. If the row begin register is reset to 0 before
+[063] We increment the readout address at count 1, prior to committing the first
+character byte to a register. If the row begin register is reset to 0 before
 the frame starts, this would suggest that the first character byte would be
 fetched from address 1 rather than address 0. To avoid this problem, [064] we actually
 start horizontal activity at time 793 rather than 791, and start the count at
@@ -175,31 +175,31 @@ meaning fetching data from memory --- starts before the scanline where that
 data will be rendered into pixels, we want the vertical count to accurately
 reflect the row of pixels within the character row that will need to be
 rendered. If we waited until the end of the scanline to increment the
-vertical count, we would be guaranteed to render the wrong block of part of
+vertical count, we would be guaranteed to render the wrong block of pixels in
 the character glyph for the first column of characters displayed. Looking
 back at my failed attempts to implement a VGA text mode using an FPGA, I'm
 fairly certain I made exactly that mistake, so I'm correcting it in this project.
 
-Now that we have a somewhat detailed understanding of what the Readout module
+[01] Now that we have a somewhat detailed understanding of what the Readout module
 is trying to do, let's take a look at the schematic. It's fairly straightforward.
-The row begin address register is implemented as two 74ACT273 devices.
-I chose the 74ACT273 because it can store 8 bits, and it has an input that
-allows the contents of the register to be cleared. The readout address
-register is implemented as three 74ACT163 devices, which you might recall
-from Episode 01 is a 4-bit synchronous binary counter. If you're thinking
+[02] The row begin address register is implemented as two 74ACT273 devices.
+I chose the 74ACT273 because it can store 8 bits, and [03] it has an input that
+allows the contents of the register to be cleared. [01] The readout address
+register [04] is implemented as three 74ACT163 devices. As you might recall
+from Episode 01, the 74ACT163 is a 4-bit synchronous binary counter. If you're thinking
 carefully, you might realize that we have 8 KB of video memory, and 8 KB
 is 2^13, so we need 13 address bits. So, how do we represent a 13 bit VRAM
-address using 3 4-bit counters? The answer is that the GAL device actually
+address using 3 4-bit counters? The answer is that [05] the GAL device actually
 maintains the high bit of the readout address register. I could have added
 a fourth 74ACT163 to implement the 13th readout address bit in a more "natural"
 way, and in general I'm very much in favor of brute force over cleverness,
 but in this case I just couldn't justify adding another chip just to implement
 a 1 bit counter. It actually didn't end up being too complicated to have the
 GAL implement the high readout address bit: it just needs to keep track of
-when the readout address is incremented or loaded, and update a registered
+when the readout address is [06] incremented or [07] loaded, and update a registered
 output appropriately.
 
-I won't cover the equations programmed into the Readout module GAL in this video,
+[01] I won't cover the equations programmed into the Readout module GAL in this video,
 but you can follow the link in the video description to check them out on your
 own if you're interested. You can also have a look at the simulation implemented
 in Logisim Evolution, which has logic circuits equivalent to the GAL design.
