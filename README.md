@@ -12,7 +12,7 @@ Video | Topic(s) | Supporting materials
 ----- | -------- |--------------------
 [Episode 01](https://youtu.be/FBDaKUfpmKo) | Sync gen and pixel output | [Episode01](Episode01)
 [Episode 02](https://youtu.be/wY-jgFELOBk) | VRAM | [Episode02](Episode02)
-Episode 03 | Readout | [Episode03](Episode03)
+[Episode 03](https://youtu.be/mVbhe-eQTJc) | Readout | [Episode03](Episode03)
 
 This project was inspired by the [Wire Wrap Odyssey](https://wirewrapodyssey.com) project.
 
