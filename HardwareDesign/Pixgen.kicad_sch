@@ -5601,7 +5601,7 @@
 	)
 	(hierarchical_label "BGGreen"
 		(shape output)
-		(at 86.36 137.16 0)
+		(at 86.36 127 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5649,7 +5649,7 @@
 	)
 	(hierarchical_label "BGBlue"
 		(shape output)
-		(at 86.36 134.62 0)
+		(at 86.36 124.46 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5685,7 +5685,7 @@
 	)
 	(hierarchical_label "FGIntens"
 		(shape output)
-		(at 86.36 132.08 0)
+		(at 86.36 142.24 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5709,7 +5709,7 @@
 	)
 	(hierarchical_label "FGRed"
 		(shape output)
-		(at 86.36 129.54 0)
+		(at 86.36 139.7 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5829,7 +5829,7 @@
 	)
 	(hierarchical_label "FGBlue"
 		(shape output)
-		(at 86.36 124.46 0)
+		(at 86.36 134.62 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5913,7 +5913,7 @@
 	)
 	(hierarchical_label "BGIntens"
 		(shape output)
-		(at 86.36 142.24 0)
+		(at 86.36 132.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5925,7 +5925,7 @@
 	)
 	(hierarchical_label "FGGreen"
 		(shape output)
-		(at 86.36 127 0)
+		(at 86.36 137.16 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5949,7 +5949,7 @@
 	)
 	(hierarchical_label "BGRed"
 		(shape output)
-		(at 86.36 139.7 0)
+		(at 86.36 129.54 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
