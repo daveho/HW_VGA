@@ -4851,7 +4851,7 @@
 		)
 		(uuid "8e7f7bb2-3805-4d05-9ef2-11d709853b59")
 	)
-	(text "The upper 4 bits of the\nfont data address come\nfrom the low 4 bits of\nVCOUNT: i.e., which row\nof the character glyph is\nbeing displayed"
+	(text "The lower 4 bits of the\nfont data address come\nfrom the low 4 bits of\nVCOUNT: i.e., which row\nof the character glyph is\nbeing displayed"
 		(exclude_from_sim no)
 		(at 74.422 29.718 0)
 		(effects
@@ -4950,7 +4950,7 @@
 		)
 		(uuid "2e0947cb-f468-4e6e-bc9a-6f972659b5ee")
 	)
-	(label "CRA11"
+	(label "CRA3"
 		(at 93.98 48.26 0)
 		(fields_autoplaced yes)
 		(effects
@@ -4961,7 +4961,7 @@
 		)
 		(uuid "2f3252a9-bc1f-4a85-9be4-fe7b54feaf62")
 	)
-	(label "CRA9"
+	(label "CRA1"
 		(at 93.98 43.18 0)
 		(fields_autoplaced yes)
 		(effects
@@ -4972,7 +4972,7 @@
 		)
 		(uuid "2ff5c3dd-9713-4a92-b33d-b831110e8db7")
 	)
-	(label "CRA8"
+	(label "CRA0"
 		(at 93.98 40.64 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5159,7 +5159,7 @@
 		)
 		(uuid "6d4c4265-07e6-4ca6-a365-e072b60a97ed")
 	)
-	(label "CRA10"
+	(label "CRA2"
 		(at 93.98 45.72 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5181,7 +5181,7 @@
 		)
 		(uuid "6ebd040a-3d96-49f9-b752-83debb35e642")
 	)
-	(label "CRA3"
+	(label "CRA7"
 		(at 91.44 72.39 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5192,7 +5192,7 @@
 		)
 		(uuid "7d285c40-ac85-4623-83b2-172087740517")
 	)
-	(label "CRA2"
+	(label "CRA6"
 		(at 91.44 69.85 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5225,7 +5225,7 @@
 		)
 		(uuid "8159e1a5-47a8-462a-af59-787fd3df744b")
 	)
-	(label "CRA0"
+	(label "CRA4"
 		(at 91.44 64.77 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5401,7 +5401,7 @@
 		)
 		(uuid "b6f745d6-5887-43eb-8037-3d917bbf1c41")
 	)
-	(label "CRA5"
+	(label "CRA9"
 		(at 91.44 77.47 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5489,7 +5489,7 @@
 		)
 		(uuid "d8ad04fb-1986-430d-8ab0-b35cc6d83938")
 	)
-	(label "CRA4"
+	(label "CRA8"
 		(at 91.44 74.93 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5511,7 +5511,7 @@
 		)
 		(uuid "e0cbd367-7531-46bc-b599-3696b95ba18a")
 	)
-	(label "CRA1"
+	(label "CRA5"
 		(at 91.44 67.31 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5522,7 +5522,7 @@
 		)
 		(uuid "e174143c-62d9-4cb7-afde-afaba2717b84")
 	)
-	(label "CRA7"
+	(label "CRA11"
 		(at 91.44 82.55 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5577,7 +5577,7 @@
 		)
 		(uuid "fbe35164-ea52-4105-82f4-96e816ce0757")
 	)
-	(label "CRA6"
+	(label "CRA10"
 		(at 91.44 80.01 0)
 		(fields_autoplaced yes)
 		(effects
