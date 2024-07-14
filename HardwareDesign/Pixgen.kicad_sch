@@ -2151,12 +2151,6 @@
 		(color 0 0 0 0)
 		(uuid "f279c728-0d68-492f-8ca4-cf996a4af6c0")
 	)
-	(junction
-		(at 128.27 144.78)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f2cc724c-11d8-423c-ac30-c9210fe4110a")
-	)
 	(bus_entry
 		(at 100.33 48.26)
 		(size 2.54 -2.54)
@@ -2626,16 +2620,6 @@
 			(type default)
 		)
 		(uuid "0afb137e-9e41-4bfc-ad35-8cb08768cd95")
-	)
-	(wire
-		(pts
-			(xy 128.27 142.24) (xy 128.27 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0be8e780-5860-467b-bb96-ddbed6483be9")
 	)
 	(bus
 		(pts
@@ -3469,6 +3453,16 @@
 	)
 	(wire
 		(pts
+			(xy 115.57 142.24) (xy 135.89 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64cc4213-25df-40cf-933d-61249486a588")
+	)
+	(wire
+		(pts
 			(xy 91.44 40.64) (xy 100.33 40.64)
 		)
 		(stroke
@@ -3586,16 +3580,6 @@
 			(type default)
 		)
 		(uuid "7779bbe0-46f2-4d1a-9758-0488df0654ef")
-	)
-	(wire
-		(pts
-			(xy 135.89 142.24) (xy 128.27 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7b2af1c2-9f75-44f9-a125-5d112fed233f")
 	)
 	(bus
 		(pts
@@ -5742,6 +5726,18 @@
 			(justify right)
 		)
 		(uuid "3ee4a733-e13a-4e4a-8ea8-60604f95aef6")
+	)
+	(hierarchical_label "-VIS"
+		(shape input)
+		(at 115.57 142.24 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5140484f-8621-4782-ae25-e26a498f0b39")
 	)
 	(hierarchical_label "FontA12"
 		(shape input)

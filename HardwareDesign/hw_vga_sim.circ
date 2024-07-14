@@ -74,11 +74,8 @@
       <a name="halign" val="left"/>
     </tool>
     <sep/>
+    <tool lib="0" name="Pin"/>
     <tool lib="0" name="Pin">
-      <a name="appearance" val="classic"/>
-    </tool>
-    <tool lib="0" name="Pin">
-      <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="radix" val="16"/>
@@ -231,7 +228,7 @@
     </comp>
     <comp lib="0" loc="(200,1240)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="Vis"/>
+      <a name="label" val="nVis"/>
     </comp>
     <comp lib="0" loc="(270,310)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -261,7 +258,7 @@
       <a name="label" val="VSync"/>
     </comp>
     <comp lib="0" loc="(550,780)" name="Tunnel">
-      <a name="label" val="Vis"/>
+      <a name="label" val="nVis"/>
     </comp>
     <comp lib="0" loc="(580,730)" name="Tunnel">
       <a name="label" val="VActive"/>
@@ -2558,16 +2555,16 @@
       <a name="label" val="VVis"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="0" loc="(760,1060)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="facing" val="west"/>
-      <a name="label" val="Vis"/>
-      <a name="output" val="true"/>
-    </comp>
     <comp lib="0" loc="(780,1320)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="VActive"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(840,1060)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="nVis"/>
       <a name="output" val="true"/>
     </comp>
     <comp lib="1" loc="(210,1370)" name="NOT Gate"/>
@@ -2627,6 +2624,7 @@
       <a name="facing" val="south"/>
     </comp>
     <comp lib="1" loc="(740,1060)" name="AND Gate"/>
+    <comp lib="1" loc="(800,1060)" name="NOT Gate"/>
     <comp lib="4" loc="(540,690)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
@@ -2843,7 +2841,8 @@
     <wire from="(670,1040)" to="(690,1040)"/>
     <wire from="(670,700)" to="(670,1040)"/>
     <wire from="(670,700)" to="(700,700)"/>
-    <wire from="(740,1060)" to="(760,1060)"/>
+    <wire from="(740,1060)" to="(770,1060)"/>
+    <wire from="(800,1060)" to="(840,1060)"/>
   </circuit>
   <circuit name="ReadoutCtrl">
     <a name="appearance" val="logisim_evolution"/>
@@ -4067,8 +4066,7 @@
     </comp>
     <comp lib="0" loc="(200,860)" name="Pin">
       <a name="appearance" val="classic"/>
-      <a name="label" val="Vis"/>
-      <a name="radix" val="16"/>
+      <a name="label" val="nVis"/>
     </comp>
     <comp lib="0" loc="(310,300)" name="Constant">
       <a name="value" val="0x0"/>
@@ -4670,7 +4668,7 @@ e 6*8 c8 28 18 8 5*0 b8
     </comp>
     <comp lib="0" loc="(160,1480)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="Vis"/>
+      <a name="label" val="nVis"/>
     </comp>
     <comp lib="0" loc="(200,100)" name="Pin">
       <a name="appearance" val="classic"/>
@@ -4690,14 +4688,14 @@ e 6*8 c8 28 18 8 5*0 b8
     </comp>
     <comp lib="0" loc="(200,310)" name="Pin">
       <a name="appearance" val="classic"/>
-      <a name="label" val="Vis"/>
+      <a name="label" val="nVis"/>
     </comp>
     <comp lib="0" loc="(200,40)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
     </comp>
     <comp lib="0" loc="(210,360)" name="Tunnel">
-      <a name="label" val="Vis"/>
+      <a name="label" val="nVis"/>
     </comp>
     <comp lib="0" loc="(480,160)" name="Tunnel">
       <a name="label" val="VActive"/>
@@ -4785,8 +4783,11 @@ e 6*8 c8 28 18 8 5*0 b8
     <comp lib="1" loc="(480,850)" name="AND Gate">
       <a name="inputs" val="3"/>
     </comp>
+    <comp lib="1" loc="(520,1610)" name="NOT Gate"/>
     <comp lib="1" loc="(520,1650)" name="NOT Gate"/>
+    <comp lib="1" loc="(520,1730)" name="NOT Gate"/>
     <comp lib="1" loc="(520,1770)" name="NOT Gate"/>
+    <comp lib="1" loc="(530,1480)" name="NOT Gate"/>
     <comp lib="1" loc="(530,1520)" name="NOT Gate"/>
     <comp lib="1" loc="(540,2110)" name="NOT Gate"/>
     <comp lib="1" loc="(550,350)" name="AND Gate">
@@ -4864,10 +4865,10 @@ e 6*8 c8 28 18 8 5*0 b8
     <wire from="(200,40)" to="(270,40)"/>
     <wire from="(210,710)" to="(520,710)"/>
     <wire from="(250,1480)" to="(250,1610)"/>
-    <wire from="(250,1480)" to="(560,1480)"/>
+    <wire from="(250,1480)" to="(500,1480)"/>
     <wire from="(250,1610)" to="(250,1730)"/>
-    <wire from="(250,1610)" to="(560,1610)"/>
-    <wire from="(250,1730)" to="(560,1730)"/>
+    <wire from="(250,1610)" to="(490,1610)"/>
+    <wire from="(250,1730)" to="(490,1730)"/>
     <wire from="(250,310)" to="(250,330)"/>
     <wire from="(270,1140)" to="(270,1910)"/>
     <wire from="(270,1140)" to="(710,1140)"/>
@@ -4978,7 +4979,9 @@ e 6*8 c8 28 18 8 5*0 b8
     <wire from="(500,830)" to="(600,830)"/>
     <wire from="(520,1330)" to="(520,1350)"/>
     <wire from="(520,1330)" to="(550,1330)"/>
+    <wire from="(520,1610)" to="(560,1610)"/>
     <wire from="(520,1650)" to="(560,1650)"/>
+    <wire from="(520,1730)" to="(560,1730)"/>
     <wire from="(520,1770)" to="(560,1770)"/>
     <wire from="(520,710)" to="(520,790)"/>
     <wire from="(520,790)" to="(600,790)"/>
@@ -4986,6 +4989,7 @@ e 6*8 c8 28 18 8 5*0 b8
     <wire from="(530,1300)" to="(550,1300)"/>
     <wire from="(530,1340)" to="(530,1390)"/>
     <wire from="(530,1340)" to="(550,1340)"/>
+    <wire from="(530,1480)" to="(560,1480)"/>
     <wire from="(530,1520)" to="(560,1520)"/>
     <wire from="(540,2110)" to="(560,2110)"/>
     <wire from="(550,350)" to="(600,350)"/>
@@ -4994,6 +4998,7 @@ e 6*8 c8 28 18 8 5*0 b8
     <wire from="(560,1080)" to="(590,1080)"/>
     <wire from="(560,1120)" to="(560,1190)"/>
     <wire from="(560,1120)" to="(590,1120)"/>
+    <wire from="(560,1610)" to="(560,1620)"/>
     <wire from="(560,590)" to="(560,670)"/>
     <wire from="(560,590)" to="(590,590)"/>
     <wire from="(560,670)" to="(940,670)"/>

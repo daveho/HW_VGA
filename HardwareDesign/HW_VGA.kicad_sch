@@ -4612,7 +4612,7 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 173.99) (xy 190.5 173.99)
+			(xy 175.26 176.53) (xy 190.5 176.53)
 		)
 		(stroke
 			(width 0)
@@ -4862,7 +4862,7 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 166.37) (xy 190.5 166.37)
+			(xy 175.26 168.91) (xy 190.5 168.91)
 		)
 		(stroke
 			(width 0)
@@ -4952,7 +4952,7 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 171.45) (xy 190.5 171.45)
+			(xy 175.26 173.99) (xy 190.5 173.99)
 		)
 		(stroke
 			(width 0)
@@ -6212,7 +6212,7 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 179.07) (xy 190.5 179.07)
+			(xy 175.26 181.61) (xy 190.5 181.61)
 		)
 		(stroke
 			(width 0)
@@ -6322,7 +6322,7 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 184.15) (xy 190.5 184.15)
+			(xy 175.26 186.69) (xy 190.5 186.69)
 		)
 		(stroke
 			(width 0)
@@ -6392,7 +6392,7 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 168.91) (xy 190.5 168.91)
+			(xy 175.26 171.45) (xy 190.5 171.45)
 		)
 		(stroke
 			(width 0)
@@ -6522,6 +6522,16 @@
 	)
 	(wire
 		(pts
+			(xy 175.26 163.83) (xy 190.5 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5014e36-4b99-4961-bc64-3e6f0bb9f695")
+	)
+	(wire
+		(pts
 			(xy 26.67 153.67) (xy 40.64 153.67)
 		)
 		(stroke
@@ -6532,7 +6542,7 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 181.61) (xy 190.5 181.61)
+			(xy 175.26 184.15) (xy 190.5 184.15)
 		)
 		(stroke
 			(width 0)
@@ -6652,7 +6662,7 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 176.53) (xy 190.5 176.53)
+			(xy 175.26 179.07) (xy 190.5 179.07)
 		)
 		(stroke
 			(width 0)
@@ -7415,7 +7425,7 @@
 		(uuid "14db11ae-5ec8-49e6-b845-265fa28e084d")
 	)
 	(label "ReadoutD5"
-		(at 177.8 179.07 0)
+		(at 177.8 181.61 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7690,7 +7700,7 @@
 		(uuid "33df68b7-8b4d-4ecc-bcbd-4a37448d2518")
 	)
 	(label "ReadoutD7"
-		(at 177.8 184.15 0)
+		(at 177.8 186.69 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7789,7 +7799,7 @@
 		(uuid "3bea2e02-8a01-4415-a8b3-2e1484e7a920")
 	)
 	(label "ReadoutD3"
-		(at 177.8 173.99 0)
+		(at 177.8 176.53 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8009,7 +8019,7 @@
 		(uuid "521b94d2-1f0a-4473-b455-7da5c5923b12")
 	)
 	(label "ReadoutD0"
-		(at 177.8 166.37 0)
+		(at 177.8 168.91 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8174,7 +8184,7 @@
 		(uuid "5e5a0e6f-4536-486e-8599-df076ff39cdc")
 	)
 	(label "ReadoutD4"
-		(at 177.8 176.53 0)
+		(at 177.8 179.07 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8834,7 +8844,7 @@
 		(uuid "b6a88fae-5177-4f1f-9f43-06e80ed1919f")
 	)
 	(label "ReadoutD6"
-		(at 177.8 181.61 0)
+		(at 177.8 184.15 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9075,6 +9085,17 @@
 		)
 		(uuid "c97675ef-0a29-41f7-8f4f-c4c2b6c162ee")
 	)
+	(label "-VIS"
+		(at 176.53 163.83 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c9cfd40e-76d2-487a-a133-18f904b8bf38")
+	)
 	(label "FGGreen"
 		(at 257.81 167.64 0)
 		(fields_autoplaced yes)
@@ -9241,7 +9262,7 @@
 		(uuid "d1df4c61-3995-4a75-ae99-f2f37787f11c")
 	)
 	(label "ReadoutD1"
-		(at 177.8 168.91 0)
+		(at 177.8 171.45 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9648,7 +9669,7 @@
 		(uuid "fa666363-5e68-42dd-ab40-ffda195760f1")
 	)
 	(label "ReadoutD2"
-		(at 177.8 171.45 0)
+		(at 177.8 173.99 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12210,7 +12231,7 @@
 			(uuid "535a812e-2ccd-43cf-b356-996fba01777d")
 		)
 		(pin "ReadoutD6" input
-			(at 190.5 181.61 180)
+			(at 190.5 184.15 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12220,7 +12241,7 @@
 			(uuid "6f4beba1-f577-4c3c-af1d-c538d90ce61d")
 		)
 		(pin "ReadoutD7" input
-			(at 190.5 184.15 180)
+			(at 190.5 186.69 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12230,7 +12251,7 @@
 			(uuid "2c9b2855-a122-4819-a22e-cd00339c805a")
 		)
 		(pin "ReadoutD4" input
-			(at 190.5 176.53 180)
+			(at 190.5 179.07 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12240,7 +12261,7 @@
 			(uuid "4b8745e5-9193-46d4-99fd-4269bc1a0a74")
 		)
 		(pin "ReadoutD3" input
-			(at 190.5 173.99 180)
+			(at 190.5 176.53 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12250,7 +12271,7 @@
 			(uuid "51ba6543-5678-4761-bb17-c578e151498c")
 		)
 		(pin "ReadoutD0" input
-			(at 190.5 166.37 180)
+			(at 190.5 168.91 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12260,7 +12281,7 @@
 			(uuid "a7542fee-2398-462e-8260-3ceee3d47d99")
 		)
 		(pin "ReadoutD2" input
-			(at 190.5 171.45 180)
+			(at 190.5 173.99 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12270,7 +12291,7 @@
 			(uuid "00a13b54-16ce-4fda-ae9f-aef6756b5179")
 		)
 		(pin "ReadoutD5" input
-			(at 190.5 179.07 180)
+			(at 190.5 181.61 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12280,7 +12301,7 @@
 			(uuid "7e05014f-5aeb-4872-849a-80e41eaa3d34")
 		)
 		(pin "ReadoutD1" input
-			(at 190.5 168.91 180)
+			(at 190.5 171.45 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12478,6 +12499,16 @@
 				(justify left)
 			)
 			(uuid "457e6167-3f5e-4483-98b8-5528bd578028")
+		)
+		(pin "-VIS" input
+			(at 190.5 163.83 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "995d94ea-7a3d-40d9-8caf-114acaf91d61")
 		)
 		(instances
 			(project "HW_VGA"

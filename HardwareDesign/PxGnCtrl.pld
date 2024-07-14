@@ -1,7 +1,7 @@
 GAL22V10
 PxGnCtrl
 
-CLK    NRST   VActive HBActive HEActive Vis      NC       NC       NC       NC NC GND
+CLK    NRST   VActive HBActive HEActive nVis     NC       NC       NC       NC NC GND
 NC     Active Count0  Count1   Phase    nSRLoad  nSRShift LdAttrCP LdCharCP NC NC VCC
 
 ; This GAL has the same timing state machine as the readout control
@@ -28,9 +28,9 @@ Phase.R =   Active * Count1 * Count0 * /Phase    ; Phase goes high if Count=11 a
 
 ; Data in the shift register should be shifted at all times
 ; **during visibility** other than when data is being loaded
-/nSRShift =   Vis * /Count1
-            + Vis * /Count0
-            + Vis * /Phase
+/nSRShift =   /nVis * /Count1
+            + /nVis * /Count0
+            + /nVis * /Phase
 
 ; The positive clock edge to load attribute data into the attribute
 ; register happens at the very end of phase 1
@@ -56,8 +56,9 @@ Inputs:
                on this scanline)
   HBActive - positive timing pulse indicating that horizontal activity is starting
   HEActive - positive timing pulse indicating that horizontal activity is ending
-  Vis      - true when a visible pixel is being displayed; we should only
-               shift data in the output shift register during visibility
+  nVis     - active-low visibility signal, asserted when a visible pixel is being
+               displayed; we should only shift data in the output shift register
+               during visibility
 
 Outputs:
 
