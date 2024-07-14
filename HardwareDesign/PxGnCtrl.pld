@@ -1,7 +1,7 @@
 GAL22V10
 PxGnCtrl
 
-CLK    NRST   VActive HBActive HEActive NC       NC       NC       NC       NC NC GND
+CLK    NRST   VActive HBActive HEActive Vis      NC       NC       NC       NC NC GND
 NC     Active Count0  Count1   Phase    nSRLoad  nSRShift LdAttrCP LdCharCP NC NC VCC
 
 ; This GAL has the same timing state machine as the readout control
@@ -27,10 +27,10 @@ Phase.R =   Active * Count1 * Count0 * /Phase    ; Phase goes high if Count=11 a
 /nSRLoad  = Active * Count1 * Count0 * Phase
 
 ; Data in the shift register should be shifted at all times
-; (during activity) other than when data is being loaded
-/nSRShift =   Active * /Count1
-            + Active * /Count0
-            + Active * /Phase
+; **during visibility** other than when data is being loaded
+/nSRShift =   Vis * /Count1
+            + Vis * /Count0
+            + Vis * /Phase
 
 ; The positive clock edge to load attribute data into the attribute
 ; register happens at the very end of phase 1
@@ -45,8 +45,8 @@ DESCRIPTION
 Pixel generator control GAL.
 Clocks data from the VRAM into the character register, attribute
 register, and output shift register, and moves data through the
-shift register on cycles other than when a new pattern is loaded
-into the shift register.
+shift register on cycles (during visibility) other than when
+a new pattern is loaded into the shift register.
 
 Inputs:
 
@@ -56,6 +56,8 @@ Inputs:
                on this scanline)
   HBActive - positive timing pulse indicating that horizontal activity is starting
   HEActive - positive timing pulse indicating that horizontal activity is ending
+  Vis      - true when a visible pixel is being displayed; we should only
+               shift data in the output shift register during visibility
 
 Outputs:
 
