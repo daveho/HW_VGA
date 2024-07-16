@@ -29,3 +29,31 @@ Font number | File                  | Link
 13          | `Bm437_TridentEarly_8x16.FON` | [TridentEarly 8x16](https://int10h.org/oldschool-pc-fonts/fontlist/font?tridentearly_8x16)
 14          | `Bm437_Trident_8x16.FON` | [Trident 8x16](https://int10h.org/oldschool-pc-fonts/fontlist/font?trident_8x16)
 15          | `Bm437_Tandy2K.FON` | [Tandy 2K](https://int10h.org/oldschool-pc-fonts/fontlist/font?tandy2k)
+
+## Creating the font ROM image
+
+To create the font ROM image, run the following command:
+
+```bash
+make
+```
+
+Note that you need Monobit to be installed (`pip install monobit`).
+
+To program the font ROM image to a 27SF512 flash memory chip:
+
+```bash
+minipro --device 'SST27SF512@DIP28' -w font_rom.bin
+```
+
+To program the font ROM image to a W27C512 flash memory chip:
+
+```bash
+minipro --device 'W27C512@DIP28' -w font_rom.bin
+```
+
+The above commands assume you are using the open-source
+[Minipro](https://gitlab.com/DavidGriffith/minipro) software.
+
+In theory, if resistor R601 is installed, it should be possible to have 8 fonts
+in a 32K EPROM (e.g., a 27C256), but I haven't tried this.
