@@ -7446,7 +7446,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74ACT163"
+		(property "Value" "74ALS163"
 			(at 160.9441 66.04 0)
 			(effects
 				(font
@@ -7628,7 +7628,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74ACT163"
+		(property "Value" "74ALS163"
 			(at 58.0741 66.04 0)
 			(effects
 				(font
@@ -8687,7 +8687,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74ACT163"
+		(property "Value" "74ALS163"
 			(at 108.8741 66.04 0)
 			(effects
 				(font
