@@ -3577,7 +3577,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74ACT157"
+		(property "Value" "74ALS157"
 			(at 108.8741 33.02 0)
 			(effects
 				(font
