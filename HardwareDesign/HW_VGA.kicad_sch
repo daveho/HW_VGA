@@ -4572,6 +4572,16 @@
 	)
 	(wire
 		(pts
+			(xy 279.4 57.15) (xy 297.18 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f46a868-bfbb-4882-bd41-9f3a044109c1")
+	)
+	(wire
+		(pts
 			(xy 289.56 167.64) (xy 300.99 167.64)
 		)
 		(stroke
@@ -6022,6 +6032,16 @@
 	)
 	(wire
 		(pts
+			(xy 279.4 59.69) (xy 297.18 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ba0c047-4aa6-45fb-99c2-bd74eae2ff56")
+	)
+	(wire
+		(pts
 			(xy 279.4 72.39) (xy 297.18 72.39)
 		)
 		(stroke
@@ -7081,6 +7101,16 @@
 		)
 		(uuid "367cdee9-0044-4129-99d8-f70be1b8f811")
 	)
+	(text "Note that pin 20 is a one-cycle\nvertical refresh pulse, which is\nsent to the interrupt controller\nas the edge-triggered IRQ6."
+		(exclude_from_sim no)
+		(at 304.8 51.054 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "40f716e7-daea-42d6-b925-cb35b45abf34")
+	)
 	(text "Sync gen and visibility signals:\nLogic is in Sync.pld"
 		(exclude_from_sim no)
 		(at 261.62 32.258 0)
@@ -7500,6 +7530,17 @@
 			(justify left bottom)
 		)
 		(uuid "1c0720cd-0258-4b45-a699-87fd91b8c8a3")
+	)
+	(label "IRQ6"
+		(at 281.94 59.69 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1d3debc7-44af-4388-becc-261ec9cff91c")
 	)
 	(label "VCOUNT_END"
 		(at 195.58 73.66 0)
@@ -8743,6 +8784,17 @@
 			(justify left bottom)
 		)
 		(uuid "ab55d4b1-563f-42e1-81d8-518500c6108f")
+	)
+	(label "VActPrev"
+		(at 281.94 57.15 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "abffadac-ea7f-48b6-88ee-f5aa41afe57f")
 	)
 	(label "~{IRQ7}"
 		(at 29.21 151.13 0)

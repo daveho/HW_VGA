@@ -1,8 +1,8 @@
 GAL22V10
 Sync
 
-Clock    NRST   HBPulse  HEPulse VBPulse VEPulse HCEND   VCZERO HVisEnd VVisEnd VCEND GND
-VEActive HSync  VSync    HVis    VVis    NVis    VActive NC     NC      NC      NC       VCC
+Clock    NRST   HBPulse  HEPulse VBPulse VEPulse HCEND   VCZERO   HVisEnd  VVisEnd VCEND GND
+VEActive HSync  VSync    HVis    VVis    NVis    VActive VRefresh VActPrev NC      NC       VCC
 
 ; Sync pulses are negative
 ; (which means that in reset we definitely want a high output)
@@ -73,6 +73,15 @@ VActive.R =   NRST * HCEND * VCEND
             + NRST * /VEActive * VActive
             + NRST * VEActive * /HCEND * VActive
 
+; Vertical refresh interrupt pulse.
+; It goes high for one clock cycle when VActive transitions from
+; high to low.
+VRefresh.R = NRST * VActPrev * /VActive
+
+; Previous VActive value.
+; Used to detect high-to-low transitions on VActive.
+VActPrev.R = VActive
+
 DESCRIPTION
 
 HSync, VSync, and pixel visibility signal generation.
@@ -103,5 +112,9 @@ Outputs:
   NVis     active-low: current pixel is visible (HVis & VVis)
   VActive  active-high: asserted when in vertical activity region
              (where memory fetch and rasterization should occur)
+  VRefresh one cycle positive pulse generated when vertical activity ends;
+             used as a vertical refresh interrupt
+  VActPrev register storing previous VActive value: used to detect
+             high-to-low transitions of VActive
 
 ; vim:ft=text:
