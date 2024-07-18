@@ -3704,6 +3704,16 @@
 		)
 		(uuid "3140175f-9c42-47ed-8e36-804b44e456a4")
 	)
+	(text "Decoupling caps"
+		(exclude_from_sim no)
+		(at 55.372 42.164 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "b73ba3d5-914a-4ce1-8e9a-c13849eeaa36")
+	)
 	(label "HC1"
 		(at 185.42 107.95 0)
 		(fields_autoplaced yes)
