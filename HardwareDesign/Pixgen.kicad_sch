@@ -6250,7 +6250,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74HCT574"
+		(property "Value" "74ALS574"
 			(at 79.6641 59.69 0)
 			(effects
 				(font
@@ -8050,7 +8050,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74HCT574"
+		(property "Value" "74ALS574"
 			(at 65.6941 119.38 0)
 			(effects
 				(font

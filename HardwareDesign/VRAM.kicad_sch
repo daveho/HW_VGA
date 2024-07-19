@@ -7541,6 +7541,17 @@
 		)
 		(uuid "0e43ff75-fde1-4187-9177-8440873bba17")
 	)
+	(text "Note that this doesn't need to be\na high-speed part since it's\nonly driven by signals from the\nhost system."
+		(exclude_from_sim no)
+		(at 97.282 60.706 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0f55067a-78c7-4a93-bef9-e4358c02ff99")
+	)
 	(text "All host address lines are\nused because the VRAM hardware\ndoes its own address decoding\n(to know when video memory\nis being accessed by the host)"
 		(exclude_from_sim no)
 		(at 31.75 149.606 0)
@@ -10452,7 +10463,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74ACT574"
+		(property "Value" "74HCT574"
 			(at 88.5541 30.48 0)
 			(effects
 				(font
