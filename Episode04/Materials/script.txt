@@ -1,14 +1,14 @@
-Before we go over the pixel generator hardware design, let's discuss how
+[01] Before we go over the pixel generator hardware design, let's discuss how
 it works.
 
-You may recall from Episode 03 that the Readout module uses an 8-cycle
+You may recall from Episode 03 that [02] the Readout module uses an 8-cycle
 cadence to time the generation of data addresses to fetch from video memory.
-At times 1 and 5, the Readout module increments the readout address
+[03] At times 1 and 5, the Readout module increments the readout address
 register, outputting the address of a byte to fetch from video memory.
-At time 1, the generated address is for a character byte, and at time 5,
+[04] At time 1, the generated address is for a character byte, and [05] at time 5,
 the generated address is for an attribute byte.
 
-At time 4, the character byte fetched from VRAM is clocked into the character
+[06] At time 4, the character byte fetched from VRAM is clocked into the character
 register. The character data, along with the low 4 bits of the vertical count
 and 4 bits selecting a font, is used to generate the address of a byte
 from the font ROM. This byte contains a pattern of 8 pixels, which correspond
