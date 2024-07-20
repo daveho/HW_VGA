@@ -9,6 +9,145 @@
 		(company "daveho hacks")
 	)
 	(lib_symbols
+		(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Connector_Generic:Conn_01x06"
 			(pin_names
 				(offset 1.016) hide)
@@ -5282,6 +5421,16 @@
 	)
 	(wire
 		(pts
+			(xy 306.07 59.69) (xy 321.31 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "483f7c96-b1b7-41ad-85d9-214184165db5")
+	)
+	(wire
+		(pts
 			(xy 53.34 156.21) (xy 67.31 156.21)
 		)
 		(stroke
@@ -6032,7 +6181,7 @@
 	)
 	(wire
 		(pts
-			(xy 279.4 59.69) (xy 297.18 59.69)
+			(xy 279.4 59.69) (xy 303.53 59.69)
 		)
 		(stroke
 			(width 0)
@@ -7101,16 +7250,6 @@
 		)
 		(uuid "367cdee9-0044-4129-99d8-f70be1b8f811")
 	)
-	(text "Note that pin 20 is a one-cycle\nvertical refresh pulse, which is\nsent to the interrupt controller\nas the edge-triggered IRQ6."
-		(exclude_from_sim no)
-		(at 304.8 51.054 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "40f716e7-daea-42d6-b925-cb35b45abf34")
-	)
 	(text "Sync gen and visibility signals:\nLogic is in Sync.pld"
 		(exclude_from_sim no)
 		(at 261.62 32.258 0)
@@ -7193,6 +7332,16 @@
 			(justify left bottom)
 		)
 		(uuid "dabd084c-28d6-4bd8-9123-df6907d9b036")
+	)
+	(text "Experimental: place jumper\nto generate a vertical\nrefresh interrupt as IRQ6"
+		(exclude_from_sim no)
+		(at 308.864 48.768 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "db2e7602-f620-4aa9-a09b-4e78a3c9a028")
 	)
 	(text "Horizontal count"
 		(exclude_from_sim no)
@@ -7532,7 +7681,7 @@
 		(uuid "1c0720cd-0258-4b45-a699-87fd91b8c8a3")
 	)
 	(label "IRQ6"
-		(at 281.94 59.69 0)
+		(at 314.96 59.69 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8674,6 +8823,17 @@
 			(justify left bottom)
 		)
 		(uuid "993ee2bc-01fb-4afd-9075-23b7913e4d74")
+	)
+	(label "VRefresh"
+		(at 281.94 59.69 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9c4f92e7-6815-44dd-a6ff-a43718a4771c")
 	)
 	(label "PC6"
 		(at 29.21 130.81 0)
@@ -10240,6 +10400,76 @@
 			(project "HW_VGA"
 				(path "/c4bd4b39-993a-4195-805f-b4de6fa4aea5"
 					(reference "C301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 303.53 54.61 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33de94f6-86cd-434b-b9a6-8521c2fd648d")
+		(property "Reference" "J301"
+			(at 308.61 53.3399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 308.61 55.8799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 303.53 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 303.53 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 303.53 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6793bb3a-b469-4015-9dd3-68d2e590987d")
+		)
+		(pin "2"
+			(uuid "a2b8cf08-2826-4d64-83f1-422ad677c9a2")
+		)
+		(instances
+			(project ""
+				(path "/c4bd4b39-993a-4195-805f-b4de6fa4aea5"
+					(reference "J301")
 					(unit 1)
 				)
 			)
