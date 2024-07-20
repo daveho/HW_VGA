@@ -25,9 +25,9 @@ background color pixel. More generally, [11] the shift register's bit 7 output
 is the pixel generator's pixel output, and the bit output as bit 7 is the
 pixel that is sent to the Output module.
 
-At times 1 through 7, the data in the shift register is shifted one bit
+[12] At times 1 through 7, [13] the data in the shift register is shifted one bit
 to the left, meaning that bit 6 becomes bit 7, bit 5 becomes bit 6, and
-so forth. By shifting the pixel data 7 times after the pattern byte is
+so forth. [14-20] By shifting the pixel data 7 times after the pattern byte is
 loaded, all 8 bits of the pattern are sent to the Output module.
 When the counter returns to time 0, another pattern byte and attribute byte
 will be clocked into the shift register and attribute register, and the
