@@ -14,14 +14,14 @@ and 4 bits selecting a font, is used to generate the address of a byte
 from the font ROM. [08] This byte contains a pattern of 8 pixels, which correspond
 to one row of one displayed character.
 
-At time 0, two important events occur. The pixel pattern fetched from the
-font ROM is clocked into a shift register, and the attribute byte fetched
+At time 0, two important events occur. [09] The pixel pattern fetched from the
+font ROM is clocked into a shift register, and [10] the attribute byte fetched
 from video memory is clocked into a register. This gives the pixel generator
 the data it needs to generate a block of 8 pixels to send to the Output
 module. The font ROM stores the pixel patterns so that the most significant
 bit of each pattern byte, bit 7, is the first pixel that should be sent to
 the display, with 1 meaning a foreground color pixel and 0 meaning a
-background color pixel. More generally, the shift register's bit 7 output
+background color pixel. More generally, [11] the shift register's bit 7 output
 is the pixel generator's pixel output, and the bit output as bit 7 is the
 pixel that is sent to the Output module.
 
