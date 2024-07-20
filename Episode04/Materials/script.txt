@@ -9,9 +9,9 @@ register, outputting the address of a byte to fetch from video memory.
 the generated address is for an attribute byte.
 
 [06] At time 4, the character byte fetched from VRAM is clocked into the character
-register. The character data, along with the low 4 bits of the vertical count
+register. [07] The character data, along with the low 4 bits of the vertical count
 and 4 bits selecting a font, is used to generate the address of a byte
-from the font ROM. This byte contains a pattern of 8 pixels, which correspond
+from the font ROM. [08] This byte contains a pattern of 8 pixels, which correspond
 to one row of one displayed character.
 
 At time 0, two important events occur. The pixel pattern fetched from the
