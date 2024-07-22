@@ -43,3 +43,7 @@ is complicated slightly because the irq_handler function which handles
 the timer interrupt also accesses the current cursor position, so
 move_cursor must disable interrupts in order to avoid a data race
 with irq_handler.
+
+These software routines are fairly rudimentary, but I think they are a
+useful starting point for more complete software support for the display,
+and they are sufficient for simple test programs.
