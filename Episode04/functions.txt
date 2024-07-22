@@ -1,0 +1,45 @@
+Now I'll give you a brief overview of the software routines I implemented to
+allow the host system to drive the display controller. I won't describe the
+implementation of each routine in detail, but I will try to give you a
+sense of what each routine does.
+
+The init function, which is called automatically by the monitor's reset
+handler, initializes some variables, clears the screen, and installs a handler
+for the timer interrupt, which is used to blink the cursor.
+
+The clear_screen function clears the screen by filling the first three VRAM
+banks with default character and attribute values. The fill_bank function
+does the work of filling one VRAM bank.
+
+The compute_addr function translates a text row number and column number to
+the address in VRAM of the character/attribute pair corresponding to that
+row and column. Note that the address is not directly useable by the host
+system because the VRAM is not directly mapped into the host address space.
+
+The map_bank function translates a VRAM address to a host address in the
+2 KB VRAM access window, and selects the correct VRAM bank. When map_bank
+returns, the caller can directly access the VRAM memory location, for example,
+to modify the character and attribute at that location.
+
+The set_bank, set_font, and set_attr functions allow the caller to set the
+current VRAM bank, the current font, and the current attribute, respectively.
+
+The copy_dumb function copies bytes from the host address space into VRAM,
+selecting the appropriate VRAM bank and translating the destination VRAM
+address to a host address in the VRAM window. The routine is "dumb" because
+it doesn't handle the case that the transfer might cross a bank boundary.
+
+The write_dumb function is like copy_dumb, except that rather than copying
+bytes containing both characters and attributes, it only copies text
+characters, and uses the current attribute as the attribute for each copied
+character.
+
+Together, copy_dumb and write_dumb serve as a very primitive mechanism to
+allow programs to put data into video memory so it can be displayed on the
+screen.
+
+The move_cursor function change the current cursor position. This task
+is complicated slightly because the irq_handler function which handles
+the timer interrupt also accesses the current cursor position, so
+move_cursor must disable interrupts in order to avoid a data race
+with irq_handler.
