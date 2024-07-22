@@ -36,7 +36,8 @@ character.
 
 Together, copy_dumb and write_dumb serve as a very primitive mechanism to
 allow programs to put data into video memory so it can be displayed on the
-screen.
+screen. I think they will likely serve as building blocks for more
+sophisticated routines.
 
 The move_cursor function change the current cursor position. This task
 is complicated slightly because the irq_handler function which handles
