@@ -1,6 +1,9 @@
 # Hardware VGA text mode project
 
+<!--
 ![photo of the prototype hardware](Episode01/Materials/figures/episode01/prototype.jpg)
+-->
+![VGA monitor showing a cat rendered using text characters](img/ingo_pic.png)
 
 This repository documents my attempt to implement a VGA text mode using logic chips and GAL devices for my [8-bit computer project](https://github.com/daveho/DIY8bit).
 
