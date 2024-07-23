@@ -1,21 +1,21 @@
 # Hardware VGA text mode project
 
-<!--
-![photo of the prototype hardware](Episode01/Materials/figures/episode01/prototype.jpg)
--->
 ![VGA monitor showing a cat rendered using text characters](img/ingo_pic.png)
 
-This repository documents my attempt to implement a VGA text mode using logic chips and GAL devices for my [8-bit computer project](https://github.com/daveho/DIY8bit).
+This repository documents my (successful!) attempt to implement a VGA text mode using logic chips and GAL devices for my [8-bit computer project](https://github.com/daveho/DIY8bit).
 
-As of the current time (mid-July 2024) the hardware can produce a valid 640x480 VGA video signal and display a solid color, 8KB of video memory has been implemented, and character and attribute data is fetched from VRAM. All that remains is rendering the character and attribute data as pixels.
+As of the current time (late July 2024), the display controller is completely working as a hand-wired prototype.
 
-The project is being documented as a series of youtube videos:
+The project is documented as a series of youtube videos:
 
 Video | Topic(s) | Supporting materials
 ----- | -------- |--------------------
 [Episode 01](https://youtu.be/FBDaKUfpmKo) | Sync gen and pixel output | [Episode01](Episode01)
 [Episode 02](https://youtu.be/wY-jgFELOBk) | VRAM | [Episode02](Episode02)
 [Episode 03](https://youtu.be/mVbhe-eQTJc) | Readout | [Episode03](Episode03)
+Episode 04 | Pixel generation | [Episode04](Episode04)
+
+There are a few photos in the [Gallery](gallery.md).
 
 This project was inspired by the [Wire Wrap Odyssey](https://wirewrapodyssey.com) project.
 
