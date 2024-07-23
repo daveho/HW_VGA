@@ -18,7 +18,7 @@ At time 0, two important events occur. [09] The pixel pattern fetched from the
 font ROM is clocked into a shift register, and [10] the attribute byte fetched
 from video memory is clocked into a register. This gives the pixel generator
 the data it needs to generate a block of 8 pixels to send to the Output
-module. The font ROM stores the pixel patterns so that the most significant
+module. [10a] The font ROM stores the pixel patterns so that the most significant
 bit of each pattern byte, bit 7, is the first pixel that should be sent to
 the display, with 1 meaning a foreground color pixel and 0 meaning a
 background color pixel. More generally, [11] the shift register's bit 7 output
