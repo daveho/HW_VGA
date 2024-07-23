@@ -13,7 +13,7 @@ Video | Topic(s) | Supporting materials
 [Episode 01](https://youtu.be/FBDaKUfpmKo) | Sync gen and pixel output | [Episode01](Episode01)
 [Episode 02](https://youtu.be/wY-jgFELOBk) | VRAM | [Episode02](Episode02)
 [Episode 03](https://youtu.be/mVbhe-eQTJc) | Readout | [Episode03](Episode03)
-Episode 04 | Pixel generation | [Episode04](Episode04)
+[Episode 04](https://youtu.be/JXyIJMKmy68) | Pixel generation | [Episode04](Episode04)
 
 There are a few photos in the [Gallery](gallery.md).
 
