@@ -4,7 +4,12 @@
 
 This repository documents my (successful!) attempt to implement a VGA text mode using logic chips and GAL devices for my [8-bit computer project](https://github.com/daveho/DIY8bit).
 
-As of the current time (late July 2024), the display controller is completely working as a hand-wired prototype.
+In July 2024, the design reached the point where it was functional
+as a hand-wired prototype.
+
+In November 2025, an [FPGA implementation](https://github.com/daveho/FPGA_VGA)
+of the display controller reached the point where it is fully
+functional.
 
 The project is documented as a series of youtube videos:
 
@@ -14,6 +19,7 @@ Video | Topic(s) | Supporting materials
 [Episode 02](https://youtu.be/wY-jgFELOBk) | VRAM | [Episode02](Episode02)
 [Episode 03](https://youtu.be/mVbhe-eQTJc) | Readout | [Episode03](Episode03)
 [Episode 04](https://youtu.be/JXyIJMKmy68) | Pixel generation | [Episode04](Episode04)
+[Episode 05](https://youtu.be/PG1XWQCylTA) | FPGA implementation | [FPGA\_VGA repository](https://github.com/daveho/FPGA_VGA)
 
 There are a few photos in the [Gallery](gallery.md).
 
